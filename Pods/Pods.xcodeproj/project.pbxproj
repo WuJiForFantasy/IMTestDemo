@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECF1363CBE24785CFE99784F77EF7D68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		F6411A0522DF4B5A5F882D5F2A0D5706 /* Pods-IMTestDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AFCE98AD14800BD5950251046090C4 /* Pods-IMTestDemo-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0179855ED7500A8CE9CF5CF6012B3A72 /* IEMContactManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMContactManager.h; path = HyphenateSDK/include/IEMContactManager.h; sourceTree = "<group>"; };
+		043BB693BF6278D218D285639F68AEFD /* EMGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroup.h; path = HyphenateSDK/include/EMGroup.h; sourceTree = "<group>"; };
+		05DA07EDDDCA5A700245F08E6CB52EAB /* EMCmdMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCmdMessageBody.h; path = HyphenateSDK/include/EMCmdMessageBody.h; sourceTree = "<group>"; };
+		098E612D86F8F296887B8B55FF533ECF /* EMError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMError.h; path = HyphenateSDK/include/EMError.h; sourceTree = "<group>"; };
+		2806CCFBDB25D2C65611301B0F17A3DE /* EMClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMClient.h; path = HyphenateSDK/include/EMClient.h; sourceTree = "<group>"; };
+		2A47B453133BAB3C00A9BF2B69B7A9BB /* libHyphenateSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libHyphenateSDK.a; path = HyphenateSDK/lib/libHyphenateSDK.a; sourceTree = "<group>"; };
+		31E9840A3E2A5423B57A8EBBF4760037 /* EMVoiceMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMVoiceMessageBody.h; path = HyphenateSDK/include/EMVoiceMessageBody.h; sourceTree = "<group>"; };
+		35D7BC272CBAE28D8A51491849A2BD04 /* EMCursorResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCursorResult.h; path = HyphenateSDK/include/EMCursorResult.h; sourceTree = "<group>"; };
+		36CF49A78F73B4E5B0361E210C62DB26 /* EMMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMMessage.h; path = HyphenateSDK/include/EMMessage.h; sourceTree = "<group>"; };
+		3DB79688B9300CE1A81C7E1206D0CE0A /* EMMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMMessageBody.h; path = HyphenateSDK/include/EMMessageBody.h; sourceTree = "<group>"; };
+		3FE186AD34AD11BFB8AA1B845A1A0631 /* EMContactManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMContactManagerDelegate.h; path = HyphenateSDK/include/EMContactManagerDelegate.h; sourceTree = "<group>"; };
+		4457140B18396943F9BF2A59FA985536 /* EMVideoMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMVideoMessageBody.h; path = HyphenateSDK/include/EMVideoMessageBody.h; sourceTree = "<group>"; };
+		4CB37C5F8DE38CB475D7F6E901A10727 /* EMClientDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMClientDelegate.h; path = HyphenateSDK/include/EMClientDelegate.h; sourceTree = "<group>"; };
+		570DE9E2FFD2D9C43A5700E1EA0CE41E /* IEMGroupManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMGroupManager.h; path = HyphenateSDK/include/IEMGroupManager.h; sourceTree = "<group>"; };
+		5CBD35C4E305D8D571BCA5632FAFC2E5 /* EMCommonDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCommonDefs.h; path = HyphenateSDK/include/EMCommonDefs.h; sourceTree = "<group>"; };
+		5D1571152EF5B81BB03C5CCA6C8E05E4 /* EMFileMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMFileMessageBody.h; path = HyphenateSDK/include/EMFileMessageBody.h; sourceTree = "<group>"; };
+		73266E74EFBE51598805129A99148F77 /* Pods-IMTestDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IMTestDemo-frameworks.sh"; sourceTree = "<group>"; };
+		74CD3941101C16348F3B167B2AE57FEC /* EMChatroom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatroom.h; path = HyphenateSDK/include/EMChatroom.h; sourceTree = "<group>"; };
+		76D777D3FE3A346AD67C4AFC4D808E4A /* Pods-IMTestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IMTestDemo.release.xcconfig"; sourceTree = "<group>"; };
+		7717796E230EF302B49D6B3FAC3184D0 /* EMChatManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerDelegate.h; path = HyphenateSDK/include/EMChatManagerDelegate.h; sourceTree = "<group>"; };
+		791BA4C200BD2A2265521E32D53A6776 /* IEMChatManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatManager.h; path = HyphenateSDK/include/IEMChatManager.h; sourceTree = "<group>"; };
+		7CB75E1DC66D4315419ED65810DA258C /* EMConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMConversation.h; path = HyphenateSDK/include/EMConversation.h; sourceTree = "<group>"; };
+		81FA8322AE7B2D3D029422FF2AC42F3B /* libPods-IMTestDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-IMTestDemo.a"; path = "libPods-IMTestDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90AFCE98AD14800BD5950251046090C4 /* Pods-IMTestDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IMTestDemo-dummy.m"; sourceTree = "<group>"; };
+		9386F7F114B8BBBA1917E5F71CC6EC54 /* EMTextMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMTextMessageBody.h; path = HyphenateSDK/include/EMTextMessageBody.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		965EE07DA615EC0753BCA5C567B69B4B /* EMGroupOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroupOptions.h; path = HyphenateSDK/include/EMGroupOptions.h; sourceTree = "<group>"; };
+		98CE1E24DD6885CB283AD119576902BE /* Pods-IMTestDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IMTestDemo-resources.sh"; sourceTree = "<group>"; };
+		A299B6B561FF0A52790733C6F889FA9F /* EMOptions+PrivateDeploy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EMOptions+PrivateDeploy.h"; path = "HyphenateSDK/include/EMOptions+PrivateDeploy.h"; sourceTree = "<group>"; };
+		A7C25C74F3F4C8B2F6FEEA2836290837 /* IEMChatroomManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatroomManager.h; path = HyphenateSDK/include/IEMChatroomManager.h; sourceTree = "<group>"; };
+		A87AEFD34E805588ACD536491E8546FA /* EMSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMSDK.h; path = HyphenateSDK/include/EMSDK.h; sourceTree = "<group>"; };
+		AE95A2E2FFCFAA03F91A3A08F3267509 /* EMChatroomManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatroomManagerDelegate.h; path = HyphenateSDK/include/EMChatroomManagerDelegate.h; sourceTree = "<group>"; };
+		AED5B00EF1DB3939F63C4BD828DEEED7 /* Pods-IMTestDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IMTestDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BADD0BA7A5A26365022B7D86802BBBC7 /* EMPushOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMPushOptions.h; path = HyphenateSDK/include/EMPushOptions.h; sourceTree = "<group>"; };
+		C3D03D45E8C8FA941C3119B544C2C5EF /* EMOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMOptions.h; path = HyphenateSDK/include/EMOptions.h; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CFA0AA5B11394AAD86B1918FFE1768E2 /* EMImageMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMImageMessageBody.h; path = HyphenateSDK/include/EMImageMessageBody.h; sourceTree = "<group>"; };
+		CFD23F382F14B33359E346058C140EE7 /* Pods-IMTestDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IMTestDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		D06EDE5FB8131D8974663CBA0575962D /* EMGroupManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroupManagerDelegate.h; path = HyphenateSDK/include/EMGroupManagerDelegate.h; sourceTree = "<group>"; };
+		D43A6CF5CFFBA8B8BA84A8F65621B8C8 /* EMLocationMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMLocationMessageBody.h; path = HyphenateSDK/include/EMLocationMessageBody.h; sourceTree = "<group>"; };
+		D4CB5930B44BD934BA1008E12FD0DCC7 /* Pods-IMTestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IMTestDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F1D73564151B5E2CBB9BD1F0F467536D /* EMErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMErrorCode.h; path = HyphenateSDK/include/EMErrorCode.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		392CB30E7EA86F3DA0DF30B436AD254E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF1363CBE24785CFE99784F77EF7D68 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3801ADF93535071DFD0EE7049A324500 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				43D7EA5F6AADB3D468CDFD4856F012A0 /* Pods-IMTestDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		402CB29EC71DDF0722E5E1EA4B252AE8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6305F6DCE7CBD14687804B1CF1F5F7A4 /* HyphenateLite_CN */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		43D7EA5F6AADB3D468CDFD4856F012A0 /* Pods-IMTestDemo */ = {
+			isa = PBXGroup;
+			children = (
+				AED5B00EF1DB3939F63C4BD828DEEED7 /* Pods-IMTestDemo-acknowledgements.markdown */,
+				CFD23F382F14B33359E346058C140EE7 /* Pods-IMTestDemo-acknowledgements.plist */,
+				90AFCE98AD14800BD5950251046090C4 /* Pods-IMTestDemo-dummy.m */,
+				73266E74EFBE51598805129A99148F77 /* Pods-IMTestDemo-frameworks.sh */,
+				98CE1E24DD6885CB283AD119576902BE /* Pods-IMTestDemo-resources.sh */,
+				D4CB5930B44BD934BA1008E12FD0DCC7 /* Pods-IMTestDemo.debug.xcconfig */,
+				76D777D3FE3A346AD67C4AFC4D808E4A /* Pods-IMTestDemo.release.xcconfig */,
+			);
+			name = "Pods-IMTestDemo";
+			path = "Target Support Files/Pods-IMTestDemo";
+			sourceTree = "<group>";
+		};
+		6305F6DCE7CBD14687804B1CF1F5F7A4 /* HyphenateLite_CN */ = {
+			isa = PBXGroup;
+			children = (
+				7717796E230EF302B49D6B3FAC3184D0 /* EMChatManagerDelegate.h */,
+				74CD3941101C16348F3B167B2AE57FEC /* EMChatroom.h */,
+				AE95A2E2FFCFAA03F91A3A08F3267509 /* EMChatroomManagerDelegate.h */,
+				2806CCFBDB25D2C65611301B0F17A3DE /* EMClient.h */,
+				4CB37C5F8DE38CB475D7F6E901A10727 /* EMClientDelegate.h */,
+				05DA07EDDDCA5A700245F08E6CB52EAB /* EMCmdMessageBody.h */,
+				5CBD35C4E305D8D571BCA5632FAFC2E5 /* EMCommonDefs.h */,
+				3FE186AD34AD11BFB8AA1B845A1A0631 /* EMContactManagerDelegate.h */,
+				7CB75E1DC66D4315419ED65810DA258C /* EMConversation.h */,
+				35D7BC272CBAE28D8A51491849A2BD04 /* EMCursorResult.h */,
+				098E612D86F8F296887B8B55FF533ECF /* EMError.h */,
+				F1D73564151B5E2CBB9BD1F0F467536D /* EMErrorCode.h */,
+				5D1571152EF5B81BB03C5CCA6C8E05E4 /* EMFileMessageBody.h */,
+				043BB693BF6278D218D285639F68AEFD /* EMGroup.h */,
+				D06EDE5FB8131D8974663CBA0575962D /* EMGroupManagerDelegate.h */,
+				965EE07DA615EC0753BCA5C567B69B4B /* EMGroupOptions.h */,
+				CFA0AA5B11394AAD86B1918FFE1768E2 /* EMImageMessageBody.h */,
+				D43A6CF5CFFBA8B8BA84A8F65621B8C8 /* EMLocationMessageBody.h */,
+				36CF49A78F73B4E5B0361E210C62DB26 /* EMMessage.h */,
+				3DB79688B9300CE1A81C7E1206D0CE0A /* EMMessageBody.h */,
+				C3D03D45E8C8FA941C3119B544C2C5EF /* EMOptions.h */,
+				A299B6B561FF0A52790733C6F889FA9F /* EMOptions+PrivateDeploy.h */,
+				BADD0BA7A5A26365022B7D86802BBBC7 /* EMPushOptions.h */,
+				A87AEFD34E805588ACD536491E8546FA /* EMSDK.h */,
+				9386F7F114B8BBBA1917E5F71CC6EC54 /* EMTextMessageBody.h */,
+				4457140B18396943F9BF2A59FA985536 /* EMVideoMessageBody.h */,
+				31E9840A3E2A5423B57A8EBBF4760037 /* EMVoiceMessageBody.h */,
+				791BA4C200BD2A2265521E32D53A6776 /* IEMChatManager.h */,
+				A7C25C74F3F4C8B2F6FEEA2836290837 /* IEMChatroomManager.h */,
+				0179855ED7500A8CE9CF5CF6012B3A72 /* IEMContactManager.h */,
+				570DE9E2FFD2D9C43A5700E1EA0CE41E /* IEMGroupManager.h */,
+				6E99C016F05D53C46A72EB7098C4E097 /* Frameworks */,
+			);
+			name = HyphenateLite_CN;
+			path = HyphenateLite_CN;
+			sourceTree = "<group>";
+		};
+		6E99C016F05D53C46A72EB7098C4E097 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A47B453133BAB3C00A9BF2B69B7A9BB /* libHyphenateSDK.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				402CB29EC71DDF0722E5E1EA4B252AE8 /* Pods */,
+				C9280F2D70DABE4A8CF540908B2379E4 /* Products */,
+				3801ADF93535071DFD0EE7049A324500 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9280F2D70DABE4A8CF540908B2379E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81FA8322AE7B2D3D029422FF2AC42F3B /* libPods-IMTestDemo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58E6EE088E47EA619682345CE7F18024 /* Pods-IMTestDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EDF4EA9A692D08947C5B879F084BF3A /* Build configuration list for PBXNativeTarget "Pods-IMTestDemo" */;
+			buildPhases = (
+				164E9C324DD8E24131A46B429311DD2E /* Sources */,
+				392CB30E7EA86F3DA0DF30B436AD254E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-IMTestDemo";
+			productName = "Pods-IMTestDemo";
+			productReference = 81FA8322AE7B2D3D029422FF2AC42F3B /* libPods-IMTestDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C9280F2D70DABE4A8CF540908B2379E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58E6EE088E47EA619682345CE7F18024 /* Pods-IMTestDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		164E9C324DD8E24131A46B429311DD2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6411A0522DF4B5A5F882D5F2A0D5706 /* Pods-IMTestDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		1E0CF33012D6D0987DF8F66B4297B580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4CB5930B44BD934BA1008E12FD0DCC7 /* Pods-IMTestDemo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E94AFCCB314E26F92623505C0990424E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76D777D3FE3A346AD67C4AFC4D808E4A /* Pods-IMTestDemo.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
+				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EDF4EA9A692D08947C5B879F084BF3A /* Build configuration list for PBXNativeTarget "Pods-IMTestDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E0CF33012D6D0987DF8F66B4297B580 /* Debug */,
+				E94AFCCB314E26F92623505C0990424E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

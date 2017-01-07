@@ -1,0 +1,116 @@
+//
+//  WJIMMainManager+Setup.m
+//  IMTestDemo
+//
+//  Created by tqh on 2017/1/7.
+//  Copyright © 2017年 tqh. All rights reserved.
+//
+
+#import "WJIMMainManager+Setup.h"
+#import <UserNotifications/UserNotifications.h> //ios10通知
+
+@implementation WJIMMainManager (Setup)
+
+#pragma mark - app delegate notifications
+
+/** @brief 注册App切入后台和进入前台的通知 */
+- (void)_setupAppDelegateNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appDidEnterBackgroundNotif:)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appWillEnterForeground:)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
+}
+
+//app进入后台断开链接
+- (void)appDidEnterBackgroundNotif:(NSNotification*)notif
+{
+    [[EMClient sharedClient] applicationDidEnterBackground:notif.object];
+}
+
+//app进入前台重新链接
+- (void)appWillEnterForeground:(NSNotification*)notif
+{
+    [[EMClient sharedClient] applicationWillEnterForeground:notif.object];
+}
+
+#pragma mark - register apns
+
+/** @brief 注册远程通知 */
+- (void)_registerRemoteNotification
+{
+    UIApplication *application = [UIApplication sharedApplication];
+    application.applicationIconBadgeNumber = 0;
+    
+    if (NSClassFromString(@"UNUserNotificationCenter")) {
+        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert completionHandler:^(BOOL granted, NSError *error) {
+            if (granted) {
+#if !TARGET_IPHONE_SIMULATOR
+                [application registerForRemoteNotifications];
+#endif
+            }
+        }];
+        return;
+    }
+    
+    if([application respondsToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        UIUserNotificationType notificationTypes = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationTypes categories:nil];
+        [application registerUserNotificationSettings:settings];
+    }
+    
+#if !TARGET_IPHONE_SIMULATOR
+    if ([application respondsToSelector:@selector(registerForRemoteNotifications)]) {
+        [application registerForRemoteNotifications];
+    }else{
+        UIRemoteNotificationType notificationTypes = UIRemoteNotificationTypeBadge |
+        UIRemoteNotificationTypeSound |
+        UIRemoteNotificationTypeAlert;
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
+    }
+#endif
+}
+
+#pragma mark - init
+
+- (void)imManagerApplication:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                      appkey:(NSString *)appkey
+                apnsCertName:(NSString *)apnsCertName
+                 otherConfig:(NSDictionary *)otherConfig
+{
+    //监听app进入后台进入前台
+    [self _setupAppDelegateNotifications];
+    //注册远程通知
+    [self _registerRemoteNotification];
+    
+    //配置全局信息
+    EMOptions *options = [EMOptions optionsWithAppkey:appkey];
+    options.apnsCertName = apnsCertName;
+    options.isAutoAcceptGroupInvitation = NO;
+    if ([otherConfig objectForKey:kSDKConfigEnableConsoleLogger]) {
+        options.enableConsoleLog = YES;
+    }
+    
+    BOOL sandBox = [otherConfig objectForKey:@"easeSandBox"] && [[otherConfig objectForKey:@"easeSandBox"] boolValue];
+    if (!sandBox) {
+        [[EMClient sharedClient] initializeSDKWithOptions:options];
+    }
+}
+
+
+- (void)imManagerApplication:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [[EMClient sharedClient] application:application didReceiveRemoteNotification:userInfo];
+}
+
+
+@end
