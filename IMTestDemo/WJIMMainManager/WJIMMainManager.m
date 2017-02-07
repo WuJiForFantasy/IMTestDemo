@@ -31,6 +31,7 @@ static WJIMMainManager *manager = nil;
         manager = [[WJIMMainManager alloc]init];
     });
     return manager;
+ 
 }
 
 - (instancetype)init
@@ -97,13 +98,13 @@ static WJIMMainManager *manager = nil;
 // 网络状态变化回调
 - (void)didConnectionStateChanged:(EMConnectionState)connectionState
 {
-    
+    NSLog(@"%@,%@环信服务器",[self class],connectionState == 0 ? @"已连接":@"未连接");
 }
 
 //自动登录完成时的回调
 - (void)autoLoginDidCompleteWithError:(EMError *)error
 {
-
+    
 }
 
 //当前登录账号在其它设备登录时会接收到此回调
@@ -135,72 +136,96 @@ static WJIMMainManager *manager = nil;
 
 //会话列表发生改变
 - (void)conversationListDidUpdate:(NSArray *)aConversationList {
-    
+    NSLog(@"会话列表发生改变");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(conversationListDidUpdate:)]) {
+        [self.delegate conversationListDidUpdate:aConversationList];
+    }
 }
 
 //收到消息
 - (void)messagesDidReceive:(NSArray *)aMessages {
     
-    BOOL isRefreshCons = YES;
-    for(EMMessage *message in aMessages){
-        BOOL needShowNotification = (message.chatType != EMChatTypeChat) ? [self _needShowNotification:message.conversationId] : YES;
-        
-#ifdef REDPACKET_AVALABLE
-        /**
-         *  屏蔽红包被抢消息的提示
-         */
-        NSDictionary *dict = message.ext;
-        needShowNotification = (dict && [dict valueForKey:RedpacketKeyRedpacketTakenMessageSign]) ? NO : needShowNotification;
-#endif
-        
-        UIApplicationState state = [[UIApplication sharedApplication] applicationState];
-        if (needShowNotification) {
-#if !TARGET_IPHONE_SIMULATOR
-            switch (state) {
-                case UIApplicationStateActive:
-                    [self.mainVC playSoundAndVibration];
-                    break;
-                case UIApplicationStateInactive:
-                    [self.mainVC playSoundAndVibration];
-                    break;
-                case UIApplicationStateBackground:
-                    [self.mainVC showNotificationWithMessage:message];
-                    break;
-                default:
-                    break;
-            }
-#endif
-        }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidReceive:)]) {
+        [self.delegate messagesDidReceive:aMessages];
     }
+    
+    NSLog(@"收到消息%@",aMessages);
+    
+//    BOOL isRefreshCons = YES;
+//    for(EMMessage *message in aMessages){
+//        BOOL needShowNotification = (message.chatType != EMChatTypeChat) ? [self _needShowNotification:message.conversationId] : YES;
+//        
+//#ifdef REDPACKET_AVALABLE
+//        /**
+//         *  屏蔽红包被抢消息的提示
+//         */
+//        NSDictionary *dict = message.ext;
+//        needShowNotification = (dict && [dict valueForKey:RedpacketKeyRedpacketTakenMessageSign]) ? NO : needShowNotification;
+//#endif
+//        
+//        UIApplicationState state = [[UIApplication sharedApplication] applicationState];
+//        if (needShowNotification) {
+//#if !TARGET_IPHONE_SIMULATOR
+////            switch (state) {
+////                case UIApplicationStateActive:
+////                    [self.mainVC playSoundAndVibration];
+////                    break;
+////                case UIApplicationStateInactive:
+////                    [self.mainVC playSoundAndVibration];
+////                    break;
+////                case UIApplicationStateBackground:
+////                    [self.mainVC showNotificationWithMessage:message];
+////                    break;
+////                default:
+////                    break;
+////            }
+//#endif
+//        }
+//    }
 }
 
 
 
 //收到cmd消息
 - (void)cmdMessagesDidReceive:(NSArray *)aCmdMessages {
-
+    NSLog(@"收到cmd消息");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cmdMessagesDidReceive:)]) {
+        [self.delegate cmdMessagesDidReceive:aCmdMessages];
+    }
 }
 
 //收到已读回执
 - (void)messagesDidRead:(NSArray *)aMessages {
-    
+    NSLog(@"收到消息已读回执");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidRead:)]) {
+        [self.delegate messagesDidRead:aMessages];
+    }
 }
 
 //收到消息送达回执
 - (void)messagesDidDeliver:(NSArray *)aMessages {
-    
+    NSLog(@"收到消息送达回执");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidDeliver:)]) {
+        [self.delegate messagesDidDeliver:aMessages];
+    }
 }
 
 //消息状态发生变化
 - (void)messageStatusDidChange:(EMMessage *)aMessage
                          error:(EMError *)aError {
-    
+    NSLog(@"消息状态发生变化");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messageStatusDidChange:error:)]) {
+        [self.delegate messageStatusDidChange:aMessage error:aError];
+    }
 }
 
 //消息附件状态发生改变
 - (void)messageAttachmentStatusDidChange:(EMMessage *)aMessage
                                    error:(EMError *)aError {
-
+    NSLog(@"消息附件发生变化");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidReceive:)]) {
+        [self.delegate messageAttachmentStatusDidChange:aMessage error:aError];
+    }
 }
 
 #pragma mark - <EMGroupManagerDelegate>

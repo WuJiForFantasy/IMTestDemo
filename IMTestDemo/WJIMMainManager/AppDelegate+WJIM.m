@@ -1,15 +1,21 @@
 //
-//  WJIMMainManager+Setup.m
+//  AppDelegate+WJIM.m
 //  IMTestDemo
 //
-//  Created by tqh on 2017/1/7.
+//  Created by tqh on 2017/2/6.
 //  Copyright © 2017年 tqh. All rights reserved.
 //
 
-#import "WJIMMainManager+Setup.h"
+#import "AppDelegate+WJIM.h"
 #import <UserNotifications/UserNotifications.h> //ios10通知
+#import "WJIMMainManager.h"
 
-@implementation WJIMMainManager (Setup)
+#define WJIMManagerKey @"917034405#imtest" //环信的key
+#define WJIMApnsCert_DEVName @""
+#define WJIMApnsCert_PROName @""
+
+@implementation AppDelegate (WJIM)
+
 
 #pragma mark - app delegate notifications
 
@@ -101,10 +107,34 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     
     BOOL sandBox = [otherConfig objectForKey:@"easeSandBox"] && [[otherConfig objectForKey:@"easeSandBox"] boolValue];
     if (!sandBox) {
-        [[EMClient sharedClient] initializeSDKWithOptions:options];
+        EMError *error = [[EMClient sharedClient] initializeSDKWithOptions:options];
+        if (error) {
+            NSLog(@"%@",error);
+        }
     }
 }
 
+- (void)imManagerApplication:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //证书
+    NSString *apnsCertName = nil;
+#if DEBUG
+    apnsCertName = WJIMApnsCert_DEVName;
+#else
+    apnsCertName = WJIMApnsCert_PROName;
+#endif
+    
+    //环信的key
+//    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+//    NSString *appkey = [ud stringForKey:@"identifier_appkey"];
+//    if (!appkey) {
+//        appkey = WJIMManagerKey;
+//        [ud setObject:appkey forKey:@"identifier_appkey"];
+//    }
+    
+    [self imManagerApplication:application didFinishLaunchingWithOptions:launchOptions appkey:WJIMManagerKey apnsCertName:apnsCertName otherConfig:nil];
+    [WJIMMainManager shareManager];
+}
 
 - (void)imManagerApplication:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo

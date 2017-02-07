@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3417701E4858DD00CC7EA4 /* WJIMMainManager+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3417691E4858DD00CC7EA4 /* WJIMMainManager+Login.m */; };
+		0D3417711E4858DD00CC7EA4 /* WJIMMainManager+Send.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D34176B1E4858DD00CC7EA4 /* WJIMMainManager+Send.m */; };
+		0D3417731E4858DD00CC7EA4 /* WJIMMainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D34176F1E4858DD00CC7EA4 /* WJIMMainManager.m */; };
+		0D3417771E48593100CC7EA4 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3417761E48593100CC7EA4 /* MainController.m */; };
+		0D34177A1E48597C00CC7EA4 /* ConversationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3417791E48597C00CC7EA4 /* ConversationController.m */; };
+		0D34177D1E4859A000CC7EA4 /* FriendListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D34177C1E4859A000CC7EA4 /* FriendListController.m */; };
+		0D3417811E485EBF00CC7EA4 /* WJIMChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3417801E485EBF00CC7EA4 /* WJIMChatController.m */; };
+		0D3417841E48601F00CC7EA4 /* UIAlertController+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3417831E48601F00CC7EA4 /* UIAlertController+Blocks.m */; };
+		0D3417871E4868D200CC7EA4 /* AppDelegate+WJIM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3417861E4868D200CC7EA4 /* AppDelegate+WJIM.m */; };
+		0D34178A1E4877DC00CC7EA4 /* WJIMChatStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3417891E4877DC00CC7EA4 /* WJIMChatStore.m */; };
 		0D6CFAB41E20957100B3259A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAB31E20957100B3259A /* main.m */; };
 		0D6CFAB71E20957100B3259A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAB61E20957100B3259A /* AppDelegate.m */; };
 		0D6CFABA1E20957100B3259A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAB91E20957100B3259A /* ViewController.m */; };
@@ -15,14 +25,15 @@
 		0D6CFAC21E20957100B3259A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CFAC01E20957100B3259A /* LaunchScreen.storyboard */; };
 		0D6CFACD1E20957100B3259A /* IMTestDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFACC1E20957100B3259A /* IMTestDemoTests.m */; };
 		0D6CFAD81E20957100B3259A /* IMTestDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAD71E20957100B3259A /* IMTestDemoUITests.m */; };
-		0D6CFAE71E20C49900B3259A /* WJIMMainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAE61E20C49900B3259A /* WJIMMainManager.m */; };
 		0D6CFAEB1E20CA6F00B3259A /* EaseConvertToCommonEmoticonsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAEA1E20CA6F00B3259A /* EaseConvertToCommonEmoticonsHelper.m */; };
 		0D6CFAF51E20CA7C00B3259A /* EaseEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAEE1E20CA7C00B3259A /* EaseEmoji.m */; };
 		0D6CFAF61E20CA7C00B3259A /* EaseEmojiEmoticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAF01E20CA7C00B3259A /* EaseEmojiEmoticons.m */; };
 		0D6CFAF71E20CA7C00B3259A /* EaseEmotionEscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAF21E20CA7C00B3259A /* EaseEmotionEscape.m */; };
 		0D6CFAF81E20CA7C00B3259A /* EaseEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAF41E20CA7C00B3259A /* EaseEmotionManager.m */; };
-		0D6CFAFB1E20CB9B00B3259A /* WJIMMainManager+Send.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAFA1E20CB9B00B3259A /* WJIMMainManager+Send.m */; };
-		0D6CFAFE1E20D5CC00B3259A /* WJIMMainManager+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CFAFD1E20D5CC00B3259A /* WJIMMainManager+Setup.m */; };
+		0DECE30D1E499B340078CB20 /* WJIMMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE30C1E499B340078CB20 /* WJIMMessageModel.m */; };
+		0DECE3151E49AE4C0078CB20 /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DECE3141E49AE4C0078CB20 /* EaseUIResource.bundle */; };
+		0DECE31A1E49AE5B0078CB20 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE3171E49AE5B0078CB20 /* NSDate+Category.m */; };
+		0DECE31B1E49AE5B0078CB20 /* NSDateFormatter+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE3191E49AE5B0078CB20 /* NSDateFormatter+Category.m */; };
 		2E29457B336A3BD875F1F28B /* libPods-IMTestDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4FD1032C30F6AA965922AD /* libPods-IMTestDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +55,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D3417681E4858DD00CC7EA4 /* WJIMMainManager+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WJIMMainManager+Login.h"; sourceTree = "<group>"; };
+		0D3417691E4858DD00CC7EA4 /* WJIMMainManager+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WJIMMainManager+Login.m"; sourceTree = "<group>"; };
+		0D34176A1E4858DD00CC7EA4 /* WJIMMainManager+Send.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WJIMMainManager+Send.h"; sourceTree = "<group>"; };
+		0D34176B1E4858DD00CC7EA4 /* WJIMMainManager+Send.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WJIMMainManager+Send.m"; sourceTree = "<group>"; };
+		0D34176E1E4858DD00CC7EA4 /* WJIMMainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMMainManager.h; sourceTree = "<group>"; };
+		0D34176F1E4858DD00CC7EA4 /* WJIMMainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMMainManager.m; sourceTree = "<group>"; };
+		0D3417751E48593100CC7EA4 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		0D3417761E48593100CC7EA4 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		0D3417781E48597C00CC7EA4 /* ConversationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationController.h; sourceTree = "<group>"; };
+		0D3417791E48597C00CC7EA4 /* ConversationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationController.m; sourceTree = "<group>"; };
+		0D34177B1E4859A000CC7EA4 /* FriendListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListController.h; sourceTree = "<group>"; };
+		0D34177C1E4859A000CC7EA4 /* FriendListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListController.m; sourceTree = "<group>"; };
+		0D34177F1E485EBF00CC7EA4 /* WJIMChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatController.h; sourceTree = "<group>"; };
+		0D3417801E485EBF00CC7EA4 /* WJIMChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatController.m; sourceTree = "<group>"; };
+		0D3417821E48601F00CC7EA4 /* UIAlertController+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Blocks.h"; sourceTree = "<group>"; };
+		0D3417831E48601F00CC7EA4 /* UIAlertController+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Blocks.m"; sourceTree = "<group>"; };
+		0D3417851E4868D200CC7EA4 /* AppDelegate+WJIM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WJIM.h"; sourceTree = "<group>"; };
+		0D3417861E4868D200CC7EA4 /* AppDelegate+WJIM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WJIM.m"; sourceTree = "<group>"; };
+		0D3417881E4877DC00CC7EA4 /* WJIMChatStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatStore.h; sourceTree = "<group>"; };
+		0D3417891E4877DC00CC7EA4 /* WJIMChatStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatStore.m; sourceTree = "<group>"; };
 		0D6CFAAF1E20957100B3259A /* IMTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6CFAB31E20957100B3259A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D6CFAB51E20957100B3259A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,8 +91,6 @@
 		0D6CFAD31E20957100B3259A /* IMTestDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMTestDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6CFAD71E20957100B3259A /* IMTestDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMTestDemoUITests.m; sourceTree = "<group>"; };
 		0D6CFAD91E20957100B3259A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D6CFAE51E20C49900B3259A /* WJIMMainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMMainManager.h; sourceTree = "<group>"; };
-		0D6CFAE61E20C49900B3259A /* WJIMMainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMMainManager.m; sourceTree = "<group>"; };
 		0D6CFAE91E20CA6F00B3259A /* EaseConvertToCommonEmoticonsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseConvertToCommonEmoticonsHelper.h; sourceTree = "<group>"; };
 		0D6CFAEA1E20CA6F00B3259A /* EaseConvertToCommonEmoticonsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseConvertToCommonEmoticonsHelper.m; sourceTree = "<group>"; };
 		0D6CFAED1E20CA7C00B3259A /* EaseEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseEmoji.h; sourceTree = "<group>"; };
@@ -72,10 +101,16 @@
 		0D6CFAF21E20CA7C00B3259A /* EaseEmotionEscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseEmotionEscape.m; sourceTree = "<group>"; };
 		0D6CFAF31E20CA7C00B3259A /* EaseEmotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseEmotionManager.h; sourceTree = "<group>"; };
 		0D6CFAF41E20CA7C00B3259A /* EaseEmotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseEmotionManager.m; sourceTree = "<group>"; };
-		0D6CFAF91E20CB9B00B3259A /* WJIMMainManager+Send.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WJIMMainManager+Send.h"; sourceTree = "<group>"; };
-		0D6CFAFA1E20CB9B00B3259A /* WJIMMainManager+Send.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WJIMMainManager+Send.m"; sourceTree = "<group>"; };
-		0D6CFAFC1E20D5CC00B3259A /* WJIMMainManager+Setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WJIMMainManager+Setup.h"; sourceTree = "<group>"; };
-		0D6CFAFD1E20D5CC00B3259A /* WJIMMainManager+Setup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WJIMMainManager+Setup.m"; sourceTree = "<group>"; };
+		0DECE3041E4972BB0078CB20 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0DECE3051E49742E0078CB20 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		0DECE30A1E499A2D0078CB20 /* IMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMessageModel.h; sourceTree = "<group>"; };
+		0DECE30B1E499B340078CB20 /* WJIMMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMMessageModel.h; sourceTree = "<group>"; };
+		0DECE30C1E499B340078CB20 /* WJIMMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMMessageModel.m; sourceTree = "<group>"; };
+		0DECE3141E49AE4C0078CB20 /* EaseUIResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseUIResource.bundle; sourceTree = "<group>"; };
+		0DECE3161E49AE5B0078CB20 /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
+		0DECE3171E49AE5B0078CB20 /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
+		0DECE3181E49AE5B0078CB20 /* NSDateFormatter+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Category.h"; sourceTree = "<group>"; };
+		0DECE3191E49AE5B0078CB20 /* NSDateFormatter+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Category.m"; sourceTree = "<group>"; };
 		6D71C37133BAC3CD793D7820 /* Pods-IMTestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMTestDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMTestDemo/Pods-IMTestDemo.release.xcconfig"; sourceTree = "<group>"; };
 		6F4FD1032C30F6AA965922AD /* libPods-IMTestDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IMTestDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B281946A7B861C055FF2083 /* Pods-IMTestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMTestDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMTestDemo/Pods-IMTestDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +142,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3417671E4858DD00CC7EA4 /* WJIMMainManager */ = {
+			isa = PBXGroup;
+			children = (
+				0D3417681E4858DD00CC7EA4 /* WJIMMainManager+Login.h */,
+				0D3417691E4858DD00CC7EA4 /* WJIMMainManager+Login.m */,
+				0D34176A1E4858DD00CC7EA4 /* WJIMMainManager+Send.h */,
+				0D34176B1E4858DD00CC7EA4 /* WJIMMainManager+Send.m */,
+				0D3417851E4868D200CC7EA4 /* AppDelegate+WJIM.h */,
+				0D3417861E4868D200CC7EA4 /* AppDelegate+WJIM.m */,
+				0D34176E1E4858DD00CC7EA4 /* WJIMMainManager.h */,
+				0D34176F1E4858DD00CC7EA4 /* WJIMMainManager.m */,
+			);
+			path = WJIMMainManager;
+			sourceTree = "<group>";
+		};
+		0D3417741E48591100CC7EA4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0D3417751E48593100CC7EA4 /* MainController.h */,
+				0D3417761E48593100CC7EA4 /* MainController.m */,
+				0D3417781E48597C00CC7EA4 /* ConversationController.h */,
+				0D3417791E48597C00CC7EA4 /* ConversationController.m */,
+				0D34177B1E4859A000CC7EA4 /* FriendListController.h */,
+				0D34177C1E4859A000CC7EA4 /* FriendListController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0D34177E1E485EAC00CC7EA4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				0D34177F1E485EBF00CC7EA4 /* WJIMChatController.h */,
+				0D3417801E485EBF00CC7EA4 /* WJIMChatController.m */,
+				0D3417881E4877DC00CC7EA4 /* WJIMChatStore.h */,
+				0D3417891E4877DC00CC7EA4 /* WJIMChatStore.m */,
+				0DECE30A1E499A2D0078CB20 /* IMessageModel.h */,
+				0DECE30B1E499B340078CB20 /* WJIMMessageModel.h */,
+				0DECE30C1E499B340078CB20 /* WJIMMessageModel.m */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		0D6CFAA61E20957100B3259A = {
 			isa = PBXGroup;
 			children = (
@@ -132,17 +209,23 @@
 		0D6CFAB11E20957100B3259A /* IMTestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0DECE3161E49AE5B0078CB20 /* NSDate+Category.h */,
+				0DECE3171E49AE5B0078CB20 /* NSDate+Category.m */,
+				0DECE3181E49AE5B0078CB20 /* NSDateFormatter+Category.h */,
+				0DECE3191E49AE5B0078CB20 /* NSDateFormatter+Category.m */,
+				0DECE3141E49AE4C0078CB20 /* EaseUIResource.bundle */,
+				0D3417821E48601F00CC7EA4 /* UIAlertController+Blocks.h */,
+				0D3417831E48601F00CC7EA4 /* UIAlertController+Blocks.m */,
+				0D34177E1E485EAC00CC7EA4 /* Chat */,
+				0D3417741E48591100CC7EA4 /* Main */,
+				0D3417671E4858DD00CC7EA4 /* WJIMMainManager */,
 				0D6CFAE81E20CA3600B3259A /* Util */,
 				0D6CFAB51E20957100B3259A /* AppDelegate.h */,
 				0D6CFAB61E20957100B3259A /* AppDelegate.m */,
 				0D6CFAB81E20957100B3259A /* ViewController.h */,
 				0D6CFAB91E20957100B3259A /* ViewController.m */,
-				0D6CFAE51E20C49900B3259A /* WJIMMainManager.h */,
-				0D6CFAE61E20C49900B3259A /* WJIMMainManager.m */,
-				0D6CFAFC1E20D5CC00B3259A /* WJIMMainManager+Setup.h */,
-				0D6CFAFD1E20D5CC00B3259A /* WJIMMainManager+Setup.m */,
-				0D6CFAF91E20CB9B00B3259A /* WJIMMainManager+Send.h */,
-				0D6CFAFA1E20CB9B00B3259A /* WJIMMainManager+Send.m */,
+				0DECE3041E4972BB0078CB20 /* PrefixHeader.pch */,
+				0DECE3051E49742E0078CB20 /* Header.h */,
 				0D6CFABB1E20957100B3259A /* Main.storyboard */,
 				0D6CFABE1E20957100B3259A /* Assets.xcassets */,
 				0D6CFAC01E20957100B3259A /* LaunchScreen.storyboard */,
@@ -290,6 +373,7 @@
 				TargetAttributes = {
 					0D6CFAAE1E20957100B3259A = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 87S2AUX254;
 						ProvisioningStyle = Automatic;
 					};
 					0D6CFAC71E20957100B3259A = {
@@ -330,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D6CFAC21E20957100B3259A /* LaunchScreen.storyboard in Resources */,
+				0DECE3151E49AE4C0078CB20 /* EaseUIResource.bundle in Resources */,
 				0D6CFABF1E20957100B3259A /* Assets.xcassets in Resources */,
 				0D6CFABD1E20957100B3259A /* Main.storyboard in Resources */,
 			);
@@ -404,17 +489,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D3417841E48601F00CC7EA4 /* UIAlertController+Blocks.m in Sources */,
+				0D34177A1E48597C00CC7EA4 /* ConversationController.m in Sources */,
 				0D6CFAF71E20CA7C00B3259A /* EaseEmotionEscape.m in Sources */,
-				0D6CFAFB1E20CB9B00B3259A /* WJIMMainManager+Send.m in Sources */,
+				0D3417711E4858DD00CC7EA4 /* WJIMMainManager+Send.m in Sources */,
 				0D6CFABA1E20957100B3259A /* ViewController.m in Sources */,
+				0D3417701E4858DD00CC7EA4 /* WJIMMainManager+Login.m in Sources */,
+				0D3417771E48593100CC7EA4 /* MainController.m in Sources */,
+				0DECE30D1E499B340078CB20 /* WJIMMessageModel.m in Sources */,
 				0D6CFAF61E20CA7C00B3259A /* EaseEmojiEmoticons.m in Sources */,
-				0D6CFAFE1E20D5CC00B3259A /* WJIMMainManager+Setup.m in Sources */,
+				0D34178A1E4877DC00CC7EA4 /* WJIMChatStore.m in Sources */,
+				0DECE31B1E49AE5B0078CB20 /* NSDateFormatter+Category.m in Sources */,
+				0D3417871E4868D200CC7EA4 /* AppDelegate+WJIM.m in Sources */,
 				0D6CFAB71E20957100B3259A /* AppDelegate.m in Sources */,
+				0DECE31A1E49AE5B0078CB20 /* NSDate+Category.m in Sources */,
+				0D34177D1E4859A000CC7EA4 /* FriendListController.m in Sources */,
+				0D3417811E485EBF00CC7EA4 /* WJIMChatController.m in Sources */,
 				0D6CFAF51E20CA7C00B3259A /* EaseEmoji.m in Sources */,
 				0D6CFAEB1E20CA6F00B3259A /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				0D6CFAF81E20CA7C00B3259A /* EaseEmotionManager.m in Sources */,
 				0D6CFAB41E20957100B3259A /* main.m in Sources */,
-				0D6CFAE71E20C49900B3259A /* WJIMMainManager.m in Sources */,
+				0D3417731E4858DD00CC7EA4 /* WJIMMainManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +604,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -550,7 +645,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -562,9 +657,12 @@
 			baseConfigurationReference = 7B281946A7B861C055FF2083 /* Pods-IMTestDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 87S2AUX254;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/IMTestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = IMTestDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tqh.IMTestDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moyou.moyouApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -574,9 +672,12 @@
 			baseConfigurationReference = 6D71C37133BAC3CD793D7820 /* Pods-IMTestDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 87S2AUX254;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/IMTestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = IMTestDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tqh.IMTestDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moyou.moyouApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

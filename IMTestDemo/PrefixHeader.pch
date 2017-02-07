@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  IMTestDemo
+//
+//  Created by tqh on 2017/2/7.
+//  Copyright © 2017年 tqh. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "Header.h"//自己创建的.h文件来存放需要全工程引用的头文件或者宏定义
+
+#endif /* PrefixHeader_pch */

@@ -10,9 +10,10 @@
 #import <UserNotifications/UserNotifications.h>
 #import "WJIMMainManager.h"
 #import "WJIMMainManager+Send.h"
-#import "WJIMMainManager+Setup.h"
-
-#define WJIMManagerKey @"1103161107178551#mouo"
+//#import "WJIMMainManager+Setup.h"
+#import "WJIMMainManager+Login.h"
+#import "MainController.h"
+#import "AppDelegate+WJIM.h"
 
 @interface AppDelegate ()
 
@@ -20,25 +21,28 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    NSString *apnsCertName = nil;
-#if DEBUG
-    apnsCertName = @"chatdemoui_dev";
-#else
-    apnsCertName = @"chatdemoui";
-#endif
-    
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSString *appkey = [ud stringForKey:@"identifier_appkey"];
-    if (!appkey) {
-        appkey = WJIMManagerKey;
-        [ud setObject:appkey forKey:@"identifier_appkey"];
-    }
 
-    [[WJIMMainManager shareManager] imManagerApplication:application didFinishLaunchingWithOptions:launchOptions appkey:appkey apnsCertName:apnsCertName otherConfig:nil];
+    MainController *main = [[MainController alloc]init];
     
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = main;
+    [self.window makeKeyAndVisible];
+    
+    [self imManagerApplication:application didFinishLaunchingWithOptions:launchOptions];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        WJIMMainManagerLoginModel *model = [[WJIMMainManagerLoginModel alloc]init];
+        model.userName = @"123";
+        model.password = @"123";
+        [WJIMMainManager loginWithLoginModel:model finish:^(BOOL sucess, EMError *error, WJIMMainManagerLoginModel *model) {
+            
+            NSLog(@"%@登录%@",model.userName,sucess ? @"成功" : @"失败");
+            [[NSUserDefaults standardUserDefaults] setObject:model.userName forKey:@"user"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }];
+    });
     return YES;
 }
 
@@ -74,7 +78,7 @@
 //收到远程通知
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSLog(@"收到通知");
-    [[WJIMMainManager shareManager] imManagerApplication:application didReceiveRemoteNotification:userInfo];
+    [self imManagerApplication:application didReceiveRemoteNotification:userInfo];
 }
 
 //收到本地通知

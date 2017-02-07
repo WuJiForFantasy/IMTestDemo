@@ -7,67 +7,146 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ECF1363CBE24785CFE99784F77EF7D68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		F6411A0522DF4B5A5F882D5F2A0D5706 /* Pods-IMTestDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AFCE98AD14800BD5950251046090C4 /* Pods-IMTestDemo-dummy.m */; };
+		0099208A4FB2E03719D016889556412A /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 30F628E0069E5E668372AA0A81A2CB7B /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18424C628BE72949D90BB12A15943FCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		213727264B9C0E9E146FAF420B2730D1 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6971E29416B00967FCDB6E2D8670FA13 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42931BD8FA59824A2B0E02A4B8845FAD /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2480BCD781DFFA2C3347D87487DB9865 /* SVIndefiniteAnimatedView.m */; };
+		519E8985F3FD4B26D421EC5859778987 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F144B482EAEB7030ADCA5EBEB9B91BBB /* SVRadialGradientLayer.m */; };
+		7205B1FD90369CBF9D42E08028FF1124 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C015DCCDEA30C629A978A51557AFB0 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72BE570678C364D1E2E5CA7AAE7D4566 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B481BFB5DC372EB6D1B147BA6E7797D5 /* SVProgressHUD.m */; };
+		79F25155BDEBA26A9FEB8E33E423F1C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		9314BFB18F65F6D55181223648BB8584 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */; };
+		9C3C11EA013215BE160E62DADAFBBE7D /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DAD71BBC8A5DE7225E5408EBFFC7FC /* SVProgressHUD-dummy.m */; };
+		C243684B41F8A7179C2D4F0B6C85FD64 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = E458DD9CEE40A9898F38F82F5ABE91C8 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D627E74BC6609294940CC1990B04AD64 /* Pods-IMTestDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AFCE98AD14800BD5950251046090C4 /* Pods-IMTestDemo-dummy.m */; };
+		E18C40C4F87883BA983A07AF8EF62869 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F059A2C3630E77A1CC08268FC9DC4 /* SVProgressAnimatedView.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4BC0C109BEC607C8DE9C0C5AC05E5EBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B9C403E0FEE7FFE6256069F1C0AFBF;
+			remoteInfo = SVProgressHUD;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0179855ED7500A8CE9CF5CF6012B3A72 /* IEMContactManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMContactManager.h; path = HyphenateSDK/include/IEMContactManager.h; sourceTree = "<group>"; };
-		043BB693BF6278D218D285639F68AEFD /* EMGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroup.h; path = HyphenateSDK/include/EMGroup.h; sourceTree = "<group>"; };
-		05DA07EDDDCA5A700245F08E6CB52EAB /* EMCmdMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCmdMessageBody.h; path = HyphenateSDK/include/EMCmdMessageBody.h; sourceTree = "<group>"; };
-		098E612D86F8F296887B8B55FF533ECF /* EMError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMError.h; path = HyphenateSDK/include/EMError.h; sourceTree = "<group>"; };
-		2806CCFBDB25D2C65611301B0F17A3DE /* EMClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMClient.h; path = HyphenateSDK/include/EMClient.h; sourceTree = "<group>"; };
-		2A47B453133BAB3C00A9BF2B69B7A9BB /* libHyphenateSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libHyphenateSDK.a; path = HyphenateSDK/lib/libHyphenateSDK.a; sourceTree = "<group>"; };
-		31E9840A3E2A5423B57A8EBBF4760037 /* EMVoiceMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMVoiceMessageBody.h; path = HyphenateSDK/include/EMVoiceMessageBody.h; sourceTree = "<group>"; };
-		35D7BC272CBAE28D8A51491849A2BD04 /* EMCursorResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCursorResult.h; path = HyphenateSDK/include/EMCursorResult.h; sourceTree = "<group>"; };
-		36CF49A78F73B4E5B0361E210C62DB26 /* EMMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMMessage.h; path = HyphenateSDK/include/EMMessage.h; sourceTree = "<group>"; };
-		3DB79688B9300CE1A81C7E1206D0CE0A /* EMMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMMessageBody.h; path = HyphenateSDK/include/EMMessageBody.h; sourceTree = "<group>"; };
-		3FE186AD34AD11BFB8AA1B845A1A0631 /* EMContactManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMContactManagerDelegate.h; path = HyphenateSDK/include/EMContactManagerDelegate.h; sourceTree = "<group>"; };
-		4457140B18396943F9BF2A59FA985536 /* EMVideoMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMVideoMessageBody.h; path = HyphenateSDK/include/EMVideoMessageBody.h; sourceTree = "<group>"; };
-		4CB37C5F8DE38CB475D7F6E901A10727 /* EMClientDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMClientDelegate.h; path = HyphenateSDK/include/EMClientDelegate.h; sourceTree = "<group>"; };
-		570DE9E2FFD2D9C43A5700E1EA0CE41E /* IEMGroupManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMGroupManager.h; path = HyphenateSDK/include/IEMGroupManager.h; sourceTree = "<group>"; };
-		5CBD35C4E305D8D571BCA5632FAFC2E5 /* EMCommonDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCommonDefs.h; path = HyphenateSDK/include/EMCommonDefs.h; sourceTree = "<group>"; };
-		5D1571152EF5B81BB03C5CCA6C8E05E4 /* EMFileMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMFileMessageBody.h; path = HyphenateSDK/include/EMFileMessageBody.h; sourceTree = "<group>"; };
+		234CB4D6FFF93B7D4BCAE4459C29047E /* EMCmdMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCmdMessageBody.h; path = HyphenateSDK/include/EMCmdMessageBody.h; sourceTree = "<group>"; };
+		2480BCD781DFFA2C3347D87487DB9865 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		2DE64A2BA2A82EAE9AC6A67FDEF83A41 /* EMClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMClient.h; path = HyphenateSDK/include/EMClient.h; sourceTree = "<group>"; };
+		30F628E0069E5E668372AA0A81A2CB7B /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		353850287A1E9A65DA43AA9A96304407 /* libPods-IMTestDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-IMTestDemo.a"; path = "libPods-IMTestDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3C4EC0B36B98E66C95D584FEF6909605 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		4567CF6052B61366AE03C1F915C471D1 /* IEMContactManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMContactManager.h; path = HyphenateSDK/include/IEMContactManager.h; sourceTree = "<group>"; };
+		470E63590E7A8F034AA8E500285BFFB0 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		490B7EED8435E18D8D9D275D2DFEE111 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		4A8665EAE9554CBAFBAE89BB5096ACEA /* EMGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroup.h; path = HyphenateSDK/include/EMGroup.h; sourceTree = "<group>"; };
+		4DEB1D8B3D4B75F79A739F4BA8CC8333 /* EMMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMMessage.h; path = HyphenateSDK/include/EMMessage.h; sourceTree = "<group>"; };
+		5D6AB3B843EB0BCB6DE5288F0A620A69 /* IEMChatroomManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatroomManager.h; path = HyphenateSDK/include/IEMChatroomManager.h; sourceTree = "<group>"; };
+		6142D838FDF1DE8B7F83549FB5792EAA /* EMVoiceMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMVoiceMessageBody.h; path = HyphenateSDK/include/EMVoiceMessageBody.h; sourceTree = "<group>"; };
+		62763E5ADAAEA66AB4638016377878C7 /* EMVideoMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMVideoMessageBody.h; path = HyphenateSDK/include/EMVideoMessageBody.h; sourceTree = "<group>"; };
+		647BD7872389D12CB28600F3CFB17390 /* EMChatroom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatroom.h; path = HyphenateSDK/include/EMChatroom.h; sourceTree = "<group>"; };
+		6614557C66FAC7F7B828365BE0E982E4 /* EMClientDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMClientDelegate.h; path = HyphenateSDK/include/EMClientDelegate.h; sourceTree = "<group>"; };
+		66CBBA3E0F93700407FBF9D0E43540DE /* EMMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMMessageBody.h; path = HyphenateSDK/include/EMMessageBody.h; sourceTree = "<group>"; };
+		683FE8D4747388B92E05AC89C8B349C6 /* EMErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMErrorCode.h; path = HyphenateSDK/include/EMErrorCode.h; sourceTree = "<group>"; };
+		6971E29416B00967FCDB6E2D8670FA13 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		6B7F059A2C3630E77A1CC08268FC9DC4 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
 		73266E74EFBE51598805129A99148F77 /* Pods-IMTestDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IMTestDemo-frameworks.sh"; sourceTree = "<group>"; };
-		74CD3941101C16348F3B167B2AE57FEC /* EMChatroom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatroom.h; path = HyphenateSDK/include/EMChatroom.h; sourceTree = "<group>"; };
+		73CE5DD6B6638C3203E45FE13454A4D6 /* EMFileMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMFileMessageBody.h; path = HyphenateSDK/include/EMFileMessageBody.h; sourceTree = "<group>"; };
+		755EA06196DBAAF0FE527E4E3F0158DF /* EMCursorResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCursorResult.h; path = HyphenateSDK/include/EMCursorResult.h; sourceTree = "<group>"; };
 		76D777D3FE3A346AD67C4AFC4D808E4A /* Pods-IMTestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IMTestDemo.release.xcconfig"; sourceTree = "<group>"; };
-		7717796E230EF302B49D6B3FAC3184D0 /* EMChatManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerDelegate.h; path = HyphenateSDK/include/EMChatManagerDelegate.h; sourceTree = "<group>"; };
-		791BA4C200BD2A2265521E32D53A6776 /* IEMChatManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatManager.h; path = HyphenateSDK/include/IEMChatManager.h; sourceTree = "<group>"; };
-		7CB75E1DC66D4315419ED65810DA258C /* EMConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMConversation.h; path = HyphenateSDK/include/EMConversation.h; sourceTree = "<group>"; };
-		81FA8322AE7B2D3D029422FF2AC42F3B /* libPods-IMTestDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-IMTestDemo.a"; path = "libPods-IMTestDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78104B8B3F99B4ABF15664154179C90F /* EMCommonDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCommonDefs.h; path = HyphenateSDK/include/EMCommonDefs.h; sourceTree = "<group>"; };
+		7D4A2ED54527B95C4645BB9367C22109 /* EMContactManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMContactManagerDelegate.h; path = HyphenateSDK/include/EMContactManagerDelegate.h; sourceTree = "<group>"; };
+		7DA794CDC785A467072DAE82A832B639 /* EMSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMSDK.h; path = HyphenateSDK/include/EMSDK.h; sourceTree = "<group>"; };
+		860C63F4CEE1D9DCA8BDFDC8527657CC /* EMChatManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerDelegate.h; path = HyphenateSDK/include/EMChatManagerDelegate.h; sourceTree = "<group>"; };
+		8AAAFE9FF654F33BE2E00C2CF527A397 /* EMGroupOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroupOptions.h; path = HyphenateSDK/include/EMGroupOptions.h; sourceTree = "<group>"; };
 		90AFCE98AD14800BD5950251046090C4 /* Pods-IMTestDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IMTestDemo-dummy.m"; sourceTree = "<group>"; };
-		9386F7F114B8BBBA1917E5F71CC6EC54 /* EMTextMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMTextMessageBody.h; path = HyphenateSDK/include/EMTextMessageBody.h; sourceTree = "<group>"; };
+		92EDBC186F4337936EEC5BAEEA7B3E01 /* EMImageMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMImageMessageBody.h; path = HyphenateSDK/include/EMImageMessageBody.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		965EE07DA615EC0753BCA5C567B69B4B /* EMGroupOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroupOptions.h; path = HyphenateSDK/include/EMGroupOptions.h; sourceTree = "<group>"; };
+		95C015DCCDEA30C629A978A51557AFB0 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
 		98CE1E24DD6885CB283AD119576902BE /* Pods-IMTestDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IMTestDemo-resources.sh"; sourceTree = "<group>"; };
-		A299B6B561FF0A52790733C6F889FA9F /* EMOptions+PrivateDeploy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EMOptions+PrivateDeploy.h"; path = "HyphenateSDK/include/EMOptions+PrivateDeploy.h"; sourceTree = "<group>"; };
-		A7C25C74F3F4C8B2F6FEEA2836290837 /* IEMChatroomManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatroomManager.h; path = HyphenateSDK/include/IEMChatroomManager.h; sourceTree = "<group>"; };
-		A87AEFD34E805588ACD536491E8546FA /* EMSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMSDK.h; path = HyphenateSDK/include/EMSDK.h; sourceTree = "<group>"; };
-		AE95A2E2FFCFAA03F91A3A08F3267509 /* EMChatroomManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatroomManagerDelegate.h; path = HyphenateSDK/include/EMChatroomManagerDelegate.h; sourceTree = "<group>"; };
+		A2B50E0E83BF6D0B5E76FE9A25692C46 /* libHyphenateSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libHyphenateSDK.a; path = HyphenateSDK/lib/libHyphenateSDK.a; sourceTree = "<group>"; };
+		A2F42656E6E5A0020367DB907DCD5615 /* IEMGroupManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMGroupManager.h; path = HyphenateSDK/include/IEMGroupManager.h; sourceTree = "<group>"; };
+		ABCE21E669907BFD589A1014BC86FBF5 /* IEMChatManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatManager.h; path = HyphenateSDK/include/IEMChatManager.h; sourceTree = "<group>"; };
 		AED5B00EF1DB3939F63C4BD828DEEED7 /* Pods-IMTestDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IMTestDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BADD0BA7A5A26365022B7D86802BBBC7 /* EMPushOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMPushOptions.h; path = HyphenateSDK/include/EMPushOptions.h; sourceTree = "<group>"; };
-		C3D03D45E8C8FA941C3119B544C2C5EF /* EMOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMOptions.h; path = HyphenateSDK/include/EMOptions.h; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CFA0AA5B11394AAD86B1918FFE1768E2 /* EMImageMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMImageMessageBody.h; path = HyphenateSDK/include/EMImageMessageBody.h; sourceTree = "<group>"; };
+		B481BFB5DC372EB6D1B147BA6E7797D5 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		BB53E77B571C54C63E979DECBF0C0659 /* EMError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMError.h; path = HyphenateSDK/include/EMError.h; sourceTree = "<group>"; };
+		BFF2278FCA0654C60D4C0EBD7B512CAE /* EMOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMOptions.h; path = HyphenateSDK/include/EMOptions.h; sourceTree = "<group>"; };
 		CFD23F382F14B33359E346058C140EE7 /* Pods-IMTestDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IMTestDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		D06EDE5FB8131D8974663CBA0575962D /* EMGroupManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroupManagerDelegate.h; path = HyphenateSDK/include/EMGroupManagerDelegate.h; sourceTree = "<group>"; };
-		D43A6CF5CFFBA8B8BA84A8F65621B8C8 /* EMLocationMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMLocationMessageBody.h; path = HyphenateSDK/include/EMLocationMessageBody.h; sourceTree = "<group>"; };
 		D4CB5930B44BD934BA1008E12FD0DCC7 /* Pods-IMTestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IMTestDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		F1D73564151B5E2CBB9BD1F0F467536D /* EMErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMErrorCode.h; path = HyphenateSDK/include/EMErrorCode.h; sourceTree = "<group>"; };
+		DAE37847FF5DC723B37DFD8EC510B08A /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSVProgressHUD.a; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD7F50557416E0077E390070AFDE6B9D /* EMGroupManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroupManagerDelegate.h; path = HyphenateSDK/include/EMGroupManagerDelegate.h; sourceTree = "<group>"; };
+		DF6D28ECA875E906D42FFE4D165EE138 /* EMLocationMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMLocationMessageBody.h; path = HyphenateSDK/include/EMLocationMessageBody.h; sourceTree = "<group>"; };
+		E1608915F59D05AA6A714AA14E85001B /* EMChatroomManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatroomManagerDelegate.h; path = HyphenateSDK/include/EMChatroomManagerDelegate.h; sourceTree = "<group>"; };
+		E458DD9CEE40A9898F38F82F5ABE91C8 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		E8DAD71BBC8A5DE7225E5408EBFFC7FC /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		EF49C36475F50825E750D4E9EE453F2A /* EMOptions+PrivateDeploy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EMOptions+PrivateDeploy.h"; path = "HyphenateSDK/include/EMOptions+PrivateDeploy.h"; sourceTree = "<group>"; };
+		F144B482EAEB7030ADCA5EBEB9B91BBB /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		F296D986D75726CD6938EE46F7A1C67F /* EMTextMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMTextMessageBody.h; path = HyphenateSDK/include/EMTextMessageBody.h; sourceTree = "<group>"; };
+		F69C10F994B277B85FC6AF227363F215 /* EMConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMConversation.h; path = HyphenateSDK/include/EMConversation.h; sourceTree = "<group>"; };
+		FCCF66D6BE7063D4689198F86D4EAF07 /* EMPushOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMPushOptions.h; path = HyphenateSDK/include/EMPushOptions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		392CB30E7EA86F3DA0DF30B436AD254E /* Frameworks */ = {
+		3857E24B9DA072146769A7FBAD3063FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECF1363CBE24785CFE99784F77EF7D68 /* Foundation.framework in Frameworks */,
+				18424C628BE72949D90BB12A15943FCE /* Foundation.framework in Frameworks */,
+				9314BFB18F65F6D55181223648BB8584 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F46331387E657E6487CD01AED323744C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79F25155BDEBA26A9FEB8E33E423F1C6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03C0DB125051530A75E4E9C51A0FD1AC /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6971E29416B00967FCDB6E2D8670FA13 /* SVIndefiniteAnimatedView.h */,
+				2480BCD781DFFA2C3347D87487DB9865 /* SVIndefiniteAnimatedView.m */,
+				E458DD9CEE40A9898F38F82F5ABE91C8 /* SVProgressAnimatedView.h */,
+				6B7F059A2C3630E77A1CC08268FC9DC4 /* SVProgressAnimatedView.m */,
+				95C015DCCDEA30C629A978A51557AFB0 /* SVProgressHUD.h */,
+				B481BFB5DC372EB6D1B147BA6E7797D5 /* SVProgressHUD.m */,
+				30F628E0069E5E668372AA0A81A2CB7B /* SVRadialGradientLayer.h */,
+				F144B482EAEB7030ADCA5EBEB9B91BBB /* SVRadialGradientLayer.m */,
+				1F4A84A44D789BEB8F09A3FB57184259 /* Resources */,
+				EBC85E4F72AE320EE8D0BAD11B873BDA /* Support Files */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		1F4A84A44D789BEB8F09A3FB57184259 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				490B7EED8435E18D8D9D275D2DFEE111 /* SVProgressHUD.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2256D6FC07FB5DCC270CD0665D92AEC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3FFD12E6713A82F05EAE8506DA2EF66 /* HyphenateLite_CN */,
+				03C0DB125051530A75E4E9C51A0FD1AC /* SVProgressHUD */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3801ADF93535071DFD0EE7049A324500 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,12 +155,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		402CB29EC71DDF0722E5E1EA4B252AE8 /* Pods */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6305F6DCE7CBD14687804B1CF1F5F7A4 /* HyphenateLite_CN */,
+				C7AB6F27FF3606F9360547F8F1977A63 /* iOS */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		43D7EA5F6AADB3D468CDFD4856F012A0 /* Pods-IMTestDemo */ = {
@@ -99,106 +178,143 @@
 			path = "Target Support Files/Pods-IMTestDemo";
 			sourceTree = "<group>";
 		};
-		6305F6DCE7CBD14687804B1CF1F5F7A4 /* HyphenateLite_CN */ = {
+		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				7717796E230EF302B49D6B3FAC3184D0 /* EMChatManagerDelegate.h */,
-				74CD3941101C16348F3B167B2AE57FEC /* EMChatroom.h */,
-				AE95A2E2FFCFAA03F91A3A08F3267509 /* EMChatroomManagerDelegate.h */,
-				2806CCFBDB25D2C65611301B0F17A3DE /* EMClient.h */,
-				4CB37C5F8DE38CB475D7F6E901A10727 /* EMClientDelegate.h */,
-				05DA07EDDDCA5A700245F08E6CB52EAB /* EMCmdMessageBody.h */,
-				5CBD35C4E305D8D571BCA5632FAFC2E5 /* EMCommonDefs.h */,
-				3FE186AD34AD11BFB8AA1B845A1A0631 /* EMContactManagerDelegate.h */,
-				7CB75E1DC66D4315419ED65810DA258C /* EMConversation.h */,
-				35D7BC272CBAE28D8A51491849A2BD04 /* EMCursorResult.h */,
-				098E612D86F8F296887B8B55FF533ECF /* EMError.h */,
-				F1D73564151B5E2CBB9BD1F0F467536D /* EMErrorCode.h */,
-				5D1571152EF5B81BB03C5CCA6C8E05E4 /* EMFileMessageBody.h */,
-				043BB693BF6278D218D285639F68AEFD /* EMGroup.h */,
-				D06EDE5FB8131D8974663CBA0575962D /* EMGroupManagerDelegate.h */,
-				965EE07DA615EC0753BCA5C567B69B4B /* EMGroupOptions.h */,
-				CFA0AA5B11394AAD86B1918FFE1768E2 /* EMImageMessageBody.h */,
-				D43A6CF5CFFBA8B8BA84A8F65621B8C8 /* EMLocationMessageBody.h */,
-				36CF49A78F73B4E5B0361E210C62DB26 /* EMMessage.h */,
-				3DB79688B9300CE1A81C7E1206D0CE0A /* EMMessageBody.h */,
-				C3D03D45E8C8FA941C3119B544C2C5EF /* EMOptions.h */,
-				A299B6B561FF0A52790733C6F889FA9F /* EMOptions+PrivateDeploy.h */,
-				BADD0BA7A5A26365022B7D86802BBBC7 /* EMPushOptions.h */,
-				A87AEFD34E805588ACD536491E8546FA /* EMSDK.h */,
-				9386F7F114B8BBBA1917E5F71CC6EC54 /* EMTextMessageBody.h */,
-				4457140B18396943F9BF2A59FA985536 /* EMVideoMessageBody.h */,
-				31E9840A3E2A5423B57A8EBBF4760037 /* EMVoiceMessageBody.h */,
-				791BA4C200BD2A2265521E32D53A6776 /* IEMChatManager.h */,
-				A7C25C74F3F4C8B2F6FEEA2836290837 /* IEMChatroomManager.h */,
-				0179855ED7500A8CE9CF5CF6012B3A72 /* IEMContactManager.h */,
-				570DE9E2FFD2D9C43A5700E1EA0CE41E /* IEMGroupManager.h */,
-				6E99C016F05D53C46A72EB7098C4E097 /* Frameworks */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				2256D6FC07FB5DCC270CD0665D92AEC2 /* Pods */,
+				7E8D9C89E845EC99F6D26E8DEA3475C7 /* Products */,
+				3801ADF93535071DFD0EE7049A324500 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7E8D9C89E845EC99F6D26E8DEA3475C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				353850287A1E9A65DA43AA9A96304407 /* libPods-IMTestDemo.a */,
+				DAE37847FF5DC723B37DFD8EC510B08A /* libSVProgressHUD.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7AB6F27FF3606F9360547F8F1977A63 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */,
+				BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EBC85E4F72AE320EE8D0BAD11B873BDA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C4EC0B36B98E66C95D584FEF6909605 /* SVProgressHUD.xcconfig */,
+				E8DAD71BBC8A5DE7225E5408EBFFC7FC /* SVProgressHUD-dummy.m */,
+				470E63590E7A8F034AA8E500285BFFB0 /* SVProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
+			sourceTree = "<group>";
+		};
+		F3FFD12E6713A82F05EAE8506DA2EF66 /* HyphenateLite_CN */ = {
+			isa = PBXGroup;
+			children = (
+				860C63F4CEE1D9DCA8BDFDC8527657CC /* EMChatManagerDelegate.h */,
+				647BD7872389D12CB28600F3CFB17390 /* EMChatroom.h */,
+				E1608915F59D05AA6A714AA14E85001B /* EMChatroomManagerDelegate.h */,
+				2DE64A2BA2A82EAE9AC6A67FDEF83A41 /* EMClient.h */,
+				6614557C66FAC7F7B828365BE0E982E4 /* EMClientDelegate.h */,
+				234CB4D6FFF93B7D4BCAE4459C29047E /* EMCmdMessageBody.h */,
+				78104B8B3F99B4ABF15664154179C90F /* EMCommonDefs.h */,
+				7D4A2ED54527B95C4645BB9367C22109 /* EMContactManagerDelegate.h */,
+				F69C10F994B277B85FC6AF227363F215 /* EMConversation.h */,
+				755EA06196DBAAF0FE527E4E3F0158DF /* EMCursorResult.h */,
+				BB53E77B571C54C63E979DECBF0C0659 /* EMError.h */,
+				683FE8D4747388B92E05AC89C8B349C6 /* EMErrorCode.h */,
+				73CE5DD6B6638C3203E45FE13454A4D6 /* EMFileMessageBody.h */,
+				4A8665EAE9554CBAFBAE89BB5096ACEA /* EMGroup.h */,
+				DD7F50557416E0077E390070AFDE6B9D /* EMGroupManagerDelegate.h */,
+				8AAAFE9FF654F33BE2E00C2CF527A397 /* EMGroupOptions.h */,
+				92EDBC186F4337936EEC5BAEEA7B3E01 /* EMImageMessageBody.h */,
+				DF6D28ECA875E906D42FFE4D165EE138 /* EMLocationMessageBody.h */,
+				4DEB1D8B3D4B75F79A739F4BA8CC8333 /* EMMessage.h */,
+				66CBBA3E0F93700407FBF9D0E43540DE /* EMMessageBody.h */,
+				BFF2278FCA0654C60D4C0EBD7B512CAE /* EMOptions.h */,
+				EF49C36475F50825E750D4E9EE453F2A /* EMOptions+PrivateDeploy.h */,
+				FCCF66D6BE7063D4689198F86D4EAF07 /* EMPushOptions.h */,
+				7DA794CDC785A467072DAE82A832B639 /* EMSDK.h */,
+				F296D986D75726CD6938EE46F7A1C67F /* EMTextMessageBody.h */,
+				62763E5ADAAEA66AB4638016377878C7 /* EMVideoMessageBody.h */,
+				6142D838FDF1DE8B7F83549FB5792EAA /* EMVoiceMessageBody.h */,
+				ABCE21E669907BFD589A1014BC86FBF5 /* IEMChatManager.h */,
+				5D6AB3B843EB0BCB6DE5288F0A620A69 /* IEMChatroomManager.h */,
+				4567CF6052B61366AE03C1F915C471D1 /* IEMContactManager.h */,
+				A2F42656E6E5A0020367DB907DCD5615 /* IEMGroupManager.h */,
+				FAC1E2B693A884A1053D7425E8403173 /* Frameworks */,
 			);
 			name = HyphenateLite_CN;
 			path = HyphenateLite_CN;
 			sourceTree = "<group>";
 		};
-		6E99C016F05D53C46A72EB7098C4E097 /* Frameworks */ = {
+		FAC1E2B693A884A1053D7425E8403173 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2A47B453133BAB3C00A9BF2B69B7A9BB /* libHyphenateSDK.a */,
+				A2B50E0E83BF6D0B5E76FE9A25692C46 /* libHyphenateSDK.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				402CB29EC71DDF0722E5E1EA4B252AE8 /* Pods */,
-				C9280F2D70DABE4A8CF540908B2379E4 /* Products */,
-				3801ADF93535071DFD0EE7049A324500 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C9280F2D70DABE4A8CF540908B2379E4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				81FA8322AE7B2D3D029422FF2AC42F3B /* libPods-IMTestDemo.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		7F2A54E0B15C60535FCC4D6B8C97F13A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213727264B9C0E9E146FAF420B2730D1 /* SVIndefiniteAnimatedView.h in Headers */,
+				C243684B41F8A7179C2D4F0B6C85FD64 /* SVProgressAnimatedView.h in Headers */,
+				7205B1FD90369CBF9D42E08028FF1124 /* SVProgressHUD.h in Headers */,
+				0099208A4FB2E03719D016889556412A /* SVRadialGradientLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		58E6EE088E47EA619682345CE7F18024 /* Pods-IMTestDemo */ = {
+		A1B9C403E0FEE7FFE6256069F1C0AFBF /* SVProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EDF4EA9A692D08947C5B879F084BF3A /* Build configuration list for PBXNativeTarget "Pods-IMTestDemo" */;
+			buildConfigurationList = 95F57A57BA1E7546704A585FCFFEAA28 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
 			buildPhases = (
-				164E9C324DD8E24131A46B429311DD2E /* Sources */,
-				392CB30E7EA86F3DA0DF30B436AD254E /* Frameworks */,
+				8664B43D878A09B9981E82C075A9DD62 /* Sources */,
+				3857E24B9DA072146769A7FBAD3063FF /* Frameworks */,
+				7F2A54E0B15C60535FCC4D6B8C97F13A /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = DAE37847FF5DC723B37DFD8EC510B08A /* libSVProgressHUD.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B6CB49AAF4E8E4D366CAD4E23E9E4C9D /* Pods-IMTestDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8FF9947F508B964B9AC42B65833164B /* Build configuration list for PBXNativeTarget "Pods-IMTestDemo" */;
+			buildPhases = (
+				F9DEC08CD1AAD65C4E4E9605E5194432 /* Sources */,
+				F46331387E657E6487CD01AED323744C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA71CD3200B31EA5836A44184A72A346 /* PBXTargetDependency */,
+			);
 			name = "Pods-IMTestDemo";
 			productName = "Pods-IMTestDemo";
-			productReference = 81FA8322AE7B2D3D029422FF2AC42F3B /* libPods-IMTestDemo.a */;
+			productReference = 353850287A1E9A65DA43AA9A96304407 /* libPods-IMTestDemo.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -218,25 +334,47 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = C9280F2D70DABE4A8CF540908B2379E4 /* Products */;
+			productRefGroup = 7E8D9C89E845EC99F6D26E8DEA3475C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58E6EE088E47EA619682345CE7F18024 /* Pods-IMTestDemo */,
+				B6CB49AAF4E8E4D366CAD4E23E9E4C9D /* Pods-IMTestDemo */,
+				A1B9C403E0FEE7FFE6256069F1C0AFBF /* SVProgressHUD */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		164E9C324DD8E24131A46B429311DD2E /* Sources */ = {
+		8664B43D878A09B9981E82C075A9DD62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6411A0522DF4B5A5F882D5F2A0D5706 /* Pods-IMTestDemo-dummy.m in Sources */,
+				42931BD8FA59824A2B0E02A4B8845FAD /* SVIndefiniteAnimatedView.m in Sources */,
+				E18C40C4F87883BA983A07AF8EF62869 /* SVProgressAnimatedView.m in Sources */,
+				9C3C11EA013215BE160E62DADAFBBE7D /* SVProgressHUD-dummy.m in Sources */,
+				72BE570678C364D1E2E5CA7AAE7D4566 /* SVProgressHUD.m in Sources */,
+				519E8985F3FD4B26D421EC5859778987 /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9DEC08CD1AAD65C4E4E9605E5194432 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D627E74BC6609294940CC1990B04AD64 /* Pods-IMTestDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA71CD3200B31EA5836A44184A72A346 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = A1B9C403E0FEE7FFE6256069F1C0AFBF /* SVProgressHUD */;
+			targetProxy = 4BC0C109BEC607C8DE9C0C5AC05E5EBE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
@@ -283,9 +421,9 @@
 			};
 			name = Debug;
 		};
-		1E0CF33012D6D0987DF8F66B4297B580 /* Debug */ = {
+		3D6795028C9B8D59E422FDB0710F19BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4CB5930B44BD934BA1008E12FD0DCC7 /* Pods-IMTestDemo.debug.xcconfig */;
+			baseConfigurationReference = 3C4EC0B36B98E66C95D584FEF6909605 /* SVProgressHUD.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -293,14 +431,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -346,7 +484,7 @@
 			};
 			name = Release;
 		};
-		E94AFCCB314E26F92623505C0990424E /* Release */ = {
+		789F27106275ADE54C7AC7CDE5D7DD12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76D777D3FE3A346AD67C4AFC4D808E4A /* Pods-IMTestDemo.release.xcconfig */;
 			buildSettings = {
@@ -369,6 +507,52 @@
 			};
 			name = Release;
 		};
+		7A578C3A2DCECF538CD92EC0B7FBA95C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4CB5930B44BD934BA1008E12FD0DCC7 /* Pods-IMTestDemo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E3190E07AFD9F80F740D64A9C5C77F83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C4EC0B36B98E66C95D584FEF6909605 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -381,11 +565,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EDF4EA9A692D08947C5B879F084BF3A /* Build configuration list for PBXNativeTarget "Pods-IMTestDemo" */ = {
+		95F57A57BA1E7546704A585FCFFEAA28 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1E0CF33012D6D0987DF8F66B4297B580 /* Debug */,
-				E94AFCCB314E26F92623505C0990424E /* Release */,
+				3D6795028C9B8D59E422FDB0710F19BA /* Debug */,
+				E3190E07AFD9F80F740D64A9C5C77F83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8FF9947F508B964B9AC42B65833164B /* Build configuration list for PBXNativeTarget "Pods-IMTestDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A578C3A2DCECF538CD92EC0B7FBA95C /* Debug */,
+				789F27106275ADE54C7AC7CDE5D7DD12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

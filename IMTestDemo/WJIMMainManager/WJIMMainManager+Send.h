@@ -8,6 +8,9 @@
 
 #import "WJIMMainManager.h"
 
+/**
+ 创建发送消息发送消息的类目
+ */
 @interface WJIMMainManager (Send)
 
 #pragma mark - send message
