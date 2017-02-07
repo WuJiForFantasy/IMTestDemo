@@ -11,6 +11,7 @@
 #import "WJIMMainManager+Send.h"
 #import "WJIMMainManager.h"
 #import "WJIMChatStore.h"
+#import "WJIMChatStore+send.h"
 
 @interface WJIMChatController () <WJIMChatStoreDelegate>
 
@@ -124,19 +125,8 @@
 }
 
 - (void)sendText {
-    EMMessage *message = [WJIMMainManager sendTextMessage:@"测试测试测试" to:self.userId messageType:EMChatTypeChat messageExt:nil];
-
-    [[EMClient sharedClient].chatManager sendMessage:message progress:nil completion:^(EMMessage *aMessage, EMError *aError) {
-        
-        if (!aError) {
-            NSLog(@"%@发送消息成功",[self class]);
-        
-        }
-        else {
-            NSLog(@"发送消息出错：~ ~ %@",aError.errorDescription);
-      
-        }
-    }];
+    
+    [self.store sendTextMessage:@"哇哈哈"];
     
 }
 

@@ -12,10 +12,8 @@
 @interface WJIMChatStore () <WJIMMainManagerChatDelegate>
 
 {
-    dispatch_queue_t _messageQueue; //线程
+    dispatch_queue_t _messageQueue; //消息线程
 }
-
-
 
 @end
 

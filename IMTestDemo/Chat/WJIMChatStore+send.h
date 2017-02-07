@@ -9,7 +9,7 @@
 #import "WJIMChatStore.h"
 
 /**
- 发送
+ 发送方法
  */
 @interface WJIMChatStore (send)
 

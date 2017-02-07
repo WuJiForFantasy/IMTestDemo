@@ -10,7 +10,7 @@
 
 @implementation WJIMChatStore (send)
 
-/**扩展字段：黑名单，好友*/
+/**扩展字段：黑名单，好友，昵称，头像*/
 - (NSDictionary *)messageExt {
 
     return @{@"nickname":@"昵称123",
