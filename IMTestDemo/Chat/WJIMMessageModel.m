@@ -176,13 +176,13 @@
 //头像地址
 - (NSString *)avatarURLPath {
     
-    return @"http://tva2.sinaimg.cn/crop.3.0.634.634.1024/cd516b22jw8fa4mlfynwzj20hs0hm0tr.jpg";
+    return _message.ext[@"avatarUrl"];
 }
 
 //昵称
 - (NSString *)nickname {
     
-    return @"发送方的昵称";
+    return _message.ext[@"nickname"];
 }
 
 //网络请求失败的站位图

@@ -13,6 +13,7 @@
 
 @interface WJIMChatStore : NSObject
 
+@property (nonatomic) NSTimeInterval messageTimeIntervalTag; //时间间隔标记
 @property (nonatomic) BOOL isViewDidAppear;//是否在当前视图
 @property (nonatomic,strong) EMConversation *conversation; //会话
 @property (strong, nonatomic) NSMutableArray *messsagesSource;  //数据<EMMessage>消息
@@ -30,7 +31,9 @@
 //关闭聊天代理
 - (void)destroyChat;
 - (NSArray *)formatMessages:(NSArray *)messages;
-
+- (EMChatType)_messageTypeFromConversationType;
+-(void)addMessageToDataSource:(EMMessage *)message
+                     progress:(id)progress;
 @end
 
 @protocol WJIMChatStoreDelegate <NSObject>

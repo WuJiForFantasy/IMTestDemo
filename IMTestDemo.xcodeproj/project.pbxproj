@@ -34,6 +34,7 @@
 		0DECE3151E49AE4C0078CB20 /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DECE3141E49AE4C0078CB20 /* EaseUIResource.bundle */; };
 		0DECE31A1E49AE5B0078CB20 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE3171E49AE5B0078CB20 /* NSDate+Category.m */; };
 		0DECE31B1E49AE5B0078CB20 /* NSDateFormatter+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE3191E49AE5B0078CB20 /* NSDateFormatter+Category.m */; };
+		0DECE31E1E49B62B0078CB20 /* WJIMChatStore+send.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE31D1E49B62B0078CB20 /* WJIMChatStore+send.m */; };
 		2E29457B336A3BD875F1F28B /* libPods-IMTestDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4FD1032C30F6AA965922AD /* libPods-IMTestDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,8 @@
 		0DECE3171E49AE5B0078CB20 /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
 		0DECE3181E49AE5B0078CB20 /* NSDateFormatter+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Category.h"; sourceTree = "<group>"; };
 		0DECE3191E49AE5B0078CB20 /* NSDateFormatter+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Category.m"; sourceTree = "<group>"; };
+		0DECE31C1E49B62B0078CB20 /* WJIMChatStore+send.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WJIMChatStore+send.h"; sourceTree = "<group>"; };
+		0DECE31D1E49B62B0078CB20 /* WJIMChatStore+send.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WJIMChatStore+send.m"; sourceTree = "<group>"; };
 		6D71C37133BAC3CD793D7820 /* Pods-IMTestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMTestDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMTestDemo/Pods-IMTestDemo.release.xcconfig"; sourceTree = "<group>"; };
 		6F4FD1032C30F6AA965922AD /* libPods-IMTestDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IMTestDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B281946A7B861C055FF2083 /* Pods-IMTestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMTestDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMTestDemo/Pods-IMTestDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				0D3417801E485EBF00CC7EA4 /* WJIMChatController.m */,
 				0D3417881E4877DC00CC7EA4 /* WJIMChatStore.h */,
 				0D3417891E4877DC00CC7EA4 /* WJIMChatStore.m */,
+				0DECE31C1E49B62B0078CB20 /* WJIMChatStore+send.h */,
+				0DECE31D1E49B62B0078CB20 /* WJIMChatStore+send.m */,
 				0DECE30A1E499A2D0078CB20 /* IMessageModel.h */,
 				0DECE30B1E499B340078CB20 /* WJIMMessageModel.h */,
 				0DECE30C1E499B340078CB20 /* WJIMMessageModel.m */,
@@ -491,6 +496,7 @@
 			files = (
 				0D3417841E48601F00CC7EA4 /* UIAlertController+Blocks.m in Sources */,
 				0D34177A1E48597C00CC7EA4 /* ConversationController.m in Sources */,
+				0DECE31E1E49B62B0078CB20 /* WJIMChatStore+send.m in Sources */,
 				0D6CFAF71E20CA7C00B3259A /* EaseEmotionEscape.m in Sources */,
 				0D3417711E4858DD00CC7EA4 /* WJIMMainManager+Send.m in Sources */,
 				0D6CFABA1E20957100B3259A /* ViewController.m in Sources */,

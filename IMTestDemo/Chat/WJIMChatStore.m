@@ -15,7 +15,7 @@
     dispatch_queue_t _messageQueue; //线程
 }
 
-@property (nonatomic) NSTimeInterval messageTimeIntervalTag; //时间间隔标记
+
 
 @end
 
