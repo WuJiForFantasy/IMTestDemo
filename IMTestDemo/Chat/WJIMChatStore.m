@@ -10,10 +10,11 @@
 #import "WJIMMainManager.h"
 
 @interface WJIMChatStore () <WJIMMainManagerChatDelegate>
-
 {
     dispatch_queue_t _messageQueue; //消息线程
 }
+
+@property (nonatomic) NSInteger messageCountOfPage; //default 20
 
 @end
 
@@ -23,6 +24,7 @@
                            conversationType:(EMConversationType)conversationType {
     self = [super init];
     if (self) {
+        self.messageCountOfPage = 20;
         //创建会话
         self.conversation = [[EMClient sharedClient].chatManager getConversation:conversationChatter type:conversationType createIfNotExist:YES];
         //将所有消息设置为已读
@@ -43,6 +45,22 @@
     
     [WJIMMainManager shareManager].delegate = nil;
 }
+
+- (void)reloadMessageData {
+    self.messageTimeIntervalTag = -1;
+    NSString *messageId = nil;
+    if ([self.messsagesSource count] > 0) {
+        messageId = [(EMMessage *)self.messsagesSource.firstObject messageId];
+    }
+    else {
+        messageId = nil;
+    }
+    //加载历史消息默认条数
+    [self _loadMessagesBefore:messageId count:self.messageCountOfPage append:YES];
+    //刷新头部
+}
+
+
 
 #pragma mark - <WJIMMainManagerChatDelegate>
 
@@ -180,6 +198,76 @@
 }
 
 #pragma mark - others
+
+
+- (void)_loadMessagesBefore:(NSString*)messageId
+                      count:(NSInteger)count
+                     append:(BOOL)isAppend
+{
+    __weak typeof(self) weakSelf = self;
+    void (^refresh)(NSArray *messages) = ^(NSArray *messages) {
+        dispatch_async(_messageQueue, ^{
+            //Format the message
+            NSArray *formattedMessages = [weakSelf formatMessages:messages];
+            
+            //Refresh the page
+            dispatch_async(dispatch_get_main_queue(), ^{
+                typeof(self) strongSelf = weakSelf;
+                if (strongSelf) {
+                    NSInteger scrollToIndex = 0;
+                    if (isAppend) {
+                        [strongSelf.messsagesSource insertObjects:messages atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [messages count])]];
+                        
+                        //Combine the message
+                        id object = [strongSelf.dataArray firstObject];
+                        if ([object isKindOfClass:[NSString class]]) {
+                            NSString *timestamp = object;
+                            [formattedMessages enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id model, NSUInteger idx, BOOL *stop) {
+                                if ([model isKindOfClass:[NSString class]] && [timestamp isEqualToString:model]) {
+                                    [strongSelf.dataArray removeObjectAtIndex:0];
+                                    *stop = YES;
+                                }
+                            }];
+                        }
+                        scrollToIndex = [strongSelf.dataArray count];
+                        [strongSelf.dataArray insertObjects:formattedMessages atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [formattedMessages count])]];
+                    }
+                    else {
+                        [strongSelf.messsagesSource removeAllObjects];
+                        [strongSelf.messsagesSource addObjectsFromArray:messages];
+                        
+                        [strongSelf.dataArray removeAllObjects];
+                        [strongSelf.dataArray addObjectsFromArray:formattedMessages];
+                    }
+                    
+                    EMMessage *latest = [strongSelf.messsagesSource lastObject];
+                    strongSelf.messageTimeIntervalTag = latest.timestamp;
+                    
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(IMChatStoreIsTableViewScrollToRowAtIndexPath:)]) {
+                        [self.delegate IMChatStoreIsTableViewScrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.dataArray count] - scrollToIndex - 1 inSection:0]];
+                    }
+                }
+            });
+            
+            //re-download all messages that are not successfully downloaded
+            for (EMMessage *message in messages)
+            {
+                [weakSelf _downloadMessageAttachments:message];
+            }
+            
+            //send the read acknoledgement
+            [weakSelf _sendHasReadResponseForMessages:messages
+                                               isRead:NO];
+        });
+    };
+    
+    [self.conversation loadMessagesStartFromId:messageId count:(int)count searchDirection:EMMessageSearchDirectionUp completion:^(NSArray *aMessages, EMError *aError) {
+        if (!aError && [aMessages count]) {
+            refresh(aMessages);
+        }
+    }];
+}
+
 
 - (BOOL)_shouldMarkMessageAsRead
 {
@@ -388,6 +476,64 @@
     }
     return type;
 }
+
+/*!
+ @method
+ @brief 下载消息附件
+ @param message  待下载附件的消息
+ */
+- (void)_downloadMessageAttachments:(EMMessage *)message
+{
+    __weak typeof(self) weakSelf = self;
+    void (^completion)(EMMessage *aMessage, EMError *error) = ^(EMMessage *aMessage, EMError *error) {
+        if (!error)
+        {
+            [weakSelf _reloadTableViewDataWithMessage:message];
+        }
+        else
+        {
+            NSLog(@"聊天界面中:thumbnail for failure!");
+
+        }
+    };
+    
+    EMMessageBody *messageBody = message.body;
+    if ([messageBody type] == EMMessageBodyTypeImage) {
+        EMImageMessageBody *imageBody = (EMImageMessageBody *)messageBody;
+        if (imageBody.thumbnailDownloadStatus > EMDownloadStatusSuccessed)
+        {
+            //download the message thumbnail
+            [[[EMClient sharedClient] chatManager] downloadMessageThumbnail:message progress:nil completion:completion];
+        }
+    }
+    else if ([messageBody type] == EMMessageBodyTypeVideo)
+    {
+        EMVideoMessageBody *videoBody = (EMVideoMessageBody *)messageBody;
+        if (videoBody.thumbnailDownloadStatus > EMDownloadStatusSuccessed)
+        {
+            //download the message thumbnail
+            [[[EMClient sharedClient] chatManager] downloadMessageThumbnail:message progress:nil completion:completion];
+        }
+    }
+    else if ([messageBody type] == EMMessageBodyTypeVoice)
+    {
+        EMVoiceMessageBody *voiceBody = (EMVoiceMessageBody*)messageBody;
+        if (voiceBody.downloadStatus > EMDownloadStatusSuccessed)
+        {
+            //download the message attachment
+            [[EMClient sharedClient].chatManager downloadMessageAttachment:message progress:nil completion:^(EMMessage *message, EMError *error) {
+                if (!error) {
+                    [weakSelf _reloadTableViewDataWithMessage:message];
+                }
+                else {
+                    NSLog(@"聊天界面中：voice for failure!");
+//                    [weakSelf showHint:NSEaseLocalizedString(@"message.voiceFail", @"voice for failure!")];
+                }
+            }];
+        }
+    }
+}
+
 
 #pragma mark - 懒加载
 

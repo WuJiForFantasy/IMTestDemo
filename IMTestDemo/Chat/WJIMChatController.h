@@ -13,8 +13,6 @@
  */
 @interface WJIMChatController : UIViewController
 
-- (instancetype)initWithUserId:(NSString *)userId;
-
 /**根据环信ID初始化聊天控制器*/
 - (instancetype)initWithConversationChatter:(NSString *)conversationChatter
                            conversationType:(EMConversationType)conversationType;

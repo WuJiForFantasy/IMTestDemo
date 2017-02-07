@@ -12,8 +12,9 @@
 #import "WJIMMainManager.h"
 #import "WJIMChatStore.h"
 #import "WJIMChatStore+send.h"
+#import "WJIMChatBaseCell.h"
 
-@interface WJIMChatController () <WJIMChatStoreDelegate>
+@interface WJIMChatController () <WJIMChatStoreDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,copy) NSString *userId;
 @property (nonatomic,strong) WJIMChatStore *store;
@@ -22,16 +23,7 @@
 
 @implementation WJIMChatController
 
-- (instancetype)initWithUserId:(NSString *)userId {
-    
-    self = [super init];
-    if (self) {
-        self.userId = userId;
-//        self.convsersation = [[EMClient sharedClient].chatManager getConversation:userId type:EMConversationTypeChat createIfNotExist:YES];
-//        [self.convsersation markAllMessagesAsRead:nil];
-    }
-    return self;
-}
+
 
 - (instancetype)initWithConversationChatter:(NSString *)conversationChatter
                            conversationType:(EMConversationType)conversationType {
@@ -54,6 +46,24 @@
     [super viewWillDisappear:animated];
     
     [self.store destroyChat];
+}
+
+#pragma mark - <UITableViewDelegate,UITableViewDataSource>
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    WJIMChatBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    id message= self.store.dataArray[indexPath.row];
+    if (![message isKindOfClass:[NSString class]]) {
+         [cell setMessage:message];
+    }else {
+        cell.textLabel.text = message;
+    }
+   
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.store.dataArray.count;
 }
 
 #pragma mark - <WJIMChatStoreDelegate>
@@ -80,6 +90,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.view addSubview:self.tableView];
+    [self.store reloadMessageData];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(rightItemPressed)];
     self.navigationItem.rightBarButtonItem = rightItem;
     self.view.backgroundColor = [UIColor whiteColor];
@@ -156,6 +168,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - 懒加载
 
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        [_tableView registerClass:[WJIMChatBaseCell class] forCellReuseIdentifier:@"cellID"];
+    }
+    return _tableView;
+}
 
 @end
