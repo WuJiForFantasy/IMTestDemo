@@ -14,6 +14,7 @@
 #import "WJIMMainManager+Login.h"
 #import "MainController.h"
 #import "AppDelegate+WJIM.h"
+#import "UIAlertController+Blocks.h"
 
 @interface AppDelegate ()
 

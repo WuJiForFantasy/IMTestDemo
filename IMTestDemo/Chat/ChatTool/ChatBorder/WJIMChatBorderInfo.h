@@ -20,6 +20,7 @@
 @property (nonatomic,strong)UIImage *borderImage;   //边框图片
 
 + (WJIMChatBorderInfo *)defaultBorderInfoFromOther;
+
 + (WJIMChatBorderInfo *)defaultBorderInfoFromMe;
 
 @end

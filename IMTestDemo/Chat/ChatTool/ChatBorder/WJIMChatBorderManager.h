@@ -20,7 +20,7 @@
 #define WJCHAT_CELL_TIMELABELHEIGHT 30                                      //footer高度
 #define WJCHAT_CELL_CONTENT_MAXWIDTH (WJCHAT_CELL_WIDTH - WJCHAT_CELL_LEFT_PADDING-WJCHAT_CELL_RIGHT_PADDING - WJCHAT_CELL_PADDING * 2)                                              //文本最大宽度
 
-/**边框管理*/
+/**边框管理，定义各种边框的尺寸*/
 
 @interface WJIMChatBorderManager : NSObject
 

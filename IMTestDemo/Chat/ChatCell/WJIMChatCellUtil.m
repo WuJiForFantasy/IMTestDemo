@@ -12,7 +12,7 @@
 
 + (CGFloat)cellHeightForMsg:(id)msg {
     
-    CGFloat height = 38.f;
+    CGFloat height = 44;
     if ([msg isKindOfClass:[WJIMMessageModel class]]) {
         WJIMMessageModel *tmpMsg = (WJIMMessageModel *)msg;
         switch (tmpMsg.bodyType) {

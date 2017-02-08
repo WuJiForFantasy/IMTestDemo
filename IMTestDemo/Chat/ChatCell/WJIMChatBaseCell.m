@@ -49,7 +49,7 @@
 - (void)setIMMessage:(id<IMessageModel>)message {
     
     self.message = message;
-    
+    self.timeLabel.text = @"";
     //显示基础逻辑控件的逻辑
     switch (message.message.status) {
         case EMMessageStatusDelivering:
@@ -211,6 +211,7 @@
         _timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60, 20)];
         _timeLabel.font = [UIFont systemFontOfSize:10];
         _timeLabel.textColor = [UIColor colorWithHexString:@"a3a3a3"];
+    
     }
     return _timeLabel;
 }
@@ -219,7 +220,6 @@
 - (UIButton *)bodyBgView {
     if (!_bodyBgView) {
         _bodyBgView = [UIButton new];
-        _bodyBgView.layer.borderWidth = 1;
     }
     return _bodyBgView;
 }

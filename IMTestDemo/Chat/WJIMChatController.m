@@ -155,11 +155,40 @@
 
 - (void)sendPic {
     
-    [WJIMMainManager sendImageMessageWithImage:[UIImage imageNamed:@""] to:@"" messageType:EMChatTypeChat messageExt:nil];
+    
+    [self.store sendImageMessageWithData:UIImagePNGRepresentation([UIImage imageNamed:@"avatar"])];
 }
 
 - (void)sendVideo {
     
+    NSString * docPath = [[NSBundle mainBundle] pathForResource:@"shipin" ofType:@"mp4"];
+    NSString * appDir = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
+    //appLib  Library/Caches目录
+    NSString *appLib = [appDir stringByAppendingString:@"/Caches"];
+    
+    BOOL filesPresent = [self copyMissingFile:docPath toPath:appLib];
+    if (filesPresent) {
+        NSLog(@"OK");
+        
+    }
+    else
+    {
+        NSLog(@"NO");
+    }
+    NSString *str = [NSString stringWithFormat:@"%@/%@",appLib,@"shipin.mp4"];
+    [self.store sendVideoMessageWithURL:[NSURL URLWithString:str]];
+    
+}
+
+- (BOOL)copyMissingFile:(NSString *)sourcePath toPath:(NSString *)toPath
+{
+    BOOL retVal = YES; // If the file already exists, we'll return success…
+    NSString * finalLocation = [toPath stringByAppendingPathComponent:[sourcePath lastPathComponent]];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:finalLocation])
+    {
+        retVal = [[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:finalLocation error:NULL];
+    }
+    return retVal;
 }
 
 - (void)sendMusic {
@@ -171,7 +200,8 @@
 }
 
 - (void)sendLocation {
-
+    
+//    self.store sendVideoMessageWithURL:<#(NSURL *)#>
 }
 
 - (void)didReceiveMemoryWarning {
@@ -186,8 +216,8 @@
         _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-//        [_tableView registerClass:[WJIMChatTextMsgCell class] forCellReuseIdentifier:@"cellID"];
         _tableView.backgroundColor = [UIColor grayColor];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }

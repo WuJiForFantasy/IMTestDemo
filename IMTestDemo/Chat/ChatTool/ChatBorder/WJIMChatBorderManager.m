@@ -39,7 +39,14 @@
                 
                 [self messageText];
                 break;
+            case EMMessageBodyTypeImage:
                 
+                [self messageImage];
+                break;
+            case EMMessageBodyTypeVideo:
+                
+                [self messageVideo];
+                break;
             default:
                 break;
         }
@@ -86,6 +93,49 @@
     self.leftPadding = self.info.leftPadding;
     self.topPadding = self.info.topPadding;
     
+}
+
+- (void)messageImage {
+    
+    UIImage *image = self.message.thumbnailImage;
+    if (!image) {
+        image = self.message.image;
+    } else {
+        
+    }
+    CGFloat f = image.size.height/image.size.width;
+    
+    CGFloat width = image.size.width;
+    CGFloat height = width * f;
+    if (image.size.width/(WJCHAT_CELL_CONTENT_MAXWIDTH - 30) > 0) {
+        //        width = WJCHAT_CELL_CONTENT_MAXWIDTH - 30;
+        if (f > 1) {
+            width = 120;
+        }else {
+            width = 150;
+        }
+        
+    }else {
+        width = image.size.width;
+    }
+    
+    height = width * f;
+    if (image) {
+        self.width = width;
+        self.height = height;
+        if (height > width*4/3) {
+            self.height = width*4/3;
+        }
+        
+    }else {
+        self.width = 120;
+        self.height = 150;
+    }
+}
+
+- (void)messageVideo {
+    
+    [self messageImage];
 }
 
 - (UIImage *)borderImage {
