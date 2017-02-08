@@ -35,11 +35,14 @@ static CGFloat cellHeight = 0;//计算cell的高度，静态变量
 #pragma mark - public
 
 - (void)setIMMessage:(id<IMessageModel>)message;
-
+//- (void)changeIMMessage:(id<IMessageModel>)message;
 //基础的坐标范围
 - (WJIMChatBorderManager *)borderImageAndFrame;
 
 //刷新基础布局
 - (void)baseFrameLayout;
+
+//cell的高度
++ (CGFloat)cellHeight;
 
 @end

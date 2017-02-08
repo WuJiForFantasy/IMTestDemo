@@ -36,13 +36,17 @@
 
 - (void)setIMMessage:(id<IMessageModel>)message {
     [super setIMMessage:message];
-
+    
+    NSString *contentString = message.text;
+    [self.emojiLabel setText:contentString];
     
     WJIMChatBorderManager *manager =  [self borderImageAndFrame];
+    
     self.emojiLabel.frame = CGRectMake(manager.leftPadding, manager.topPadding,  manager.labelWidth,  manager.labelHeight);
     
-    cellHeight = self.bodyBgView.bottom + WJCHAT_CELL_TIMELABELHEIGHT ;
+    cellHeight = self.bodyBgView.bottom + WJCHAT_CELL_TIMELABELHEIGHT;
     self.cellHeight = cellHeight;
+    
     [self baseFrameLayout];
 }
 

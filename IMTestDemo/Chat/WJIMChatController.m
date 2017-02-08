@@ -12,13 +12,16 @@
 #import "WJIMMainManager.h"
 #import "WJIMChatStore.h"
 #import "WJIMChatStore+send.h"
-#import "WJIMChatBaseCell.h"
+//#import "WJIMChatBaseCell.h"
+#import "WJIMChatTextMsgCell.h"
+#import "WJIMChatCellUtil.h"
 
 @interface WJIMChatController () <WJIMChatStoreDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,copy) NSString *userId;
 @property (nonatomic,strong) WJIMChatStore *store;
 @property (nonatomic,strong) UITableView *tableView;
+
 @end
 
 @implementation WJIMChatController
@@ -51,19 +54,27 @@
 #pragma mark - <UITableViewDelegate,UITableViewDataSource>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WJIMChatBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
-    id message= self.store.dataArray[indexPath.row];
-    if (![message isKindOfClass:[NSString class]]) {
-         [cell setMessage:message];
-    }else {
-        cell.textLabel.text = message;
-    }
-   
+    
+//    WJIMChatTextMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+//    id message= self.store.dataArray[indexPath.row];
+//    if (![message isKindOfClass:[NSString class]]) {
+//         [cell setIMMessage:message];
+//    }else {
+//        cell.textLabel.text = message;
+//    }
+   UITableViewCell *cell = [WJIMChatCellUtil tableView:tableView cellForMsg:self.store.dataArray[indexPath.row]];
+    
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return self.store.dataArray.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return [WJIMChatCellUtil cellHeightForMsg:self.store.dataArray[indexPath.row]];
 }
 
 #pragma mark - <WJIMChatStoreDelegate>
@@ -175,7 +186,8 @@
         _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        [_tableView registerClass:[WJIMChatBaseCell class] forCellReuseIdentifier:@"cellID"];
+//        [_tableView registerClass:[WJIMChatTextMsgCell class] forCellReuseIdentifier:@"cellID"];
+        _tableView.backgroundColor = [UIColor grayColor];
     }
     return _tableView;
 }

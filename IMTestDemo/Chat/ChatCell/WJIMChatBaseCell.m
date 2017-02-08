@@ -23,6 +23,7 @@
         [self.contentView addSubview:self.errorView];
         [self.contentView addSubview:self.readView];
         [self.contentView addSubview:self.activity];
+        self.readView.hidden = YES;
         [self addEvent];
     }
     return self;
@@ -41,12 +42,55 @@
 
 #pragma mark - public
 
-- (void)setIMMessage:(id<IMessageModel>)message {
++ (CGFloat)cellHeight {
+    return cellHeight + 0.001;
+}
 
-//    self.textLabel.text = message.text;
+- (void)setIMMessage:(id<IMessageModel>)message {
+    
+    self.message = message;
+    
+    //显示基础逻辑控件的逻辑
+    switch (message.message.status) {
+        case EMMessageStatusDelivering:
+        {
+            
+            self.readView.hidden = YES;
+            self.errorView.hidden = YES;
+            [self.activity setHidden:NO];
+            [self.activity startAnimating];
+        }
+            break;
+        case EMMessageStatusSuccessed:
+        {
+            self.errorView.hidden = YES;
+            if (message.isMessageRead) {
+                self.readView.hidden = NO;
+            }
+            [self.activity stopAnimating];
+        }
+            break;
+        case EMMessageStatusPending:
+        case EMMessageStatusFailed:
+        {
+            self.errorView.hidden = NO;
+            if (message.isSender) {
+                self.timeLabel.text = @"信息发送失败";
+                self.timeLabel.textColor = [UIColor redColor];
+            }
+            self.readView.hidden = YES;
+            [self.activity stopAnimating];
+            [self.activity setHidden:YES];
+            
+        }
+            break;
+        default:
+            break;
+    }
     
     
 }
+
 
 - (WJIMChatBorderManager *)borderImageAndFrame {
     
@@ -100,7 +144,7 @@
         self.errorView.frame = CGRectMake(self.bodyBgView.right, self.bodyBgView.centerY-20, 40, 40);
         self.readView.frame = CGRectZero;
     }else {
-        self.readView.frame =  CGRectMake(self.bodyBgView.left-20-7, self.bodyBgView.left + 2, 20, 12.5);
+        self.readView.frame =  CGRectMake(self.bodyBgView.left-20-7, self.bodyBgView.top + 2, 20, 12.5);
         self.errorView.frame = CGRectMake(self.bodyBgView.left-40, self.bodyBgView.centerY-20, 40, 40);
     }
     
@@ -142,6 +186,7 @@
         _avatarView.layer.cornerRadius = 5;
         _avatarView.layer.masksToBounds = YES;
         _avatarView.userInteractionEnabled = YES;
+        _avatarView.backgroundColor = [UIColor whiteColor];
     }
     return _avatarView;
 }
@@ -174,6 +219,7 @@
 - (UIButton *)bodyBgView {
     if (!_bodyBgView) {
         _bodyBgView = [UIButton new];
+        _bodyBgView.layer.borderWidth = 1;
     }
     return _bodyBgView;
 }

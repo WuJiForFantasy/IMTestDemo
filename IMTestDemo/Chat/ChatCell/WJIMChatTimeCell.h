@@ -1,5 +1,5 @@
 //
-//  WJIMChatTextMsgCell.h
+//  WJIMChatTimeCell.h
 //  IMTestDemo
 //
 //  Created by tqh on 2017/2/8.
@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WJIMChatBaseCell.h"
 
 /**
- 聊天cell的文本类
+ 聊天cell的时间显示类
  */
-@interface WJIMChatTextMsgCell : WJIMChatBaseCell
+@interface WJIMChatTimeCell : UITableViewCell
 
 @end
