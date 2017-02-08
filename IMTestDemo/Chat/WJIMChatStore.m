@@ -60,8 +60,6 @@
     //刷新头部
 }
 
-
-
 #pragma mark - <WJIMMainManagerChatDelegate>
 
 /*!

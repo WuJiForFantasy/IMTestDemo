@@ -7,5 +7,7 @@ target 'IMTestDemo' do
 
 pod 'HyphenateLite_CN'  #环信的demo
 pod 'SVProgressHUD'     #加载圈
+pod 'YYText'            #富文本框架
+pod 'YYWebImage'        #网络加载图片
 
 end

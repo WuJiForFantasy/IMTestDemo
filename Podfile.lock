@@ -1,15 +1,29 @@
 PODS:
   - HyphenateLite_CN (3.2.0)
   - SVProgressHUD (2.1.2)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYText (1.0.7)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
   - HyphenateLite_CN
   - SVProgressHUD
+  - YYText
+  - YYWebImage
 
 SPEC CHECKSUMS:
   HyphenateLite_CN: b1b023ca05b254f495924711158b3112abf37c04
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: d5eeb505af5c118f36f57b22337220bacd22c7af
+PODFILE CHECKSUM: 3f536a753a549b131707c78de705ee304e97c810
 
 COCOAPODS: 1.1.1

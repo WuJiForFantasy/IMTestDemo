@@ -14,15 +14,55 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YYCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YYImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YYText.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YYWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A1B9C403E0FEE7FFE6256069F1C0AFBF</key>
+		<key>06127142A39D89628A0DEA6D6EE55353</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B6CB49AAF4E8E4D366CAD4E23E9E4C9D</key>
+		<key>2593778AC58F022F9B4CEA49996C5CA3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A0A06D87F697B61795E86D6E86E12B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98BBB8F0AEE7F3E18776FBD7E20D9B62</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2838886FFD26CCC20F5421774525D79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FEB2D61B59A434CE33747B99C38C8874</key>
 		<dict>
 			<key>primary</key>
 			<true/>

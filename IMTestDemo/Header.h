@@ -13,5 +13,7 @@
 #import "WJIMMainManager+Send.h"
 #import "WJIMMainManager+Login.h"
 #import "NSDate+Category.h"
+#import "HexColors.h"
+#import "YYWebImage.h"
 
 #endif /* Header_h */

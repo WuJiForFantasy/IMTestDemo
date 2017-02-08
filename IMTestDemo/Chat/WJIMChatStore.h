@@ -28,10 +28,8 @@
 
 //开启聊天代理
 - (void)setupChat;
-
 //关闭聊天代理
 - (void)destroyChat;
-
 //加载历史消息
 - (void)reloadMessageData;
 
