@@ -13,4 +13,6 @@
  */
 @interface WJIMChatTimeCell : UITableViewCell
 
+- (void)setTimeText:(NSString *)text;
+
 @end

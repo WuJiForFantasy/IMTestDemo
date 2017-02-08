@@ -13,4 +13,12 @@
  */
 @interface WJIMChatLocationMsgCell : WJIMChatBaseCell
 
+@property (nonatomic,strong)UIImageView *picImage;
+
+@property (nonatomic,strong)UIView *bottomView;
+
+@property (nonatomic,strong)UIButton *locationIcon;
+
+@property (nonatomic,strong)UILabel *locationLabel;
+
 @end

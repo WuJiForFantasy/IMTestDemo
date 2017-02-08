@@ -112,7 +112,7 @@
 
 - (void)rightItemPressed {
     
-    [UIAlertController showActionSheetInViewController:self withTitle:@"发送消息" message:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"文字",@"图片",@"视频",@"语音",@"红包,地理位置"] popoverPresentationControllerBlock:^(UIPopoverPresentationController * _Nonnull popover) {
+    [UIAlertController showActionSheetInViewController:self withTitle:@"发送消息" message:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"文字",@"图片",@"视频",@"语音",@"红包",@"地理位置"] popoverPresentationControllerBlock:^(UIPopoverPresentationController * _Nonnull popover) {
         
     } tapBlock:^(UIAlertController * _Nonnull controller, UIAlertAction * _Nonnull action, NSInteger buttonIndex) {
         NSLog(@"%ld",buttonIndex);
@@ -192,7 +192,22 @@
 }
 
 - (void)sendMusic {
-    [WJIMMainManager sendVoiceMessageWithLocalPath:@"" duration:10 to:@"" messageType:EMChatTypeChat messageExt:nil];
+    NSString * docPath = [[NSBundle mainBundle] pathForResource:@"148654703233540" ofType:@"amr"];
+    NSString * appDir = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
+    //appLib  Library/Caches目录
+    NSString *appLib = [appDir stringByAppendingString:@"/Caches"];
+    
+    BOOL filesPresent = [self copyMissingFile:docPath toPath:appLib];
+    if (filesPresent) {
+        NSLog(@"OK");
+        
+    }
+    else
+    {
+        NSLog(@"NO");
+    }
+    NSString *str = [NSString stringWithFormat:@"%@/%@",appLib,@"148654703233540.amr"];
+    [self.store sendVoiceMessageWithLocalPath:str duration:10];
 }
 
 - (void)sendHongbao {
@@ -201,7 +216,7 @@
 
 - (void)sendLocation {
     
-//    self.store sendVideoMessageWithURL:<#(NSURL *)#>
+    [self.store sendLocationMessageLatitude:30.67 longitude:104.06 andAddress:@"成都"];
 }
 
 - (void)didReceiveMemoryWarning {

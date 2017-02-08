@@ -47,6 +47,14 @@
                 
                 [self messageVideo];
                 break;
+            case EMMessageBodyTypeVoice:
+                
+                [self messageAudio];
+                break;
+            case EMMessageBodyTypeLocation:
+                
+                [self messageLocation];
+                break;
             default:
                 break;
         }
@@ -136,6 +144,27 @@
 - (void)messageVideo {
     
     [self messageImage];
+}
+
+- (void)messageAudio {
+    CGFloat testf = 20;
+    
+    CGFloat width = WJCHAT_CELL_CONTENT_MAXWIDTH * testf / 60;//秒速
+    width = 120;
+    self.width = width;
+    self.height = 44;
+    if (self.message.message.direction == EMMessageDirectionReceive) {
+        self.leftPadding = 15;
+        self.rightPadding = 15;
+    }else {
+        self.rightPadding = 15;
+        self.leftPadding = 5;
+    }
+}
+
+- (void)messageLocation {
+    self.width = 200;
+    self.height = 130;
 }
 
 - (UIImage *)borderImage {

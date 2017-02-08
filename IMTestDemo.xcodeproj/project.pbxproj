@@ -51,6 +51,8 @@
 		0DA9CB8F1E4AFD5700CD8FD0 /* WJIMChatLocationMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9CB8E1E4AFD5700CD8FD0 /* WJIMChatLocationMsgCell.m */; };
 		0DA9CB921E4B05AB00CD8FD0 /* WYArrowImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9CB911E4B05AB00CD8FD0 /* WYArrowImageTool.m */; };
 		0DA9CB941E4B0D8200CD8FD0 /* shipin.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9CB931E4B0D8200CD8FD0 /* shipin.mp4 */; };
+		0DA9CB961E4B1ACF00CD8FD0 /* yinpin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9CB951E4B1ACF00CD8FD0 /* yinpin.mp3 */; };
+		0DA9CB981E4B1FFB00CD8FD0 /* 148654703233540.amr in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9CB971E4B1FFB00CD8FD0 /* 148654703233540.amr */; };
 		0DECE30D1E499B340078CB20 /* WJIMMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE30C1E499B340078CB20 /* WJIMMessageModel.m */; };
 		0DECE3151E49AE4C0078CB20 /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DECE3141E49AE4C0078CB20 /* EaseUIResource.bundle */; };
 		0DECE31A1E49AE5B0078CB20 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE3171E49AE5B0078CB20 /* NSDate+Category.m */; };
@@ -159,6 +161,8 @@
 		0DA9CB901E4B05AB00CD8FD0 /* WYArrowImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYArrowImageTool.h; sourceTree = "<group>"; };
 		0DA9CB911E4B05AB00CD8FD0 /* WYArrowImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYArrowImageTool.m; sourceTree = "<group>"; };
 		0DA9CB931E4B0D8200CD8FD0 /* shipin.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = shipin.mp4; sourceTree = "<group>"; };
+		0DA9CB951E4B1ACF00CD8FD0 /* yinpin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yinpin.mp3; sourceTree = "<group>"; };
+		0DA9CB971E4B1FFB00CD8FD0 /* 148654703233540.amr */ = {isa = PBXFileReference; lastKnownFileType = file; path = 148654703233540.amr; sourceTree = "<group>"; };
 		0DECE3041E4972BB0078CB20 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0DECE3051E49742E0078CB20 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		0DECE30A1E499A2D0078CB20 /* IMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMessageModel.h; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 		0D6CFAB11E20957100B3259A /* IMTestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0DA9CB971E4B1FFB00CD8FD0 /* 148654703233540.amr */,
+				0DA9CB951E4B1ACF00CD8FD0 /* yinpin.mp3 */,
 				0DA9CB931E4B0D8200CD8FD0 /* shipin.mp4 */,
 				0DA9CB901E4B05AB00CD8FD0 /* WYArrowImageTool.h */,
 				0DA9CB911E4B05AB00CD8FD0 /* WYArrowImageTool.m */,
@@ -557,9 +563,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA9CB981E4B1FFB00CD8FD0 /* 148654703233540.amr in Resources */,
 				0DA9CB601E4AC95D00CD8FD0 /* Face_Expression.bundle in Resources */,
 				0D6CFAC21E20957100B3259A /* LaunchScreen.storyboard in Resources */,
 				0DA9CB671E4AC96A00CD8FD0 /* face.plist in Resources */,
+				0DA9CB961E4B1ACF00CD8FD0 /* yinpin.mp3 in Resources */,
 				0DA9CB631E4AC95D00CD8FD0 /* MLEmoji_ExpressionImage.plist in Resources */,
 				0DA9CB941E4B0D8200CD8FD0 /* shipin.mp4 in Resources */,
 				0DA9CB5E1E4AC95D00CD8FD0 /* expression_custom.plist in Resources */,

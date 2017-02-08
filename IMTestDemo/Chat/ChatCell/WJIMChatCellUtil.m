@@ -112,7 +112,7 @@
         {
             cell = [[WJIMChatTimeCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TimeLabel"];
         }
-        cell.textLabel.text = msg;
+        [cell setTimeText:msg];
         return cell;
     }
     else {
