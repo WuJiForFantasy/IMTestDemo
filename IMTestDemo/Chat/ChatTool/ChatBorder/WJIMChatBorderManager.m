@@ -71,7 +71,7 @@
     if (!protypeLabel) {
         protypeLabel = [MLEmojiLabel new];
         protypeLabel.numberOfLines = 0;
-        protypeLabel.font = [UIFont systemFontOfSize:14.0f];
+        protypeLabel.font = [UIFont systemFontOfSize:14];
         protypeLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         //                protypeLabel.textInsets = UIEdgeInsetsMake(10, 10, 10, 10);
         protypeLabel.isNeedAtAndPoundSign = YES;
@@ -85,8 +85,8 @@
     [protypeLabel setText:contentString];
     CGSize size = [protypeLabel preferredSizeWithMaxWidth:WJCHAT_CELL_CONTENT_MAXWIDTH-20];
     
-    self.labelWidth = size.width;
-    self.labelHeight = size.height+5;
+    self.labelWidth = size.width + 1;
+    self.labelHeight = size.height + 5;
     
     if (self.labelHeight < 25) {
         self.labelHeight = 30;

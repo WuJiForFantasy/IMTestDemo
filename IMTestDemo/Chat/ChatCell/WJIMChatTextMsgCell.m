@@ -73,6 +73,7 @@
         _emojiLabel.isNeedAtAndPoundSign = YES;
         _emojiLabel.disableEmoji = NO;
         _emojiLabel.lineSpacing = 3.0f;
+    
         _emojiLabel.customEmojiRegex = @"\\[[a-zA-Z0-9\\u4e00-\\u9fa5]+\\]";
         _emojiLabel.customEmojiPlistName = @"face.plist";
         _emojiLabel.customEmojiBundleName = @"Face_Expression.bundle";
