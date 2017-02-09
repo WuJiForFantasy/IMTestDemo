@@ -16,7 +16,7 @@
 #define WJCHAT_CELL_PADDING 10                                              //间距
 #define WJCHAT_CELL_LEFT_PADDING (40+15)                                    //左边距离
 #define WJCHAT_CELL_RIGHT_PADDING (15+WJCHAT_CELL_AVATARWIDTH)              //右边距离
-#define WJCHAT_CELL_HEADER 0                                                //header高度
+#define WJCHAT_CELL_HEADER 20                                                //header高度
 #define WJCHAT_CELL_TIMELABELHEIGHT 30                                      //footer高度
 #define WJCHAT_CELL_CONTENT_MAXWIDTH (WJCHAT_CELL_WIDTH - WJCHAT_CELL_LEFT_PADDING-WJCHAT_CELL_RIGHT_PADDING - WJCHAT_CELL_PADDING * 2)                                              //文本最大宽度
 

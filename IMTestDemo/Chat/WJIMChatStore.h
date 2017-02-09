@@ -25,6 +25,8 @@
 @property (strong, nonatomic) NSMutableArray *dataArray;        //tableView数据，用于UI显示
 @property (nonatomic, assign) id<WJIMChatStoreDelegate> delegate;
 
+@property (strong, nonatomic) NSIndexPath *menuIndexPath;           //菜单（删除，拷贝，转发等）弹出的下标
+
 //初始化数据管理
 - (instancetype)initWithConversationChatter:(NSString *)conversationChatter
                            conversationType:(EMConversationType)conversationType;
@@ -38,6 +40,8 @@
 //加载历史消息
 - (void)reloadMessageData;
 
+- (void)deleteOnMessageAtMenuIndexPath;
+- (void)copyOnMessageAtMenuIndexPath;
 #pragma mark - others
 
 - (NSArray *)formatMessages:(NSArray *)messages;
@@ -59,6 +63,8 @@
 
 //刷新一组cell
 - (void)IMChatStoreIsTableViewReloadRowsAtIndexPaths:(NSArray *)indexPaths;
+//删除一组cell
+- (void)IMChatStoreIsTableViewDeleteRowsAtIndexPaths:(NSArray *)indexPaths;
 //刷新整个列表
 - (void)IMChatStoreIsTableViewReloadData;
 //刷新列表后滑动到最后位置
@@ -66,7 +72,5 @@
 
 @optional
 
-//- (void)IMChatStoreIsMessageCellSelected:(id<IMessageModel>)model;
-//- (void)IMChatStoreIsTableViewSelectedImage
 
 @end

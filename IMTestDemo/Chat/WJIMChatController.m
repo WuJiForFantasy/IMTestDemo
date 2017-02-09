@@ -19,10 +19,16 @@
 
 
 @interface WJIMChatController () <WJIMChatStoreDelegate,WJIMChatBaseCellDelegate,UITableViewDelegate,UITableViewDataSource>
-
+{
+    UIMenuItem *_copyMenuItem;                  //复制
+    UIMenuItem *_deleteMenuItem;                //删除
+    UIMenuItem *_transpondMenuItem;             //转发，暂时不需要
+    UILongPressGestureRecognizer *_longpressed; //长时间点击
+}
 @property (nonatomic,copy) NSString *userId;
 @property (nonatomic,strong) WJIMChatStore *store;
 @property (nonatomic,strong) UITableView *tableView;
+@property (strong, nonatomic) UIMenuController *menuController; //菜单控制器
 
 @end
 
@@ -39,6 +45,8 @@
     return self;
 }
 
+#pragma mark - 生命周期
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -51,17 +59,39 @@
     [self.store destroyChat];
 }
 
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self.view addSubview:self.tableView];
+
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(rightItemPressed)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    _longpressed =  [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    _longpressed.minimumPressDuration = 0.5;
+    [self.tableView addGestureRecognizer:_longpressed];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.store reloadMessageData];
+        [self.tableView.mj_header endRefreshing];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+}
+
+
 #pragma mark - <UITableViewDelegate,UITableViewDataSource>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-   UITableViewCell *cell = [WJIMChatCellUtil tableView:tableView cellForMsg:self.store.dataArray[indexPath.row]];
+    UITableViewCell *cell = [WJIMChatCellUtil tableView:tableView cellForMsg:self.store.dataArray[indexPath.row]];
     id object = [self.store.dataArray objectAtIndex:indexPath.row];
     if (![object isKindOfClass:[NSString class]]) {
         WJIMChatBaseCell *newCell = (WJIMChatBaseCell *)cell;
         newCell.delegate = self;
     }
-
+    
     return cell;
 }
 
@@ -85,6 +115,14 @@
     [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
 }
+
+- (void)IMChatStoreIsTableViewDeleteRowsAtIndexPaths:(NSArray *)indexPaths {
+    NSLog(@"删除了一组数据");
+    [self.tableView beginUpdates];
+    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView endUpdates];
+}
+
 //刷新整个列表
 - (void)IMChatStoreIsTableViewReloadData {
     NSLog(@"刷新列表");
@@ -146,32 +184,51 @@
     [self.store resendMessage:model.message];
 }
 
-#pragma mark - 生命周期
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self.view addSubview:self.tableView];
-
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(rightItemPressed)];
-    self.navigationItem.rightBarButtonItem = rightItem;
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self.store reloadMessageData];
-        [self.tableView.mj_header endRefreshing];
-    }];
-    [self.tableView.mj_header beginRefreshing];
-}
-
 #pragma mark - 事件监听
 
+//长按显示菜单
+- (void)handleLongPress:(UILongPressGestureRecognizer *)recognizer {
+    if (recognizer.state == UIGestureRecognizerStateBegan && [self.store.dataArray count] > 0)
+    {
+        CGPoint location = [recognizer locationInView:self.tableView];
+        NSIndexPath * indexPath = [self.tableView indexPathForRowAtPoint:location];
+        BOOL canLongPress = NO;
+        canLongPress = YES;
+        if (!canLongPress) {
+            return;
+        }
+        id object = [self.store.dataArray objectAtIndex:indexPath.row];
+        if (![object isKindOfClass:[NSString class]]) {
+            WJIMChatBaseCell *cell = (WJIMChatBaseCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+            [cell becomeFirstResponder];
+            self.store.menuIndexPath = indexPath;
+            [self showMenuViewController:cell.bodyBgView andIndexPath:indexPath messageType:cell.message.bodyType];
+        }
+    }
+}
+
+//删除
+- (void)deleteMenuAction:(id)sender {
+    NSLog(@"删除");
+    [self.store deleteOnMessageAtMenuIndexPath];
+}
+
+//复制
+- (void)copyMenuAction:(id)sender {
+    NSLog(@"复制");
+    [self.store copyOnMessageAtMenuIndexPath];
+}
+
+//转发
+- (void)transpondMenuAction:(id)sender {
+    NSLog(@"转发");
+    //调用转发方法
+}
 - (void)rightItemPressed {
     
     [UIAlertController showActionSheetInViewController:self withTitle:@"发送消息" message:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"文字",@"图片",@"视频",@"语音",@"红包",@"地理位置"] popoverPresentationControllerBlock:^(UIPopoverPresentationController * _Nonnull popover) {
         
     } tapBlock:^(UIAlertController * _Nonnull controller, UIAlertAction * _Nonnull action, NSInteger buttonIndex) {
-        NSLog(@"%ld",buttonIndex);
         switch (buttonIndex) {
             case 2:
                 
@@ -205,7 +262,7 @@
 
 - (void)sendText {
     
-    [self.store sendTextMessage:@"哇哈哈，这是测试文本n"];
+    [self.store sendTextMessage:@"哇哈哈，这是测😂😂😂试文本n😂😂测试文本😂😂😂😂😂测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本😂测试文本测试文本测试文本测试文本"];
     
 }
 
@@ -323,6 +380,41 @@
     
     [self.store _audioMessageCellSelected:model];
 }
+
+#pragma mark - private
+
+- (void)showMenuViewController:(UIView *)showInView
+                  andIndexPath:(NSIndexPath *)indexPath
+                   messageType:(EMMessageBodyType)messageType
+{
+    if (self.menuController == nil) {
+        self.menuController = [UIMenuController sharedMenuController];
+    }
+    
+    if (_deleteMenuItem == nil) {
+        _deleteMenuItem = [[UIMenuItem alloc] initWithTitle:@"删除" action:@selector(deleteMenuAction:)];
+    }
+    
+    if (_copyMenuItem == nil) {
+        _copyMenuItem = [[UIMenuItem alloc] initWithTitle:@"拷贝" action:@selector(copyMenuAction:)];
+    }
+    
+    if (_transpondMenuItem == nil) {
+        _transpondMenuItem = [[UIMenuItem alloc] initWithTitle:@"转发" action:@selector(transpondMenuAction:)];
+    }
+    
+    if (messageType == EMMessageBodyTypeText) {
+        [self.menuController setMenuItems:@[_copyMenuItem, _deleteMenuItem,_transpondMenuItem]];
+    } else if (messageType == EMMessageBodyTypeImage){
+        [self.menuController setMenuItems:@[_deleteMenuItem,_transpondMenuItem]];
+    } else {
+        [self.menuController setMenuItems:@[_deleteMenuItem,_transpondMenuItem]];
+    }
+    [self.menuController setTargetRect:showInView.frame inView:showInView.superview];
+    [self.menuController setMenuVisible:YES animated:YES];
+}
+
+
 #pragma mark - 懒加载
 
 - (UITableView *)tableView {

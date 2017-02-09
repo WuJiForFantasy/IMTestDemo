@@ -22,6 +22,7 @@
         
         [self defaultCommon];
         [self.contentView addSubview:self.avatarView];
+        [self.contentView addSubview:self.nickNameLabel];
         [self.contentView addSubview:self.bodyBgView];
         [self.contentView addSubview:self.footerView];
         [self.contentView addSubview:self.headerView];
@@ -31,6 +32,7 @@
         [self.contentView addSubview:self.activity];
         self.readView.hidden = YES;
         [self addEvent];
+
     }
     return self;
 }
@@ -56,6 +58,12 @@
     
     self.message = message;
     self.timeLabel.text = @"";
+    
+    if (self.chatType != EMChatTypeChat) {
+        self.nickNameLabel.text = message.nickname;
+        [self.avatarView yy_setImageWithURL:[NSURL URLWithString:message.avatarURLPath] placeholder:nil];
+    }
+  
     //显示基础逻辑控件的逻辑
     switch (message.message.status) {
         case EMMessageStatusDelivering:
@@ -100,12 +108,22 @@
 
 - (WJIMChatBorderManager *)borderImageAndFrame {
     
+    CGFloat left = WJCHAT_CELL_LEFT_PADDING;
+    CGFloat right = WJCHAT_CELL_RIGHT_PADDING;
+    CGFloat minY = WJCHAT_CELL_HEADER;
+    if (self.chatType == EMChatTypeChat) {
+        left = 0;
+        right = 0;
+        minY = 0;
+    }
+    
     WJIMChatBorderManager *manager = [[WJIMChatBorderManager alloc]initWithIMMessage:self.message];
     [self.bodyBgView setBackgroundImage:manager.borderImage forState:UIControlStateNormal];
     if (!self.message.isSender) {
-        self.bodyBgView.frame = CGRectMake(WJCHAT_CELL_LEFT_PADDING+WJCHAT_CELL_PADDING, WJCHAT_CELL_HEADER, manager.width, manager.height);
+        
+        self.bodyBgView.frame = CGRectMake(left+WJCHAT_CELL_PADDING, minY, manager.width, manager.height);
     }else {
-        self.bodyBgView.frame = CGRectMake(WJCHAT_CELL_WIDTH-WJCHAT_CELL_RIGHT_PADDING-WJCHAT_CELL_PADDING-manager.width, WJCHAT_CELL_HEADER, manager.width, manager.height);
+        self.bodyBgView.frame = CGRectMake(WJCHAT_CELL_WIDTH-right-WJCHAT_CELL_PADDING-manager.width, minY, manager.width, manager.height);
     }
     return manager;
 }
@@ -122,10 +140,25 @@
 - (void)avatarFrameLayout {
 
     CGFloat minY = WJCHAT_CELL_HEADER;
+    //如果是单独聊天
+    if (self.chatType == EMChatTypeChat) {
+        minY = 0;
+    }
     if (!self.message.isSender) {
         self.avatarView.frame = CGRectMake(15, minY, WJCHAT_CELL_AVATARWIDTH, WJCHAT_CELL_AVATARWIDTH);
+        if (self.chatType != EMChatTypeChat) {
+            self.nickNameLabel.frame = CGRectMake(self.avatarView.right + 10, minY, 100, 20);
+        }else {
+            self.nickNameLabel.frame = CGRectZero;
+            self.avatarView.frame = CGRectZero;
+        }
+        
     }else {
         self.avatarView.frame = CGRectMake(WJCHAT_CELL_WIDTH-WJCHAT_CELL_RIGHT_PADDING,minY, WJCHAT_CELL_AVATARWIDTH, WJCHAT_CELL_AVATARWIDTH);
+        self.nickNameLabel.frame = CGRectZero;
+        if (self.chatType == EMChatTypeChat) {
+            self.avatarView.frame = CGRectZero;
+        }
     }
 }
 
@@ -225,6 +258,14 @@
     return _avatarView;
 }
 
+- (UILabel *)nickNameLabel {
+    if (!_nickNameLabel) {
+        _nickNameLabel = [UILabel new];
+        _nickNameLabel.font = [UIFont systemFontOfSize:11];
+        _nickNameLabel.textColor = [UIColor whiteColor];
+    }
+    return _nickNameLabel;
+}
 
 - (UIView *)headerView {
     if (!_headerView) {

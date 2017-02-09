@@ -24,6 +24,7 @@ static CGFloat cellHeight = 0;//计算cell的高度，静态变量
 @property (nonatomic,strong) id<IMessageModel> message;             //环信聊天消息
 @property (nonatomic,strong) UIActivityIndicatorView *activity;     //消息发送时的圈圈
 @property (nonatomic,strong) UIImageView *avatarView;               //头像
+@property (nonatomic,strong) UILabel *nickNameLabel;                //昵称文本
 @property (nonatomic,strong) UIView *footerView;                    //底部
 @property (nonatomic,strong) UIView *headerView;                    //头部
 @property (nonatomic,strong) UILabel *timeLabel;                    //时间

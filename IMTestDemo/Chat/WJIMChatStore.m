@@ -60,6 +60,49 @@
     //刷新头部
 }
 
+//复制文字
+- (void)copyOnMessageAtMenuIndexPath {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    if (self.menuIndexPath && self.menuIndexPath.row > 0) {
+        id<IMessageModel> model = [self.dataArray objectAtIndex:self.menuIndexPath.row];
+        pasteboard.string = model.text;
+    }
+    self.menuIndexPath = nil;
+}
+
+//删除消息
+- (void)deleteOnMessageAtMenuIndexPath {
+    if (self.menuIndexPath && self.menuIndexPath.row > 0) {
+        id<IMessageModel> model = [self.dataArray objectAtIndex:self.menuIndexPath.row];
+        NSMutableIndexSet *indexs = [NSMutableIndexSet indexSetWithIndex:self.menuIndexPath.row];
+        NSMutableArray *indexPaths = [NSMutableArray arrayWithObjects:self.menuIndexPath, nil];
+        
+        [self.conversation deleteMessageWithId:model.message.messageId error:nil];
+        [self.messsagesSource removeObject:model.message];
+        
+        if (self.menuIndexPath.row - 1 >= 0) {
+            id nextMessage = nil;
+            id prevMessage = [self.dataArray objectAtIndex:(self.menuIndexPath.row - 1)];
+            if (self.menuIndexPath.row + 1 < [self.dataArray count]) {
+                nextMessage = [self.dataArray objectAtIndex:(self.menuIndexPath.row + 1)];
+            }
+            if ((!nextMessage || [nextMessage isKindOfClass:[NSString class]]) && [prevMessage isKindOfClass:[NSString class]]) {
+                [indexs addIndex:self.menuIndexPath.row - 1];
+                [indexPaths addObject:[NSIndexPath indexPathForRow:(self.menuIndexPath.row - 1) inSection:0]];
+            }
+        }
+        [self.dataArray removeObjectsAtIndexes:indexs];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(IMChatStoreIsTableViewDeleteRowsAtIndexPaths:)]) {
+            [self.delegate IMChatStoreIsTableViewDeleteRowsAtIndexPaths:indexPaths];
+        }
+        if ([self.dataArray count] == 0) {
+            self.messageTimeIntervalTag = -1;
+        }
+    }
+    
+    self.menuIndexPath = nil;
+}
+
 #pragma mark - <WJIMMainManagerChatDelegate>
 
 /*!
