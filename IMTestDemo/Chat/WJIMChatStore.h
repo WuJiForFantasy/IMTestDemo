@@ -11,11 +11,16 @@
 
 @protocol WJIMChatStoreDelegate;
 
+/**
+ 聊天的数据处理
+ */
 @interface WJIMChatStore : NSObject
 
-@property (nonatomic) NSTimeInterval messageTimeIntervalTag; //时间间隔标记
-@property (nonatomic) BOOL isViewDidAppear;//是否在当前视图
-@property (nonatomic,strong) EMConversation *conversation; //会话
+@property (nonatomic) NSTimeInterval messageTimeIntervalTag;    //时间间隔标记
+@property (nonatomic) BOOL isViewDidAppear;                     //是否在当前视图
+@property (nonatomic) BOOL scrollToBottomWhenAppear;            //当前页面显示的时候是否滚动到最后一条
+@property (nonatomic) BOOL isPlayingAudio;                      //是否正在播放音频
+@property (nonatomic,strong) EMConversation *conversation;      //会话
 @property (strong, nonatomic) NSMutableArray *messsagesSource;  //数据<EMMessage>消息
 @property (strong, nonatomic) NSMutableArray *dataArray;        //tableView数据，用于UI显示
 @property (nonatomic, assign) id<WJIMChatStoreDelegate> delegate;
@@ -39,6 +44,13 @@
 - (EMChatType)_messageTypeFromConversationType;
 -(void)addMessageToDataSource:(EMMessage *)message
                      progress:(id)progress;
+
+#pragma mark - selected
+//发送消息已经读回执
+- (void)_sendHasReadResponseForMessages:(NSArray*)messages
+                                 isRead:(BOOL)isRead;
+//刷新单个cell
+- (void)_reloadTableViewDataWithMessage:(EMMessage *)message;
 @end
 
 @protocol WJIMChatStoreDelegate <NSObject>
