@@ -32,11 +32,11 @@
 //添加事件
 - (void)addEvent {
     
-//    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bubbleViewTapAction:)];
-//    [self.bodyBgView addGestureRecognizer:tapRecognizer];
-//    
-//    UITapGestureRecognizer *tapRecognizer2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarViewTapAction:)];
-//    [self.avatarView addGestureRecognizer:tapRecognizer2];
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bubbleViewTapAction:)];
+    [self.bodyBgView addGestureRecognizer:tapRecognizer];
+
+    UITapGestureRecognizer *tapRecognizer2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarViewTapAction:)];
+    [self.avatarView addGestureRecognizer:tapRecognizer2];
 }
 
 
@@ -153,10 +153,38 @@
 
 #pragma mark - 事件监听
 
+- (void)bubbleViewTapAction:(UITapGestureRecognizer *)sender {
+    
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        if (!_delegate) {
+            return;
+        }
+        if ([_delegate respondsToSelector:@selector(messageCellSelected:)]) {
+            [_delegate messageCellSelected:self.message];
+        }
+        
+        if ([_delegate respondsToSelector:@selector(messageCellSelected:cell:)]) {
+            [_delegate messageCellSelected:self.message cell:self];
+        }
+        
+    }
+}
+
+- (void)avatarViewTapAction:(UITapGestureRecognizer *)sender {
+    
+    if ([_delegate respondsToSelector:@selector(avatarViewSelcted:)]) {
+        [_delegate avatarViewSelcted:self.message];
+    }
+    
+}
+
 - (void)errorViewPressed {
     
-    NSLog(@"错误点击视图");
+    if ([_delegate respondsToSelector:@selector(errorViewSelcted:)]) {
+        [_delegate errorViewSelcted:self.message];
+    }
 }
+
 
 #pragma mark - others
 

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-IMTestDemo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06127142A39D89628A0DEA6D6EE55353</key>
+		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2593778AC58F022F9B4CEA49996C5CA3</key>
+		<key>08F08D82F39974A64513628AEA963F10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A0A06D87F697B61795E86D6E86E12B6</key>
+		<key>1A31F16FF7378560D021A701193DD765</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98BBB8F0AEE7F3E18776FBD7E20D9B62</key>
+		<key>6231A95DB81B3BE9FEC11049B6D1F791</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2838886FFD26CCC20F5421774525D79</key>
+		<key>9D2E0000F621A1C4969D8910B17778A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FEB2D61B59A434CE33747B99C38C8874</key>
+		<key>C995C8E63017C4D4E129FCA6F95DA20A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F21861A1737EEF0B51688A24E9A996CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

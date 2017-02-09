@@ -44,6 +44,8 @@
 		0D99F1CF1E4C190700C86D82 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D99F1C01E4C190700C86D82 /* libopencore-amrnb.a */; };
 		0D99F1D01E4C190700C86D82 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D99F1C41E4C190700C86D82 /* libopencore-amrwb.a */; };
 		0D99F1D31E4C19BE00C86D82 /* WJIMMessageReadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99F1D21E4C19BE00C86D82 /* WJIMMessageReadManager.m */; };
+		0D99F1D61E4C45C300C86D82 /* WJHuanXinChatMovieController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99F1D51E4C45C300C86D82 /* WJHuanXinChatMovieController.m */; };
+		0D99F1D91E4C46AD00C86D82 /* WJHuanXinChatPhotosBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99F1D81E4C46AD00C86D82 /* WJHuanXinChatPhotosBrowserController.m */; };
 		0DA9CB491E4AC1CA00CD8FD0 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9CB481E4AC1CA00CD8FD0 /* HexColors.m */; };
 		0DA9CB4E1E4AC5D400CD8FD0 /* WJIMChatBorderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9CB4D1E4AC5D400CD8FD0 /* WJIMChatBorderInfo.m */; };
 		0DA9CB511E4AC66F00CD8FD0 /* WJIMChatBorderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9CB501E4AC66F00CD8FD0 /* WJIMChatBorderManager.m */; };
@@ -174,6 +176,10 @@
 		0D99F1C41E4C190700C86D82 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
 		0D99F1D11E4C19BE00C86D82 /* WJIMMessageReadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMMessageReadManager.h; sourceTree = "<group>"; };
 		0D99F1D21E4C19BE00C86D82 /* WJIMMessageReadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMMessageReadManager.m; sourceTree = "<group>"; };
+		0D99F1D41E4C45C300C86D82 /* WJHuanXinChatMovieController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJHuanXinChatMovieController.h; sourceTree = "<group>"; };
+		0D99F1D51E4C45C300C86D82 /* WJHuanXinChatMovieController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJHuanXinChatMovieController.m; sourceTree = "<group>"; };
+		0D99F1D71E4C46AD00C86D82 /* WJHuanXinChatPhotosBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJHuanXinChatPhotosBrowserController.h; sourceTree = "<group>"; };
+		0D99F1D81E4C46AD00C86D82 /* WJHuanXinChatPhotosBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJHuanXinChatPhotosBrowserController.m; sourceTree = "<group>"; };
 		0DA9CB471E4AC1CA00CD8FD0 /* HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColors.h; sourceTree = "<group>"; };
 		0DA9CB481E4AC1CA00CD8FD0 /* HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColors.m; sourceTree = "<group>"; };
 		0DA9CB4C1E4AC5D400CD8FD0 /* WJIMChatBorderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatBorderInfo.h; sourceTree = "<group>"; };
@@ -507,6 +513,10 @@
 		0DA9CB4A1E4AC59600CD8FD0 /* ChatTool */ = {
 			isa = PBXGroup;
 			children = (
+				0D99F1D71E4C46AD00C86D82 /* WJHuanXinChatPhotosBrowserController.h */,
+				0D99F1D81E4C46AD00C86D82 /* WJHuanXinChatPhotosBrowserController.m */,
+				0D99F1D41E4C45C300C86D82 /* WJHuanXinChatMovieController.h */,
+				0D99F1D51E4C45C300C86D82 /* WJHuanXinChatMovieController.m */,
 				0DA9CB4B1E4AC59600CD8FD0 /* ChatBorder */,
 			);
 			path = ChatTool;
@@ -786,6 +796,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D99F1CB1E4C190700C86D82 /* EMCDDeviceManagerBase.m in Sources */,
+				0D99F1D91E4C46AD00C86D82 /* WJHuanXinChatPhotosBrowserController.m in Sources */,
 				0D99F1C61E4C190700C86D82 /* EMAudioRecorderUtil.m in Sources */,
 				0D3417841E48601F00CC7EA4 /* UIAlertController+Blocks.m in Sources */,
 				0DA9CB921E4B05AB00CD8FD0 /* WYArrowImageTool.m in Sources */,
@@ -814,6 +825,7 @@
 				0DA9CB8F1E4AFD5700CD8FD0 /* WJIMChatLocationMsgCell.m in Sources */,
 				0D3417871E4868D200CC7EA4 /* AppDelegate+WJIM.m in Sources */,
 				0D6CFAB71E20957100B3259A /* AppDelegate.m in Sources */,
+				0D99F1D61E4C45C300C86D82 /* WJHuanXinChatMovieController.m in Sources */,
 				0DECE31A1E49AE5B0078CB20 /* NSDate+Category.m in Sources */,
 				0DA9CB641E4AC95D00CD8FD0 /* MLEmojiLabel.m in Sources */,
 				0D99F19F1E4C0CE600C86D82 /* WJIMChatStore+Selected.m in Sources */,

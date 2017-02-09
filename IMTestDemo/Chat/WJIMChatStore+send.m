@@ -126,8 +126,8 @@
                 NSArray *formattedMessages = [self formatMessages:self.messsagesSource];
                 [self.dataArray removeAllObjects];
                 [self.dataArray addObjectsFromArray:formattedMessages];
-                if (self.delegate && [self.delegate respondsToSelector:@selector(IMChatStoreIsTableViewScrollToRowAtIndexPath:)]) {
-                    [self.delegate IMChatStoreIsTableViewScrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.dataArray count] - 1 inSection:0]];
+                if (self.delegate && [self.delegate respondsToSelector:@selector(IMChatStoreIsTableViewScrollToRowAtIndexPath:animated:)]) {
+                    [self.delegate IMChatStoreIsTableViewScrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.dataArray count] - 1 inSection:0]animated:NO];
                 }
                 return;
             }

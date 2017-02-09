@@ -55,11 +55,18 @@
 
 @protocol WJIMChatStoreDelegate <NSObject>
 
+@required
+
 //刷新一组cell
 - (void)IMChatStoreIsTableViewReloadRowsAtIndexPaths:(NSArray *)indexPaths;
 //刷新整个列表
 - (void)IMChatStoreIsTableViewReloadData;
 //刷新列表后滑动到最后位置
-- (void)IMChatStoreIsTableViewScrollToRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)IMChatStoreIsTableViewScrollToRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated;
+
+@optional
+
+//- (void)IMChatStoreIsMessageCellSelected:(id<IMessageModel>)model;
+//- (void)IMChatStoreIsTableViewSelectedImage
 
 @end

@@ -241,8 +241,8 @@
                     EMMessage *latest = [strongSelf.messsagesSource lastObject];
                     strongSelf.messageTimeIntervalTag = latest.timestamp;
                     
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(IMChatStoreIsTableViewScrollToRowAtIndexPath:)]) {
-                        [self.delegate IMChatStoreIsTableViewScrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.dataArray count] - scrollToIndex - 1 inSection:0]];
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(IMChatStoreIsTableViewScrollToRowAtIndexPath:animated:)]) {
+                        [self.delegate IMChatStoreIsTableViewScrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.dataArray count] - scrollToIndex - 1 inSection:0] animated:NO];
                     }
                 }
             });
@@ -328,8 +328,8 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.dataArray addObjectsFromArray:messages];
-            if (self.delegate && [self.delegate respondsToSelector:@selector(IMChatStoreIsTableViewScrollToRowAtIndexPath:)]) {
-                [self.delegate IMChatStoreIsTableViewScrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[weakSelf.dataArray count] - 1 inSection:0]];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(IMChatStoreIsTableViewScrollToRowAtIndexPath:animated:)]) {
+                [self.delegate IMChatStoreIsTableViewScrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[weakSelf.dataArray count] - 1 inSection:0] animated:YES];
             }
         });
     });

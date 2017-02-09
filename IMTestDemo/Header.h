@@ -15,6 +15,7 @@
 #import "NSDate+Category.h"
 #import "HexColors.h"
 #import "YYWebImage.h"
+#import "MJRefresh.h"
 #import "WJIMMessageReadManager.h"
 
 #endif /* Header_h */
