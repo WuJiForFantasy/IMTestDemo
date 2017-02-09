@@ -13,6 +13,8 @@
  */
 @interface WJIMChatStore (send)
 
+//重新发送消息
+- (void)resendMessage:(EMMessage *)message;
 //发送文本消息
 - (void)sendTextMessage:(NSString *)text;
 //发送地理位置

@@ -14,7 +14,7 @@
 /**聊天cell的基类
  1.注意调用添加消息后把cellHeight赋值
  2.注意高度调用 [WJIMChatBaseCell cellHeight]
- 3.more~~~
+ 3.集合了群聊，单聊，聊天室的布局～～～～～
  */
 
 static CGFloat cellHeight = 0;//计算cell的高度，静态变量

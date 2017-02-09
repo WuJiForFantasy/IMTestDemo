@@ -8,6 +8,12 @@
 
 #import "WJIMChatBaseCell.h"
 
+@interface WJIMChatBaseCell ()
+
+@property (nonatomic) EMChatType chatType; //聊天类型，群聊，单聊，聊天室
+
+@end
+
 @implementation WJIMChatBaseCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -280,6 +286,11 @@
         _activity.hidden = YES;
     }
     return _activity;
+}
+
+- (EMChatType)chatType {
+    
+    return self.message.message.chatType;
 }
 
 @end

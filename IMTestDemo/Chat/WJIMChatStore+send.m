@@ -102,6 +102,25 @@
     }];
 }
 
+//重新发送消息
+- (void)resendMessage:(EMMessage *)message {
+    
+    __weak typeof(self) weakself = self;
+    [[[EMClient sharedClient] chatManager] resendMessage:message progress:nil completion:^(EMMessage *message, EMError *error) {
+        if (!error) {
+            [weakself _refreshAfterSentMessage:message];
+        }
+        else {
+            if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(IMChatStoreIsTableViewReloadData)]) {
+                [weakself.delegate IMChatStoreIsTableViewReloadData];
+            }
+//            [weakself.tableView reloadData];
+        }
+    }];
+    
+//    [self.tableView reloadData];
+}
+
 //刷新列表之后发送消息
 - (void)_refreshAfterSentMessage:(EMMessage*)aMessage {
     

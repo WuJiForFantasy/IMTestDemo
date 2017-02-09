@@ -110,7 +110,7 @@
             break;
         case EMMessageBodyTypeLocation:
         {
-//            [self _locationMessageCellSelected:model];
+            [self _locationMessageCellSelected:model];
         }
             break;
         case EMMessageBodyTypeVoice:
@@ -126,9 +126,7 @@
             break;
         case EMMessageBodyTypeFile:
         {
-            //            _scrollToBottomWhenAppear = NO;
-//            [self showHint:@"Custom implementation!"];
-//            NSLog(@"文件来咯");
+            NSLog(@"点击文件");
         }
             break;
         default:
@@ -139,11 +137,13 @@
 /** 头像点击 */
 - (void)avatarViewSelcted:(id<IMessageModel>)model {
     NSLog(@"点击头像");
+    
 }
 
 /** 错误点击 */
 - (void)errorViewSelcted:(id<IMessageModel>)model {
-    NSLog(@"点击错误");
+    
+    [self.store resendMessage:model.message];
 }
 
 #pragma mark - 生命周期
@@ -205,7 +205,7 @@
 
 - (void)sendText {
     
-    [self.store sendTextMessage:@"哇哈哈"];
+    [self.store sendTextMessage:@"哇哈哈，这是测试文本n"];
     
 }
 
