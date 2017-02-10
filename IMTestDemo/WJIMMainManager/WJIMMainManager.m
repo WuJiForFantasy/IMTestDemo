@@ -184,10 +184,9 @@ static WJIMMainManager *manager = nil;
 //    }
 }
 
-
-
 //收到cmd消息
 - (void)cmdMessagesDidReceive:(NSArray *)aCmdMessages {
+    
     NSLog(@"收到cmd消息");
     if (self.delegate && [self.delegate respondsToSelector:@selector(cmdMessagesDidReceive:)]) {
         [self.delegate cmdMessagesDidReceive:aCmdMessages];
@@ -196,6 +195,7 @@ static WJIMMainManager *manager = nil;
 
 //收到已读回执
 - (void)messagesDidRead:(NSArray *)aMessages {
+    
     NSLog(@"收到消息已读回执");
     if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidRead:)]) {
         [self.delegate messagesDidRead:aMessages];
@@ -204,6 +204,7 @@ static WJIMMainManager *manager = nil;
 
 //收到消息送达回执
 - (void)messagesDidDeliver:(NSArray *)aMessages {
+    
     NSLog(@"收到消息送达回执");
     if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidDeliver:)]) {
         [self.delegate messagesDidDeliver:aMessages];
@@ -213,6 +214,7 @@ static WJIMMainManager *manager = nil;
 //消息状态发生变化
 - (void)messageStatusDidChange:(EMMessage *)aMessage
                          error:(EMError *)aError {
+    
     NSLog(@"消息状态发生变化");
     if (self.delegate && [self.delegate respondsToSelector:@selector(messageStatusDidChange:error:)]) {
         [self.delegate messageStatusDidChange:aMessage error:aError];
@@ -222,6 +224,7 @@ static WJIMMainManager *manager = nil;
 //消息附件状态发生改变
 - (void)messageAttachmentStatusDidChange:(EMMessage *)aMessage
                                    error:(EMError *)aError {
+    
     NSLog(@"消息附件发生变化");
     if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidReceive:)]) {
         [self.delegate messageAttachmentStatusDidChange:aMessage error:aError];
@@ -233,53 +236,78 @@ static WJIMMainManager *manager = nil;
 - (void)groupInvitationDidReceive:(NSString *)aGroupId
                           inviter:(NSString *)aInviter
                           message:(NSString *)aMessage {
-    
+   
+    //使用推送逻辑将会话列表群通知添加 “接受到入群的回调”
+    NSLog(@"接受到入群的回调");
+    [self showWithString:@"接受到入群的回调"];
 }
+
 
 - (void)groupInvitationDidAccept:(EMGroup *)aGroup
                          invitee:(NSString *)aInvitee {
     
+    //使用推送逻辑将会话列表群通知添加 “别人同意你的邀请”
+    NSLog(@"别人同意你的邀请");
+    [self showWithString:@"别人同意你的邀请"];
 }
 
+//别人拒绝你的邀请
 - (void)groupInvitationDidDecline:(EMGroup *)aGroup
                           invitee:(NSString *)aInvitee
                            reason:(NSString *)aReason {
     
+    //使用推送逻辑将会话列表群通知添加 “别人拒绝你的邀请”
+    NSLog(@"别人拒绝你的邀请");
+    [self showWithString:@"别人拒绝你的邀请"];
 }
 
-- (void)didJoinGroup:(EMGroup *)aGroup
-             inviter:(NSString *)aInviter
-             message:(NSString *)aMessage {
-    
-}
+//- (void)didJoinGroup:(EMGroup *)aGroup
+//             inviter:(NSString *)aInviter
+//             message:(NSString *)aMessage {
+//    
+//}
 
 //离开群组回调
 - (void)didLeaveGroup:(EMGroup *)aGroup
                reason:(EMGroupLeaveReason)aReason {
-
-}
-
-//群组的群主收到用户的入群申请，群的类型是EMGroupStylePublicJoinNeedApproval
-- (void)joinGroupRequestDidReceive:(EMGroup *)aGroup
-                              user:(NSString *)aUsername
-                            reason:(NSString *)aReason {
-
-}
-
-//群主同意用户A的入群申请后，用户A会接收到该回调，群的类型是EMGroupStylePublicJoinNeedApproval
-- (void)joinGroupRequestDidDecline:(NSString *)aGroupId
-                            reason:(NSString *)aReason {
     
+    //使用推送逻辑将会话列表群通知添加 “你离开了群”
+    NSLog(@"你已经离开群");
+    [self showWithString:@"你已经离开群"];
 }
 
-//群主拒绝用户A的入群申请后，用户A会接收到该回调，群的类型是EMGroupStylePublicJoinNeedApproval
-- (void)joinGroupRequestDidApprove:(EMGroup *)aGroup {
+////群组的群主收到用户的入群申请，群的类型是EMGroupStylePublicJoinNeedApproval
+//- (void)joinGroupRequestDidReceive:(EMGroup *)aGroup
+//                              user:(NSString *)aUsername
+//                            reason:(NSString *)aReason {
+//    //joinGroupRequestDidReceive
+//    NSLog(@"群主收到用户的入群申请");
+//    
+//    //使用推送逻辑将会话列表群通知添加 “入群申请”
+//     [self showWithString:@"群主收到用户的入群申请"];
+//}
 
-}
+////群主同意用户A的入群申请后，用户A会接收到该回调，群的类型是EMGroupStylePublicJoinNeedApproval
+//- (void)joinGroupRequestDidDecline:(NSString *)aGroupId
+//                            reason:(NSString *)aReason {
+//    
+//    NSLog(@"群主同意你的入群申请");
+//    //使用推送逻辑将会话列表群通知添加 “群主同意你入群”
+//    [self showWithString:@"群主同意你的入群申请"];
+//}
+//
+////群主拒绝用户A的入群申请后，用户A会接收到该回调，群的类型是EMGroupStylePublicJoinNeedApproval
+//- (void)joinGroupRequestDidApprove:(EMGroup *)aGroup {
+//
+//    NSLog(@"群主拒绝你的入群申请");
+//    //使用推送逻辑将会话列表群通知添加 “群主拒接你入群”
+//    [self showWithString:@"群主拒绝你的入群申请"];
+//}
 
 //群组列表发生变化
 - (void)groupListDidUpdate:(NSArray *)aGroupList {
     
+    NSLog(@"群组列表发生变化");
 }
 
 #pragma mark - others
@@ -311,6 +339,10 @@ static WJIMMainManager *manager = nil;
     
     [[EMClient sharedClient] logout:NO];
 
+}
+
+- (void)showWithString:(NSString *)string {
+    [SVProgressHUD showWithStatus:string];
 }
 
 @end

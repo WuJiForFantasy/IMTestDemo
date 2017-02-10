@@ -27,6 +27,10 @@
     UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:friendList];
     
     self.viewControllers = @[nav1,nav2];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

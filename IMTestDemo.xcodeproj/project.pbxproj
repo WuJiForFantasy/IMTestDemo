@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2D53F31E4D581B00FA34E4 /* WJIMMainManager+Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D53F21E4D581B00FA34E4 /* WJIMMainManager+Group.m */; };
+		0D2D53F61E4DB5C800FA34E4 /* WJIMConversationStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D53F51E4DB5C800FA34E4 /* WJIMConversationStore.m */; };
+		0D2D53F91E4DBAB500FA34E4 /* WJIMNotifyCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D53F81E4DBAB500FA34E4 /* WJIMNotifyCache.m */; };
 		0D3417701E4858DD00CC7EA4 /* WJIMMainManager+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3417691E4858DD00CC7EA4 /* WJIMMainManager+Login.m */; };
 		0D3417711E4858DD00CC7EA4 /* WJIMMainManager+Send.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D34176B1E4858DD00CC7EA4 /* WJIMMainManager+Send.m */; };
 		0D3417731E4858DD00CC7EA4 /* WJIMMainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D34176F1E4858DD00CC7EA4 /* WJIMMainManager.m */; };
@@ -96,6 +99,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D2D53F11E4D581B00FA34E4 /* WJIMMainManager+Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WJIMMainManager+Group.h"; sourceTree = "<group>"; };
+		0D2D53F21E4D581B00FA34E4 /* WJIMMainManager+Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WJIMMainManager+Group.m"; sourceTree = "<group>"; };
+		0D2D53F41E4DB5C800FA34E4 /* WJIMConversationStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMConversationStore.h; sourceTree = "<group>"; };
+		0D2D53F51E4DB5C800FA34E4 /* WJIMConversationStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMConversationStore.m; sourceTree = "<group>"; };
+		0D2D53F71E4DBAB500FA34E4 /* WJIMNotifyCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMNotifyCache.h; sourceTree = "<group>"; };
+		0D2D53F81E4DBAB500FA34E4 /* WJIMNotifyCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMNotifyCache.m; sourceTree = "<group>"; };
 		0D3417681E4858DD00CC7EA4 /* WJIMMainManager+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WJIMMainManager+Login.h"; sourceTree = "<group>"; };
 		0D3417691E4858DD00CC7EA4 /* WJIMMainManager+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WJIMMainManager+Login.m"; sourceTree = "<group>"; };
 		0D34176A1E4858DD00CC7EA4 /* WJIMMainManager+Send.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WJIMMainManager+Send.h"; sourceTree = "<group>"; };
@@ -271,10 +280,14 @@
 				0D3417691E4858DD00CC7EA4 /* WJIMMainManager+Login.m */,
 				0D34176A1E4858DD00CC7EA4 /* WJIMMainManager+Send.h */,
 				0D34176B1E4858DD00CC7EA4 /* WJIMMainManager+Send.m */,
+				0D2D53F11E4D581B00FA34E4 /* WJIMMainManager+Group.h */,
+				0D2D53F21E4D581B00FA34E4 /* WJIMMainManager+Group.m */,
 				0D3417851E4868D200CC7EA4 /* AppDelegate+WJIM.h */,
 				0D3417861E4868D200CC7EA4 /* AppDelegate+WJIM.m */,
 				0D34176E1E4858DD00CC7EA4 /* WJIMMainManager.h */,
 				0D34176F1E4858DD00CC7EA4 /* WJIMMainManager.m */,
+				0D2D53F71E4DBAB500FA34E4 /* WJIMNotifyCache.h */,
+				0D2D53F81E4DBAB500FA34E4 /* WJIMNotifyCache.m */,
 			);
 			path = WJIMMainManager;
 			sourceTree = "<group>";
@@ -286,6 +299,8 @@
 				0D3417761E48593100CC7EA4 /* MainController.m */,
 				0D3417781E48597C00CC7EA4 /* ConversationController.h */,
 				0D3417791E48597C00CC7EA4 /* ConversationController.m */,
+				0D2D53F41E4DB5C800FA34E4 /* WJIMConversationStore.h */,
+				0D2D53F51E4DB5C800FA34E4 /* WJIMConversationStore.m */,
 				0D34177B1E4859A000CC7EA4 /* FriendListController.h */,
 				0D34177C1E4859A000CC7EA4 /* FriendListController.m */,
 			);
@@ -824,6 +839,7 @@
 				0DA9CB6D1E4AF45C00CD8FD0 /* WJIMChatTimeCell.m in Sources */,
 				0DA9CB8F1E4AFD5700CD8FD0 /* WJIMChatLocationMsgCell.m in Sources */,
 				0D3417871E4868D200CC7EA4 /* AppDelegate+WJIM.m in Sources */,
+				0D2D53F61E4DB5C800FA34E4 /* WJIMConversationStore.m in Sources */,
 				0D6CFAB71E20957100B3259A /* AppDelegate.m in Sources */,
 				0D99F1D61E4C45C300C86D82 /* WJHuanXinChatMovieController.m in Sources */,
 				0DECE31A1E49AE5B0078CB20 /* NSDate+Category.m in Sources */,
@@ -836,10 +852,12 @@
 				0DA9CB8C1E4AFD3000CD8FD0 /* WJIMChatAudioMsgCell.m in Sources */,
 				0D6CFAEB1E20CA6F00B3259A /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				0DA9CB6A1E4ACBF700CD8FD0 /* WJIMChatTextMsgCell.m in Sources */,
+				0D2D53F91E4DBAB500FA34E4 /* WJIMNotifyCache.m in Sources */,
 				0D6CFAF81E20CA7C00B3259A /* EaseEmotionManager.m in Sources */,
 				0D99F1CC1E4C190700C86D82 /* amrFileCodec.mm in Sources */,
 				0DA9CB651E4AC95D00CD8FD0 /* TTTAttributedLabel.m in Sources */,
 				0DECE3221E49CB5E0078CB20 /* UIView+IM.m in Sources */,
+				0D2D53F31E4D581B00FA34E4 /* WJIMMainManager+Group.m in Sources */,
 				0D99F1D31E4C19BE00C86D82 /* WJIMMessageReadManager.m in Sources */,
 				0D99F1CE1E4C190700C86D82 /* EMVoiceConverter.mm in Sources */,
 				0D6CFAB41E20957100B3259A /* main.m in Sources */,

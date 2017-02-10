@@ -22,7 +22,7 @@
         
         [self defaultCommon];
         [self.contentView addSubview:self.avatarView];
-        [self.contentView addSubview:self.nickNameLabel];
+        [self.headerView addSubview:self.nickNameLabel];
         [self.contentView addSubview:self.bodyBgView];
         [self.contentView addSubview:self.footerView];
         [self.contentView addSubview:self.headerView];
@@ -147,7 +147,7 @@
     if (!self.message.isSender) {
         self.avatarView.frame = CGRectMake(15, minY, WJCHAT_CELL_AVATARWIDTH, WJCHAT_CELL_AVATARWIDTH);
         if (self.chatType != EMChatTypeChat) {
-            self.nickNameLabel.frame = CGRectMake(self.avatarView.right + 10, minY, 100, 20);
+            self.nickNameLabel.frame = CGRectMake(self.avatarView.right + 20, 0, 100, 20);
         }else {
             self.nickNameLabel.frame = CGRectZero;
             self.avatarView.frame = CGRectZero;
