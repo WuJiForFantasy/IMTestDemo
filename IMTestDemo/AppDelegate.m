@@ -32,18 +32,18 @@
     [self.window makeKeyAndVisible];
     
     [self imManagerApplication:application didFinishLaunchingWithOptions:launchOptions];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        WJIMMainManagerLoginModel *model = [[WJIMMainManagerLoginModel alloc]init];
-        model.userName = @"123";
-        model.password = @"123";
-        [WJIMMainManager loginWithLoginModel:model finish:^(BOOL sucess, EMError *error, WJIMMainManagerLoginModel *model) {
-            
-            NSLog(@"%@登录%@",model.userName,sucess ? @"成功" : @"失败");
-            [[NSUserDefaults standardUserDefaults] setObject:model.userName forKey:@"user"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }];
-    });
+    WJIMMainManagerLoginModel *model = [[WJIMMainManagerLoginModel alloc]init];
+    model.userName = @"123";
+    model.password = @"123";
+    [WJIMMainManager loginWithLoginModel:model finish:^(BOOL sucess, EMError *error, WJIMMainManagerLoginModel *model) {
+        
+        NSLog(@"%@登录%@",model.userName,sucess ? @"成功" : @"失败");
+        [[NSUserDefaults standardUserDefaults] setObject:model.userName forKey:@"user"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    
+//    });
     return YES;
 }
 

@@ -19,5 +19,7 @@
 #import "MJRefresh.h"
 #import "WJIMMessageReadManager.h"
 #import "SVProgressHUD.h"
+#import "MJExtension.h"
+#import "WJIMNotifyCache.h"
 
 #endif /* Header_h */

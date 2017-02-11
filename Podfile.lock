@@ -1,5 +1,6 @@
 PODS:
   - HyphenateLite_CN (3.2.0)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - SVProgressHUD (2.1.2)
   - YYCache (1.0.4)
@@ -13,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - HyphenateLite_CN
+  - MJExtension
   - MJRefresh
   - SVProgressHUD
   - YYText
@@ -20,6 +22,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   HyphenateLite_CN: b1b023ca05b254f495924711158b3112abf37c04
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -27,6 +30,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 195a6eb9403ed2dfdd2c9c8671ff0f5f71746ede
+PODFILE CHECKSUM: 2f9ea7151d152c6377ca8fccd737d785970b41a0
 
 COCOAPODS: 1.1.1

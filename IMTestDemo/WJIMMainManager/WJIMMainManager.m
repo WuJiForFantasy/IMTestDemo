@@ -240,6 +240,7 @@ static WJIMMainManager *manager = nil;
     //使用推送逻辑将会话列表群通知添加 “接受到入群的回调”
     NSLog(@"接受到入群的回调");
     [self showWithString:@"接受到入群的回调"];
+    [[WJIMNotifyCache shareManager] saveWithType:WJIMNotifyChatGroupType_ReceiveJoin groupId:aGroupId inviteId:aInviter message:aMessage];
 }
 
 
@@ -247,8 +248,9 @@ static WJIMMainManager *manager = nil;
                          invitee:(NSString *)aInvitee {
     
     //使用推送逻辑将会话列表群通知添加 “别人同意你的邀请”
-    NSLog(@"别人同意你的邀请");
-    [self showWithString:@"别人同意你的邀请"];
+    NSLog(@"接受到入群的回调");
+    [self showWithString:@"接受到入群的回调"];
+    [[WJIMNotifyCache shareManager] saveWithType:WJIMNotifyChatGroupType_AcceptJoin groupId:aGroup.groupId inviteId:aInvitee message:@""];
 }
 
 //别人拒绝你的邀请
@@ -256,9 +258,11 @@ static WJIMMainManager *manager = nil;
                           invitee:(NSString *)aInvitee
                            reason:(NSString *)aReason {
     
+
     //使用推送逻辑将会话列表群通知添加 “别人拒绝你的邀请”
     NSLog(@"别人拒绝你的邀请");
     [self showWithString:@"别人拒绝你的邀请"];
+    [[WJIMNotifyCache shareManager] saveWithType:WJIMNotifyChatGroupType_AcceptJoin groupId:aGroup.groupId inviteId:aInvitee message:aReason];
 }
 
 //- (void)didJoinGroup:(EMGroup *)aGroup
@@ -274,6 +278,20 @@ static WJIMMainManager *manager = nil;
     //使用推送逻辑将会话列表群通知添加 “你离开了群”
     NSLog(@"你已经离开群");
     [self showWithString:@"你已经离开群"];
+    switch (aReason) {
+        case EMGroupLeaveReasonBeRemoved:
+            [[WJIMNotifyCache shareManager] saveWithType:WJIMNotifyChatGroupType_LeaveReasonBeRemoved groupId:aGroup.groupId inviteId:@"" message:@""];
+            break;
+        case EMGroupLeaveReasonUserLeave:
+            [[WJIMNotifyCache shareManager] saveWithType:WJIMNotifyChatGroupType_LeaveReasonUserLeave groupId:aGroup.groupId inviteId:@"" message:@""];
+            break;
+        case EMGroupLeaveReasonDestroyed:
+            [[WJIMNotifyCache shareManager] saveWithType:WJIMNotifyChatGroupType_LeaveReasonDestroyed groupId:aGroup.groupId inviteId:@"" message:@""];
+            break;
+        default:
+            break;
+    }
+    
 }
 
 ////群组的群主收到用户的入群申请，群的类型是EMGroupStylePublicJoinNeedApproval
