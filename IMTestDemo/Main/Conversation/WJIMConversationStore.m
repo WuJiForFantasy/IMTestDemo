@@ -13,15 +13,23 @@
 
 - (void)loadDataFromDB {
 //    YYCache *cache = [[YYCache alloc]initWithName:@""];
-    WJIMNotifyChatGroupModel *cache = [[WJIMNotifyCache shareManager] getChatGroupModelFromCache];
-    EMConversation *con = [[EMClient sharedClient].chatManager getAllConversations];
     
-    for (int i = 0; i < 10; i++) {
-        WJIMConversationModel *model = [[WJIMConversationModel alloc]init];
-        model.title = @"asdsa";
-        model.content = @"这是内容xxx";
-        [self.dataArray addObject:model];
-    }
+//    WJIMNotifyChatGroupModel *cache = [[WJIMNotifyCache shareManager] getChatGroupModelFromCache];
+//    EMConversation *con = [[EMClient sharedClient].chatManager getAllConversations];
+//    
+//    for (int i = 0; i < 10; i++) {
+//        WJIMConversationModel *model = [[WJIMConversationModel alloc]init];
+//        model.title = @"asdsa";
+//        model.content = @"这是内容xxx";
+//        [self.dataArray addObject:model];
+//    }
+    
+    [self tableViewDidTriggerHeaderRefresh];
+}
+
+- (void)refreshData {
+    
+    [self refreshAndSortView];
 }
 
 #pragma mark - 懒加载
@@ -54,8 +62,8 @@
         }
     }
 
-    if (self.delegate && [self.delegate respondsToSelector:@selector(WJIMConversationStoreIsTableViewReloadData)]) {
-        [self.delegate WJIMConversationStoreIsTableViewReloadData];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(WJIMConversationStoreIsTableViewRefreshData)]) {
+        [self.delegate WJIMConversationStoreIsTableViewRefreshData];
     }
 }
 

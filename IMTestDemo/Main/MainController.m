@@ -10,7 +10,9 @@
 #import "ConversationController.h"
 #import "FriendListController.h"
 
-@interface MainController ()
+@interface MainController ()<WJIMMainManagerChatDelegate>
+
+@property (nonatomic,strong) ConversationController *convsersation;
 
 @end
 
@@ -20,23 +22,32 @@
     [super viewDidLoad];
     FriendListController *friendList = [FriendListController new];
     friendList.title = @"好友列表";
-    ConversationController *convsersation = [ConversationController new];
-    convsersation.title = @"会话";
     
-    UINavigationController *nav1 = [[UINavigationController alloc]initWithRootViewController:convsersation];
+    self.convsersation = [ConversationController new];
+    self.convsersation.title = @"会话";
+    
+    UINavigationController *nav1 = [[UINavigationController alloc]initWithRootViewController:self.convsersation];
     UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:friendList];
     
     self.viewControllers = @[nav1,nav2];
     
-    
-    
-    
+    [[WJIMMainManager shareManager].delegates addDelegate:self delegateQueue:dispatch_get_main_queue()];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - <WJIMMainManagerChatDelegate>
+
+/**会话列表改变*/
+- (void)conversationListDidUpdate:(NSArray *)aConversationList {
+    
+    NSLog(@"会话列表改变");
+    [self.convsersation loadDataFromDB];
 }
 
+/**收到消息*/
+- (void)messagesDidReceive:(NSArray *)aMessages {
+    
+    NSLog(@"在外面收到了消息");
+    [self.convsersation refreshData];
+}
 
 @end

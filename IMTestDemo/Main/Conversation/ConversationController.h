@@ -13,4 +13,7 @@
  */
 @interface ConversationController : UIViewController
 
+- (void)refreshData;
+- (void)loadDataFromDB;
+
 @end

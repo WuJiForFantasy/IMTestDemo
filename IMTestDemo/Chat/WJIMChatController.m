@@ -267,9 +267,12 @@
 }
 
 - (void)sendPic {
+ 
     
+//    NSData *data = [YYImage imageNamed:@"=====png-02240"].animatedImageData;
     
-    [self.store sendImageMessageWithData:UIImagePNGRepresentation([UIImage imageNamed:@"avatar"])];
+    [self.store sendImageMessageWithData:UIImageJPEGRepresentation([UIImage imageNamed:@"avatar"], 0.5)];
+    
 }
 
 - (void)sendVideo {
@@ -422,7 +425,7 @@
         _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.backgroundColor = [UIColor grayColor];
+        _tableView.backgroundColor = [UIColor lightGrayColor];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;

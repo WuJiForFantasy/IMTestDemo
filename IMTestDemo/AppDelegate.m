@@ -18,22 +18,24 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic,strong) MainController *mainController;
+
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    MainController *main = [[MainController alloc]init];
+    self.mainController = [[MainController alloc]init];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = main;
+    self.window.rootViewController = self.mainController;
     [self.window makeKeyAndVisible];
     
     [self imManagerApplication:application didFinishLaunchingWithOptions:launchOptions];
     WJIMMainManagerLoginModel *model = [[WJIMMainManagerLoginModel alloc]init];
-    model.userName = @"123";
+    model.userName = @"123456";
     model.password = @"123";
     [WJIMMainManager loginWithLoginModel:model finish:^(BOOL sucess, EMError *error, WJIMMainManagerLoginModel *model) {
         

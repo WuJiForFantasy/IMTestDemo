@@ -139,6 +139,10 @@
         self.width = 120;
         self.height = 150;
     }
+    
+//    self.width = 120;
+//    self.height = 120;
+    
 }
 
 - (void)messageVideo {

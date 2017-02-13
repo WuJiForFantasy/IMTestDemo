@@ -15,7 +15,7 @@
 /** @brief 注册SDK时，是否允许控制台输出log */
 #define kSDKConfigEnableConsoleLogger @"SDKConfigEnableConsoleLogger"
 #import "WJIMMessageModel.h"
-
+#import "GCDMulticastDelegate.h"        //xmpp多播
 @protocol WJIMMainManagerChatDelegate;
 
 
@@ -25,8 +25,8 @@
 
 + (instancetype)shareManager;
 
-@property (nonatomic,weak) id<WJIMMainManagerChatDelegate> delegate;
-
+//@property (nonatomic,weak) id<WJIMMainManagerChatDelegate> delegate;
+@property (nonatomic, readonly, strong) GCDMulticastDelegate <WJIMMainManagerChatDelegate> *delegates;  
 //从服务器获取推送属性
 - (void)asyncPushOptions;
 

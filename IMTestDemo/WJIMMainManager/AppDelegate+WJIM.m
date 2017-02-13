@@ -112,6 +112,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
             NSLog(@"%@",error);
         }
     }
+
+
 }
 
 - (void)imManagerApplication:(UIApplication *)application
@@ -141,6 +143,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [[EMClient sharedClient] application:application didReceiveRemoteNotification:userInfo];
 }
+
 
 
 @end

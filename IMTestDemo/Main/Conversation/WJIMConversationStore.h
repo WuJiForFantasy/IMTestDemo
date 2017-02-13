@@ -15,13 +15,19 @@
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @property (nonatomic,assign) id<WJIMConversationStoreDelegate>delegate;
 
-//- (void)loadDataFromDB;
-- (void)tableViewDidTriggerHeaderRefresh;
+- (void)refreshData;
+
+- (void)loadDataFromDB;
+
 @end
 
 
 @protocol WJIMConversationStoreDelegate <NSObject>
 
+//加载数据
 - (void)WJIMConversationStoreIsTableViewReloadData;
+
+//刷新数据
+- (void)WJIMConversationStoreIsTableViewRefreshData;
 
 @end

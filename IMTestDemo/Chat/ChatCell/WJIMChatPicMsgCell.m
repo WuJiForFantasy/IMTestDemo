@@ -11,7 +11,7 @@
 
 @interface WJIMChatPicMsgCell ()
 
-@property (nonatomic,strong)UIImageView *picImage; //图片
+@property (nonatomic,strong)YYAnimatedImageView *picImage; //图片
 
 @end
 
@@ -48,13 +48,19 @@
     } else {
         self.picImage.image = image;
     }
-    self.picImage.frame = self.bodyBgView.bounds;
     
-    if (!message.isSender) {
-        self.picImage.image = [WYArrowImageTool arrowLeftImage:image size:self.bodyBgView.bounds.size];
-    }else {
-        self.picImage.image = [WYArrowImageTool arrowRightImage:image size:self.bodyBgView.bounds.size];
-    }
+//    self.picImage.image = [YYImage imageNamed:@"=====png-02240"];
+    self.picImage.frame = self.bodyBgView.bounds;
+//    NSLog(@"%@",message.fileURLPath);
+//    NSLog(@"%@",message.thumbnailFileURLPath);
+//    NSLog(@"%@",message.fileLocalPath);
+//    NSLog(@"%@",message.thumbnailFileLocalPath);
+    
+//    if (!message.isSender) {
+//        self.picImage.image = [WYArrowImageTool arrowLeftImage:image size:self.bodyBgView.bounds.size];
+//    }else {
+//        self.picImage.image = [WYArrowImageTool arrowRightImage:image size:self.bodyBgView.bounds.size];
+//    }
     
     cellHeight =  self.bodyBgView.bottom+WJCHAT_CELL_TIMELABELHEIGHT;
     self.cellHeight = cellHeight;
@@ -64,10 +70,11 @@
 
 #pragma mark - 懒加载
 
-- (UIImageView *)picImage {
+- (YYAnimatedImageView *)picImage {
     if (!_picImage) {
-        _picImage = [UIImageView new];
-
+        _picImage = [YYAnimatedImageView new];
+//        _picImage.autoPlayAnimatedImage = YES;
+//        _picImage.image = [UIImage imageNamed:@"=====png-02300.gif"];
     }
     return _picImage;
 }

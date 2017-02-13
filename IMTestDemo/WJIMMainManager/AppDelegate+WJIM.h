@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate (WJIM)
+@interface AppDelegate (WJIM) 
 
 //集成环信SDK的方法
 

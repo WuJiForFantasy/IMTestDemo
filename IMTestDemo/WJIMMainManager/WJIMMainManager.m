@@ -46,6 +46,9 @@ static WJIMMainManager *manager = nil;
 - (void)initHelper
 {
     
+    //初始化多播
+    _delegates = (GCDMulticastDelegate<WJIMMainManagerChatDelegate> *)[[GCDMulticastDelegate alloc]init];
+    //初始化环信
     [[EMClient sharedClient] addDelegate:self delegateQueue:nil];
     [[EMClient sharedClient].groupManager addDelegate:self delegateQueue:nil];
     [[EMClient sharedClient].roomManager addDelegate:self delegateQueue:nil];
@@ -137,17 +140,18 @@ static WJIMMainManager *manager = nil;
 //会话列表发生改变
 - (void)conversationListDidUpdate:(NSArray *)aConversationList {
     NSLog(@"会话列表发生改变");
-    if (self.delegate && [self.delegate respondsToSelector:@selector(conversationListDidUpdate:)]) {
-        [self.delegate conversationListDidUpdate:aConversationList];
-    }
+    [self.delegates conversationListDidUpdate:aConversationList];
+//    if (self.delegates && [self.delegates respondsToSelector:@selector(conversationListDidUpdate:)]) {
+//        [self.delegates conversationListDidUpdate:aConversationList];
+//    }
 }
 
 //收到消息
 - (void)messagesDidReceive:(NSArray *)aMessages {
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidReceive:)]) {
-        [self.delegate messagesDidReceive:aMessages];
-    }
+    [self.delegates messagesDidReceive:aMessages];
+//    if (self.delegates && [self.delegates respondsToSelector:@selector(messagesDidReceive:)]) {
+//        [self.delegates messagesDidReceive:aMessages];
+//    }
     
     NSLog(@"收到消息%@",aMessages);
     
@@ -186,49 +190,49 @@ static WJIMMainManager *manager = nil;
 
 //收到cmd消息
 - (void)cmdMessagesDidReceive:(NSArray *)aCmdMessages {
-    
+    [self.delegates cmdMessagesDidReceive:aCmdMessages];
     NSLog(@"收到cmd消息");
-    if (self.delegate && [self.delegate respondsToSelector:@selector(cmdMessagesDidReceive:)]) {
-        [self.delegate cmdMessagesDidReceive:aCmdMessages];
-    }
+//    if (self.delegates && [self.delegates respondsToSelector:@selector(cmdMessagesDidReceive:)]) {
+//        [self.delegates cmdMessagesDidReceive:aCmdMessages];
+//    }
 }
 
 //收到已读回执
 - (void)messagesDidRead:(NSArray *)aMessages {
-    
+    [self.delegates messagesDidRead:aMessages];
     NSLog(@"收到消息已读回执");
-    if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidRead:)]) {
-        [self.delegate messagesDidRead:aMessages];
-    }
+//    if (self.delegates && [self.delegates respondsToSelector:@selector(messagesDidRead:)]) {
+//        [self.delegates messagesDidRead:aMessages];
+//    }
 }
 
 //收到消息送达回执
 - (void)messagesDidDeliver:(NSArray *)aMessages {
-    
+    [self.delegates messagesDidDeliver:aMessages];
     NSLog(@"收到消息送达回执");
-    if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidDeliver:)]) {
-        [self.delegate messagesDidDeliver:aMessages];
-    }
+//    if (self.delegates && [self.delegates respondsToSelector:@selector(messagesDidDeliver:)]) {
+//        [self.delegates messagesDidDeliver:aMessages];
+//    }
 }
 
 //消息状态发生变化
 - (void)messageStatusDidChange:(EMMessage *)aMessage
                          error:(EMError *)aError {
-    
+     [self.delegates messageStatusDidChange:aMessage error:aError];
     NSLog(@"消息状态发生变化");
-    if (self.delegate && [self.delegate respondsToSelector:@selector(messageStatusDidChange:error:)]) {
-        [self.delegate messageStatusDidChange:aMessage error:aError];
-    }
+//    if (self.delegates && [self.delegates respondsToSelector:@selector(messageStatusDidChange:error:)]) {
+//        [self.delegates messageStatusDidChange:aMessage error:aError];
+//    }
 }
 
 //消息附件状态发生改变
 - (void)messageAttachmentStatusDidChange:(EMMessage *)aMessage
                                    error:(EMError *)aError {
-    
+    [self.delegates messageAttachmentStatusDidChange:aMessage error:aError];
     NSLog(@"消息附件发生变化");
-    if (self.delegate && [self.delegate respondsToSelector:@selector(messagesDidReceive:)]) {
-        [self.delegate messageAttachmentStatusDidChange:aMessage error:aError];
-    }
+//    if (self.delegates && [self.delegates respondsToSelector:@selector(messagesDidReceive:)]) {
+//        [self.delegates messageAttachmentStatusDidChange:aMessage error:aError];
+//    }
 }
 
 #pragma mark - <EMGroupManagerDelegate>

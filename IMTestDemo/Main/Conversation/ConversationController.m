@@ -26,9 +26,17 @@
     [super viewDidLoad];
     
     [self.view addSubview:self.tableView];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.store tableViewDidTriggerHeaderRefresh];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.store loadDataFromDB];
     });
+}
+
+- (void)refreshData {
+    [self.store refreshData];
+}
+
+- (void)loadDataFromDB {
+    [self.store loadDataFromDB];
 }
 
 #pragma mark - <UITableViewDelegate,UITableViewDataSource>
