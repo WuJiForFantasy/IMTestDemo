@@ -16,6 +16,9 @@
 #define kSDKConfigEnableConsoleLogger @"SDKConfigEnableConsoleLogger"
 #import "WJIMMessageModel.h"
 #import "GCDMulticastDelegate.h"        //xmpp多播
+#import "WJIMChatStore.h"               //聊天的数据处理
+#import "WJIMConversationStore.h"       //会话的数据处理
+
 @protocol WJIMMainManagerChatDelegate;
 
 
@@ -25,8 +28,13 @@
 
 + (instancetype)shareManager;
 
-//@property (nonatomic,weak) id<WJIMMainManagerChatDelegate> delegate;
+
 @property (nonatomic, readonly, strong) GCDMulticastDelegate <WJIMMainManagerChatDelegate> *delegates;  
+@property (nonatomic,weak) WJIMChatStore *chatStore;                    //聊天数据管理
+@property (nonatomic,weak) WJIMConversationStore *conversationStore;    //会话数据管理
+
+@property (nonatomic,assign) NSInteger allUnreadMessageCount;           //所有未读消息
+
 //从服务器获取推送属性
 - (void)asyncPushOptions;
 
@@ -36,6 +44,8 @@
 //从数据库获取会话信息
 - (void)asyncConversationFromDB;
 
+//获取所有未读消息
+- (CGFloat)getAllUnreadMessageCount;
 @end
 
 #pragma mark - 协议
@@ -90,7 +100,7 @@
  */
 - (void)messageAttachmentStatusDidChange:(EMMessage *)aMessage
                                    error:(EMError *)aError;
-
-
+/**未读消息数量*/
+- (void)unReadAllMessageCount:(NSInteger)count;
 
 @end

@@ -11,6 +11,20 @@
 
 @implementation WJIMConversationStore
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        [WJIMMainManager shareManager].conversationStore = self;
+    }
+    return self;
+}
+
+- (void)dealloc {
+    [WJIMMainManager shareManager].conversationStore = nil;
+}
+
 - (void)loadDataFromDB {
 //    YYCache *cache = [[YYCache alloc]initWithName:@""];
     

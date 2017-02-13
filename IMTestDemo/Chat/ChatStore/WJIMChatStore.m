@@ -38,11 +38,13 @@
 //创建聊天监听
 - (void)setupChat {
     
+    [WJIMMainManager shareManager].chatStore = self;
     [[WJIMMainManager shareManager].delegates addDelegate:self delegateQueue:dispatch_get_main_queue()];
 }
 
 - (void)destroyChat {
     
+    [WJIMMainManager shareManager].chatStore = nil;
     [[WJIMMainManager shareManager].delegates removeDelegate:self delegateQueue:dispatch_get_main_queue()];
 }
 

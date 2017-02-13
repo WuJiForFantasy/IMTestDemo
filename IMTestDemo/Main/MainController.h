@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-
+#import "ConversationController.h"
 /**
  主控制器
  */
 @interface MainController : UITabBarController
 
-
+@property (nonatomic,strong) ConversationController *convsersation;
 
 @end

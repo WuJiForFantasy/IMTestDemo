@@ -10,9 +10,9 @@
 #import "ConversationController.h"
 #import "FriendListController.h"
 
-@interface MainController ()<WJIMMainManagerChatDelegate>
+@interface MainController ()
 
-@property (nonatomic,strong) ConversationController *convsersation;
+
 
 @end
 
@@ -31,23 +31,8 @@
     
     self.viewControllers = @[nav1,nav2];
     
-    [[WJIMMainManager shareManager].delegates addDelegate:self delegateQueue:dispatch_get_main_queue()];
+  
 }
 
-#pragma mark - <WJIMMainManagerChatDelegate>
-
-/**会话列表改变*/
-- (void)conversationListDidUpdate:(NSArray *)aConversationList {
-    
-    NSLog(@"会话列表改变");
-    [self.convsersation loadDataFromDB];
-}
-
-/**收到消息*/
-- (void)messagesDidReceive:(NSArray *)aMessages {
-    
-    NSLog(@"在外面收到了消息");
-    [self.convsersation refreshData];
-}
 
 @end

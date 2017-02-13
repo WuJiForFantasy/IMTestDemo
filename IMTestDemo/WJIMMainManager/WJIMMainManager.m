@@ -7,9 +7,19 @@
 //
 
 #import "WJIMMainManager.h"
-
+#import <UserNotifications/UserNotifications.h>
 
 static WJIMMainManager *manager = nil;
+static const CGFloat kDefaultPlaySoundInterval = 3.0;
+static NSString *kMessageType = @"MessageType";
+static NSString *kConversationChatter = @"ConversationChatter";
+static NSString *kGroupName = @"GroupName";
+
+@interface WJIMMainManager ()
+
+@property (nonatomic,strong)NSDate *lastPlaySoundDate;   //音频最后播放时间
+
+@end
 
 @implementation WJIMMainManager
 
@@ -154,39 +164,60 @@ static WJIMMainManager *manager = nil;
 //    }
     
     NSLog(@"收到消息%@",aMessages);
-    
-//    BOOL isRefreshCons = YES;
-//    for(EMMessage *message in aMessages){
-//        BOOL needShowNotification = (message.chatType != EMChatTypeChat) ? [self _needShowNotification:message.conversationId] : YES;
-//        
-//#ifdef REDPACKET_AVALABLE
-//        /**
-//         *  屏蔽红包被抢消息的提示
-//         */
-//        NSDictionary *dict = message.ext;
-//        needShowNotification = (dict && [dict valueForKey:RedpacketKeyRedpacketTakenMessageSign]) ? NO : needShowNotification;
-//#endif
-//        
-//        UIApplicationState state = [[UIApplication sharedApplication] applicationState];
-//        if (needShowNotification) {
-//#if !TARGET_IPHONE_SIMULATOR
-////            switch (state) {
-////                case UIApplicationStateActive:
-////                    [self.mainVC playSoundAndVibration];
-////                    break;
-////                case UIApplicationStateInactive:
-////                    [self.mainVC playSoundAndVibration];
-////                    break;
-////                case UIApplicationStateBackground:
-////                    [self.mainVC showNotificationWithMessage:message];
-////                    break;
-////                default:
-////                    break;
-////            }
-//#endif
-//        }
-//    }
+
+    BOOL isRefreshCons = YES;
+    for(EMMessage *message in aMessages){
+        
+        UIApplicationState state = [[UIApplication sharedApplication] applicationState];
+        
+#if !TARGET_IPHONE_SIMULATOR
+            switch (state) {
+                case UIApplicationStateActive:
+                case UIApplicationStateInactive:
+                    
+                    //播放音乐震动
+                    [self playSoundAndVibration];
+                    break;
+                case UIApplicationStateBackground:
+                    //显示通知信息
+                    [self showNotificationWithMessage:message];
+                    break;
+                default:
+                    break;
+            }
+#endif
+        
+        BOOL isChatting = NO;
+        if (self.chatStore) {
+            isChatting = [message.conversationId isEqualToString:self.chatStore.conversation.conversationId];
+        }
+        //没有在聊天中收到消息刷新列表
+        if (self.chatStore == nil || !isChatting || state == UIApplicationStateBackground) {
+            
+            if (self.conversationStore) {
+                [self.conversationStore refreshData];
+            }
+            //设置小红点
+            self.allUnreadMessageCount = [self getAllUnreadMessageCount];
+        }
+        if (isChatting) {
+            isRefreshCons = NO;
+        }
+        
+    }
+   
+    if (isRefreshCons) {
+        if (self.conversationStore) {
+            [self.conversationStore refreshData];
+        }
+        //设置小红点
+        [self getAllUnreadMessageCount];
+        
+        self.allUnreadMessageCount = [self getAllUnreadMessageCount];
+        [self.delegates unReadAllMessageCount:self.allUnreadMessageCount];
+    }
 }
+
 
 //收到cmd消息
 - (void)cmdMessagesDidReceive:(NSArray *)aCmdMessages {
@@ -366,5 +397,122 @@ static WJIMMainManager *manager = nil;
 - (void)showWithString:(NSString *)string {
     [SVProgressHUD showWithStatus:string];
 }
+
+#pragma mark - tool
+
+/**播放音乐&震动*/
+- (void)playSoundAndVibration{
+    NSTimeInterval timeInterval = [[NSDate date]
+                                   timeIntervalSinceDate:self.lastPlaySoundDate];
+    if (timeInterval < 3) {
+        //如果距离上次响铃和震动时间太短, 则跳过响铃
+        NSLog(@"skip ringing & vibration %@, %@", [NSDate date], self.lastPlaySoundDate);
+        return;
+    }
+    
+    //保存最后一次响铃时间
+    self.lastPlaySoundDate = [NSDate date];
+    
+    // 收到消息时，播放音频
+    [[EMCDDeviceManager sharedInstance] playNewMessageSound];
+    // 收到消息时，震动
+    [[EMCDDeviceManager sharedInstance] playVibration];
+}
+
+
+/**显示通知的消息～～～～（发送本地推送）*/
+- (void)showNotificationWithMessage:(EMMessage *)message
+{
+    EMPushOptions *options = [[EMClient sharedClient] pushOptions];
+    NSString *alertBody = nil;
+    if (options.displayStyle == EMPushDisplayStyleMessageSummary) {
+        EMMessageBody *messageBody = message.body;
+        NSString *messageStr = nil;
+        switch (messageBody.type) {
+            case EMMessageBodyTypeText:
+            {
+                messageStr = ((EMTextMessageBody *)messageBody).text;
+            }
+                break;
+            case EMMessageBodyTypeImage:
+            {
+                messageStr = NSLocalizedString(@"message.image", @"Image");
+            }
+                break;
+            case EMMessageBodyTypeLocation:
+            {
+                messageStr = NSLocalizedString(@"message.location", @"Location");
+            }
+                break;
+            case EMMessageBodyTypeVoice:
+            {
+                messageStr = NSLocalizedString(@"message.voice", @"Voice");
+            }
+                break;
+            case EMMessageBodyTypeVideo:{
+                messageStr = NSLocalizedString(@"message.video", @"Video");
+            }
+                break;
+            default:
+                break;
+        }
+   
+    }
+    else{
+        alertBody = NSLocalizedString(@"receiveMessage", @"you have a new message");
+    }
+    
+    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:self.lastPlaySoundDate];
+    BOOL playSound = NO;
+    if (!self.lastPlaySoundDate || timeInterval >= 3) {
+        self.lastPlaySoundDate = [NSDate date];
+        playSound = YES;
+    }
+    
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    [userInfo setObject:[NSNumber numberWithInt:message.chatType] forKey:kMessageType];
+    [userInfo setObject:message.conversationId forKey:kConversationChatter];
+    
+    //发送本地推送
+    if (NSClassFromString(@"UNUserNotificationCenter")) {
+        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:0.01 repeats:NO];
+        UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+        if (playSound) {
+            content.sound = [UNNotificationSound defaultSound];
+        }
+        content.body =alertBody;
+        content.userInfo = userInfo;
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:message.messageId content:content trigger:trigger];
+        [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:nil];
+    }
+    else {
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.fireDate = [NSDate date]; //触发通知的时间
+        notification.alertBody = alertBody;
+        notification.alertAction = NSLocalizedString(@"open", @"Open");
+        notification.timeZone = [NSTimeZone defaultTimeZone];
+        if (playSound) {
+            notification.soundName = UILocalNotificationDefaultSoundName;
+        }
+        notification.userInfo = userInfo;
+        
+        //发送通知
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+}
+
+/**获取所有未读消息数量*/
+- (CGFloat)getAllUnreadMessageCount {
+    NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
+    NSInteger unreadCount = 0;
+    for (EMConversation *conversation in conversations) {
+        unreadCount += conversation.unreadMessagesCount;
+    }
+    
+    //    UIApplication *application = [UIApplication sharedApplication];
+    //    [application setApplicationIconBadgeNumber:unreadCount];
+    return unreadCount;
+}
+
 
 @end

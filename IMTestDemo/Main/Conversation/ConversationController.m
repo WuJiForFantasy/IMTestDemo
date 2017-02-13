@@ -71,7 +71,13 @@
 #pragma mark - <WJIMConversationStoreDelegate>
 
 - (void)WJIMConversationStoreIsTableViewReloadData {
+    
     [self.tableView reloadData];
+}
+
+- (void)WJIMConversationStoreIsTableViewRefreshData {
+    
+     [self.tableView reloadData];
 }
 
 #pragma mark - 懒加载

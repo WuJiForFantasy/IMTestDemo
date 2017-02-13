@@ -112,7 +112,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
             NSLog(@"%@",error);
         }
     }
-
+    [[WJIMMainManager shareManager].delegates addDelegate:self delegateQueue:dispatch_get_main_queue()];
 
 }
 
@@ -145,5 +145,18 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
 }
 
 
+#pragma mark - <WJIMMainManagerChatDelegate>
+
+/**所有未读消息*/
+- (void)unReadAllMessageCount:(NSInteger)count {
+    NSLog(@"所有未读消息:%ld",count);
+    if (count > 0) {
+        self.mainController.viewControllers[0].tabBarItem.badgeValue = [NSString stringWithFormat:@"%i",(int)count];
+    }else{
+        self.mainController.viewControllers[0].tabBarItem.badgeValue = nil;
+    }
+    UIApplication *application = [UIApplication sharedApplication];
+    [application setApplicationIconBadgeNumber:count];
+}
 
 @end
