@@ -17,9 +17,10 @@ typedef void (^WJIMMainManagerLoginFinishBlock)(BOOL sucess, EMError *error, WJI
 @interface WJIMMainManager (Login)
 
 /**登录(没有用户自动注册,注册后自动登录)*/
-+ (void)loginWithLoginModel:(WJIMMainManagerLoginModel *)loginModel finish:(WJIMMainManagerLoginFinishBlock)finish;
+- (void)loginWithLoginModel:(WJIMMainManagerLoginModel *)loginModel finish:(WJIMMainManagerLoginFinishBlock)finish;
 
-+ (void)logout;
+/**退出登录*/
+- (void)logout;
 
 @end
 

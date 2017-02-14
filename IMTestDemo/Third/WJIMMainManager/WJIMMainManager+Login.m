@@ -12,7 +12,7 @@
 
 #pragma mark - public
 
-+ (void)loginWithLoginModel:(WJIMMainManagerLoginModel *)loginModel finish:(WJIMMainManagerLoginFinishBlock)finish {
+- (void)loginWithLoginModel:(WJIMMainManagerLoginModel *)loginModel finish:(WJIMMainManagerLoginFinishBlock)finish {
     
     //登录
     [[EMClient sharedClient] loginWithUsername:loginModel.userName password:loginModel.password completion:^(NSString *aUsername, EMError *aError) {
@@ -23,10 +23,19 @@
             }
             else {
                 if (!aError) {
+                    
                     [self saveUserInfoWithLoginModel:loginModel];
-                    finish(YES,nil,loginModel);
+                    
+                    [self.delegates imClientDidLogin:self sucess:YES withError:nil loginModel:loginModel];
+                    if (finish) {
+                        finish(YES,nil,loginModel);
+                    }
+                    
                 }else {
-                    finish(NO,aError,loginModel);
+                    [self.delegates imClientDidLogin:self sucess:YES withError:nil loginModel:loginModel];
+                    if (finish) {
+                        finish(NO,aError,loginModel);
+                    }
                 }
             }
     }];
@@ -39,7 +48,7 @@
 
 #pragma mark - private
 
-+ (void)registerWithLoginModel:(WJIMMainManagerLoginModel *)loginModel finish:(WJIMMainManagerLoginFinishBlock)finish {
+- (void)registerWithLoginModel:(WJIMMainManagerLoginModel *)loginModel finish:(WJIMMainManagerLoginFinishBlock)finish {
     
     [[EMClient sharedClient] registerWithUsername:loginModel.userName password:[self changePassWordWithLoginModel:loginModel] completion:^(NSString *aUsername, EMError *aError) {
         
@@ -55,12 +64,12 @@
 #pragma mark - others
 
 //保存用户的数据信息
-+ (void)saveUserInfoWithLoginModel:(WJIMMainManagerLoginModel *)loginModel {
+- (void)saveUserInfoWithLoginModel:(WJIMMainManagerLoginModel *)loginModel {
     
 }
 
 //密码生成规则
-+ (NSString *)changePassWordWithLoginModel:(WJIMMainManagerLoginModel *)loginModel {
+- (NSString *)changePassWordWithLoginModel:(WJIMMainManagerLoginModel *)loginModel {
     return @"123";
 }
 

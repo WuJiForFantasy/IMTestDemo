@@ -20,7 +20,7 @@
 #import "WJIMConversationStore.h"       //会话的数据处理
 
 @protocol WJIMMainManagerChatDelegate;
-
+@class WJIMMainManagerLoginModel;
 
 /**聊天总管理*/
 //链接，单聊，群组，聊天室
@@ -102,5 +102,7 @@
                                    error:(EMError *)aError;
 /**未读消息数量*/
 - (void)unReadAllMessageCount:(NSInteger)count;
+//BOOL sucess, EMError *error, WJIMMainManagerLoginModel *model
+- (void)imClientDidLogin:(WJIMMainManager *)client sucess:(BOOL)sucess withError:(EMError *)error loginModel:(WJIMMainManagerLoginModel *)loginModel;
 
 @end

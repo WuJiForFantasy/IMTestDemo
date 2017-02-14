@@ -15,10 +15,11 @@
 #import "MainController.h"
 #import "AppDelegate+WJIM.h"
 #import "UIAlertController+Blocks.h"
+#import "LoginController.h"
 
 @interface AppDelegate ()
 
-
+@property (nonatomic,strong) LoginController *login;
 
 @end
 
@@ -26,35 +27,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    self.mainController = [[MainController alloc]init];
+    
+    
+    self.login = [[LoginController alloc]init];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = self.mainController;
+    self.window.rootViewController = self.login;
     [self.window makeKeyAndVisible];
     
     [self imManagerApplication:application didFinishLaunchingWithOptions:launchOptions];
-    WJIMMainManagerLoginModel *model = [[WJIMMainManagerLoginModel alloc]init];
-    model.userName = @"123";
-    model.password = @"123";
-    [WJIMMainManager loginWithLoginModel:model finish:^(BOOL sucess, EMError *error, WJIMMainManagerLoginModel *model) {
-        
-        
-        NSLog(@"%@登录%@",model.userName,sucess ? @"成功" : @"失败");
-        [[NSUserDefaults standardUserDefaults] setObject:model.userName forKey:@"user"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        //登录成功刷新小红点
-        NSInteger count = [[WJIMMainManager shareManager] getAllUnreadMessageCount];
-        NSLog(@"所有未读消息:%ld",count);
-        if (count > 0) {
-            self.mainController.viewControllers[0].tabBarItem.badgeValue = [NSString stringWithFormat:@"%i",(int)count];
-        }else{
-            self.mainController.viewControllers[0].tabBarItem.badgeValue = nil;
-        }
-        UIApplication *application = [UIApplication sharedApplication];
-        [application setApplicationIconBadgeNumber:count];
-    }];
+   
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //    
 //    });

@@ -26,9 +26,8 @@
     [super viewDidLoad];
     
     [self.view addSubview:self.tableView];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.store loadDataFromDB];
-    });
+    [self.store loadDataFromDB];
+   
 }
 
 - (void)refreshData {

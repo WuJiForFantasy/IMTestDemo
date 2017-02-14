@@ -159,4 +159,16 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     [application setApplicationIconBadgeNumber:count];
 }
 
+- (void)imClientDidLogin:(WJIMMainManager *)client sucess:(BOOL)sucess withError:(EMError *)error loginModel:(WJIMMainManagerLoginModel *)loginModel {
+    
+    if (sucess) {
+        self.mainController = [[MainController alloc]init];
+        self.window.rootViewController = self.mainController;
+        [self.window makeKeyAndVisible];
+    }else {
+        NSLog(@"登录失败");
+    }
+    
+}
+
 @end
