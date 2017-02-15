@@ -12,6 +12,7 @@
 #import "WJIMChatAudioBoardView.h"
 #import "WJIMChatFaceBoardView.h"
 #import "WJIMChatMoreBoardView.h"
+#import "FaceSourceManager.h"
 
 @interface WJIMChatKeyBoard () <WJIMChatKeyBoardToolBarDelegate>
 
@@ -34,7 +35,7 @@
         self.backgroundColor = [UIColor whiteColor];
         self.keyBoardTopY = frame.origin.y;
         self.newTopY = self.keyBoardTopY;
-        self.customKeyBoardHeight = 200;
+        self.customKeyBoardHeight = 216;
         [self common];
         [self addSubview:self.audioBoardView];
         [self addSubview:self.faceBoardView];
@@ -161,7 +162,8 @@
 
 - (WJIMChatFaceBoardView *)faceBoardView {
     if (!_faceBoardView) {
-        _faceBoardView = [WJIMChatFaceBoardView new];
+        _faceBoardView = [[WJIMChatFaceBoardView alloc]initWithFrame:CGRectMake(0, 40+self.toolBar.toolBarChangeHeight, CGRectGetWidth(self.bounds), self.customKeyBoardHeight)];
+        [_faceBoardView loadFaceSubjectItems:[FaceSourceManager loadFaceSource]];
     }
     return _faceBoardView;
 }

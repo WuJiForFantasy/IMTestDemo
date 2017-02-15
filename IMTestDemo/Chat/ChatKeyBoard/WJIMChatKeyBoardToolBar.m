@@ -16,8 +16,10 @@
 @property (nonatomic,strong) UIButton *faceButton;      //表情按钮
 @property (nonatomic,strong) UIButton *moreButton;      //更多按钮
 @property (nonatomic,strong) YYTextView *textView;      //文本输入
-@property (nonatomic,assign) UIEdgeInsets contentInset;    //内容
+@property (nonatomic,strong) UIView *topLineView;       //顶部线条
+@property (nonatomic,strong) UIView *bottomLineView;    //底部线条
 
+@property (nonatomic,assign) UIEdgeInsets contentInset;    //内容
 @property (nonatomic,assign) CGFloat toolBarTopY;       //键盘弹起的时候监听
 @property (nonatomic,assign) CGFloat toolBarHeight;     //键盘弹起的工具条的高度
 
@@ -44,6 +46,8 @@
     [self addSubview:self.faceButton];
     [self addSubview:self.moreButton];
     [self addSubview:self.textView];
+    [self addSubview:self.topLineView];
+    [self addSubview:self.bottomLineView];
     
 }
 
@@ -98,7 +102,8 @@
     self.audioButton.frame = CGRectMake(0, 0, 40, 40);
     self.faceButton.frame = CGRectMake(width - 80, 0, 40, 40);
     self.moreButton.frame = CGRectMake(width - 40, 0, 40, 40);
-    
+    self.topLineView.frame = CGRectMake(0, 0, width, 1);
+    self.bottomLineView.frame = CGRectMake(0, 39, width, 1);
 }
 
 #pragma mark - 事件监听
@@ -214,6 +219,22 @@
         _textView.layer.masksToBounds = YES;
     }
     return _textView;
+}
+
+- (UIView *)topLineView {
+    if (!_topLineView) {
+        _topLineView = [UIView new];
+        _topLineView.backgroundColor = [UIColor lightGrayColor];
+    }
+    return _topLineView;
+}
+
+- (UIView *)bottomLineView {
+    if (!_bottomLineView) {
+        _bottomLineView = [UIView new];
+        _bottomLineView.backgroundColor = [UIColor lightGrayColor];
+    }
+    return _bottomLineView;
 }
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FacePanel.h"
 
-@interface WJIMChatFaceBoardView : UIView
+@interface WJIMChatFaceBoardView : FacePanel
+
+- (void)changeFaceSubjectIndex:(NSInteger)subjectIndex;
 
 @end
