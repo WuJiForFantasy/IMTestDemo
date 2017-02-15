@@ -83,6 +83,30 @@
 		0DD5F84D1E52AC9900D606F6 /* EaseEmojiEmoticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8461E52AC9800D606F6 /* EaseEmojiEmoticons.m */; };
 		0DD5F84E1E52AC9900D606F6 /* EaseEmotionEscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8481E52AC9800D606F6 /* EaseEmotionEscape.m */; };
 		0DD5F84F1E52AC9900D606F6 /* EaseEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F84A1E52AC9800D606F6 /* EaseEmotionManager.m */; };
+		0DD5F8531E52B0B400D606F6 /* WJIMChatKeyBoardTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8521E52B0B400D606F6 /* WJIMChatKeyBoardTool.m */; };
+		0DD5F8561E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8551E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.m */; };
+		0DD5F8591E52D73B00D606F6 /* news_ic_Voice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8571E52D73B00D606F6 /* news_ic_Voice@2x.png */; };
+		0DD5F85A1E52D73B00D606F6 /* news_ic_Voice@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8581E52D73B00D606F6 /* news_ic_Voice@3x.png */; };
+		0DD5F85D1E52D74500D606F6 /* news_ic_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F85B1E52D74500D606F6 /* news_ic_more@2x.png */; };
+		0DD5F85E1E52D74500D606F6 /* news_ic_more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F85C1E52D74500D606F6 /* news_ic_more@3x.png */; };
+		0DD5F8611E52D74F00D606F6 /* news_ic_Expression@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F85F1E52D74F00D606F6 /* news_ic_Expression@2x.png */; };
+		0DD5F8621E52D74F00D606F6 /* news_ic_Expression@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8601E52D74F00D606F6 /* news_ic_Expression@3x.png */; };
+		0DD5F8651E52D76A00D606F6 /* news_ic_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8631E52D76A00D606F6 /* news_ic_keyboard@2x.png */; };
+		0DD5F8661E52D76A00D606F6 /* news_ic_keyboard@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8641E52D76A00D606F6 /* news_ic_keyboard@3x.png */; };
+		0DD5F8691E52DB0C00D606F6 /* WJKeyBoardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8681E52DB0C00D606F6 /* WJKeyBoardManager.m */; };
+		0DD5F86C1E52DB7200D606F6 /* WJIMChatKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F86B1E52DB7200D606F6 /* WJIMChatKeyBoard.m */; };
+		0DD5F86F1E52FB9D00D606F6 /* WJIMChatAudioBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F86E1E52FB9D00D606F6 /* WJIMChatAudioBoardView.m */; };
+		0DD5F8721E52FC3900D606F6 /* WJIMChatFaceBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8711E52FC3900D606F6 /* WJIMChatFaceBoardView.m */; };
+		0DD5F8751E52FC6300D606F6 /* WJIMChatMoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8741E52FC6300D606F6 /* WJIMChatMoreBoardView.m */; };
+		0DD5F87A1E53034300D606F6 /* news_ic_Photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8761E53034300D606F6 /* news_ic_Photo@2x.png */; };
+		0DD5F87B1E53034300D606F6 /* news_ic_Photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8771E53034300D606F6 /* news_ic_Photo@3x.png */; };
+		0DD5F87C1E53034300D606F6 /* news_ic_Photograph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8781E53034300D606F6 /* news_ic_Photograph@2x.png */; };
+		0DD5F87D1E53034300D606F6 /* news_ic_Photograph@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8791E53034300D606F6 /* news_ic_Photograph@3x.png */; };
+		0DD5F8801E53034900D606F6 /* news_ic_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F87E1E53034900D606F6 /* news_ic_red@2x.png */; };
+		0DD5F8811E53034900D606F6 /* news_ic_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F87F1E53034900D606F6 /* news_ic_red@3x.png */; };
+		0DD5F8841E53038500D606F6 /* news_ic_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8821E53038500D606F6 /* news_ic_video@2x.png */; };
+		0DD5F8851E53038500D606F6 /* news_ic_video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD5F8831E53038500D606F6 /* news_ic_video@3x.png */; };
+		0DD5F8881E5303D600D606F6 /* WJIMChatMoreBoardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8871E5303D600D606F6 /* WJIMChatMoreBoardViewCell.m */; };
 		0DECE3151E49AE4C0078CB20 /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DECE3141E49AE4C0078CB20 /* EaseUIResource.bundle */; };
 		0DECE3221E49CB5E0078CB20 /* UIView+IM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE3211E49CB5E0078CB20 /* UIView+IM.m */; };
 		0DECE3251E49CB8C0078CB20 /* WJIMChatBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE3241E49CB8C0078CB20 /* WJIMChatBaseCell.m */; };
@@ -254,6 +278,38 @@
 		0DD5F8481E52AC9800D606F6 /* EaseEmotionEscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseEmotionEscape.m; sourceTree = "<group>"; };
 		0DD5F8491E52AC9800D606F6 /* EaseEmotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseEmotionManager.h; sourceTree = "<group>"; };
 		0DD5F84A1E52AC9800D606F6 /* EaseEmotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseEmotionManager.m; sourceTree = "<group>"; };
+		0DD5F8511E52B0B400D606F6 /* WJIMChatKeyBoardTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatKeyBoardTool.h; sourceTree = "<group>"; };
+		0DD5F8521E52B0B400D606F6 /* WJIMChatKeyBoardTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatKeyBoardTool.m; sourceTree = "<group>"; };
+		0DD5F8541E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatKeyBoardToolBar.h; sourceTree = "<group>"; };
+		0DD5F8551E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatKeyBoardToolBar.m; sourceTree = "<group>"; };
+		0DD5F8571E52D73B00D606F6 /* news_ic_Voice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_Voice@2x.png"; sourceTree = "<group>"; };
+		0DD5F8581E52D73B00D606F6 /* news_ic_Voice@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_Voice@3x.png"; sourceTree = "<group>"; };
+		0DD5F85B1E52D74500D606F6 /* news_ic_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_more@2x.png"; sourceTree = "<group>"; };
+		0DD5F85C1E52D74500D606F6 /* news_ic_more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_more@3x.png"; sourceTree = "<group>"; };
+		0DD5F85F1E52D74F00D606F6 /* news_ic_Expression@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_Expression@2x.png"; sourceTree = "<group>"; };
+		0DD5F8601E52D74F00D606F6 /* news_ic_Expression@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_Expression@3x.png"; sourceTree = "<group>"; };
+		0DD5F8631E52D76A00D606F6 /* news_ic_keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_keyboard@2x.png"; sourceTree = "<group>"; };
+		0DD5F8641E52D76A00D606F6 /* news_ic_keyboard@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_keyboard@3x.png"; sourceTree = "<group>"; };
+		0DD5F8671E52DB0C00D606F6 /* WJKeyBoardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJKeyBoardManager.h; sourceTree = "<group>"; };
+		0DD5F8681E52DB0C00D606F6 /* WJKeyBoardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJKeyBoardManager.m; sourceTree = "<group>"; };
+		0DD5F86A1E52DB7200D606F6 /* WJIMChatKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatKeyBoard.h; sourceTree = "<group>"; };
+		0DD5F86B1E52DB7200D606F6 /* WJIMChatKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatKeyBoard.m; sourceTree = "<group>"; };
+		0DD5F86D1E52FB9D00D606F6 /* WJIMChatAudioBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatAudioBoardView.h; sourceTree = "<group>"; };
+		0DD5F86E1E52FB9D00D606F6 /* WJIMChatAudioBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatAudioBoardView.m; sourceTree = "<group>"; };
+		0DD5F8701E52FC3900D606F6 /* WJIMChatFaceBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatFaceBoardView.h; sourceTree = "<group>"; };
+		0DD5F8711E52FC3900D606F6 /* WJIMChatFaceBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatFaceBoardView.m; sourceTree = "<group>"; };
+		0DD5F8731E52FC6300D606F6 /* WJIMChatMoreBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatMoreBoardView.h; sourceTree = "<group>"; };
+		0DD5F8741E52FC6300D606F6 /* WJIMChatMoreBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatMoreBoardView.m; sourceTree = "<group>"; };
+		0DD5F8761E53034300D606F6 /* news_ic_Photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_Photo@2x.png"; sourceTree = "<group>"; };
+		0DD5F8771E53034300D606F6 /* news_ic_Photo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_Photo@3x.png"; sourceTree = "<group>"; };
+		0DD5F8781E53034300D606F6 /* news_ic_Photograph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_Photograph@2x.png"; sourceTree = "<group>"; };
+		0DD5F8791E53034300D606F6 /* news_ic_Photograph@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_Photograph@3x.png"; sourceTree = "<group>"; };
+		0DD5F87E1E53034900D606F6 /* news_ic_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_red@2x.png"; sourceTree = "<group>"; };
+		0DD5F87F1E53034900D606F6 /* news_ic_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_red@3x.png"; sourceTree = "<group>"; };
+		0DD5F8821E53038500D606F6 /* news_ic_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_video@2x.png"; sourceTree = "<group>"; };
+		0DD5F8831E53038500D606F6 /* news_ic_video@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_ic_video@3x.png"; sourceTree = "<group>"; };
+		0DD5F8861E5303D600D606F6 /* WJIMChatMoreBoardViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatMoreBoardViewCell.h; sourceTree = "<group>"; };
+		0DD5F8871E5303D600D606F6 /* WJIMChatMoreBoardViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatMoreBoardViewCell.m; sourceTree = "<group>"; };
 		0DECE3041E4972BB0078CB20 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0DECE3051E49742E0078CB20 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		0DECE3141E49AE4C0078CB20 /* EaseUIResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseUIResource.bundle; sourceTree = "<group>"; };
@@ -311,6 +367,7 @@
 		0D34177E1E485EAC00CC7EA4 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				0DD5F8501E52B05100D606F6 /* ChatKeyBoard */,
 				0DD5F83F1E52AC9800D606F6 /* Util */,
 				0DD5F82C1E52AC5F00D606F6 /* WJIMMainManager */,
 				0D6E80821E51A727000908DA /* ChatController */,
@@ -347,6 +404,8 @@
 		0D6CFAB11E20957100B3259A /* IMTestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0DD5F8671E52DB0C00D606F6 /* WJKeyBoardManager.h */,
+				0DD5F8681E52DB0C00D606F6 /* WJKeyBoardManager.m */,
 				0DD5F7BD1E52A3E200D606F6 /* Third */,
 				0D6E80751E51940D000908DA /* =====png-02450.gif */,
 				0D6E80771E5196D2000908DA /* =====png-02240.gif */,
@@ -655,6 +714,43 @@
 			path = Emoji;
 			sourceTree = "<group>";
 		};
+		0DD5F8501E52B05100D606F6 /* ChatKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				0DD5F8821E53038500D606F6 /* news_ic_video@2x.png */,
+				0DD5F8831E53038500D606F6 /* news_ic_video@3x.png */,
+				0DD5F87E1E53034900D606F6 /* news_ic_red@2x.png */,
+				0DD5F87F1E53034900D606F6 /* news_ic_red@3x.png */,
+				0DD5F8761E53034300D606F6 /* news_ic_Photo@2x.png */,
+				0DD5F8771E53034300D606F6 /* news_ic_Photo@3x.png */,
+				0DD5F8781E53034300D606F6 /* news_ic_Photograph@2x.png */,
+				0DD5F8791E53034300D606F6 /* news_ic_Photograph@3x.png */,
+				0DD5F8631E52D76A00D606F6 /* news_ic_keyboard@2x.png */,
+				0DD5F8641E52D76A00D606F6 /* news_ic_keyboard@3x.png */,
+				0DD5F85F1E52D74F00D606F6 /* news_ic_Expression@2x.png */,
+				0DD5F8601E52D74F00D606F6 /* news_ic_Expression@3x.png */,
+				0DD5F85B1E52D74500D606F6 /* news_ic_more@2x.png */,
+				0DD5F85C1E52D74500D606F6 /* news_ic_more@3x.png */,
+				0DD5F8571E52D73B00D606F6 /* news_ic_Voice@2x.png */,
+				0DD5F8581E52D73B00D606F6 /* news_ic_Voice@3x.png */,
+				0DD5F8511E52B0B400D606F6 /* WJIMChatKeyBoardTool.h */,
+				0DD5F8521E52B0B400D606F6 /* WJIMChatKeyBoardTool.m */,
+				0DD5F8541E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.h */,
+				0DD5F8551E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.m */,
+				0DD5F86A1E52DB7200D606F6 /* WJIMChatKeyBoard.h */,
+				0DD5F86B1E52DB7200D606F6 /* WJIMChatKeyBoard.m */,
+				0DD5F86D1E52FB9D00D606F6 /* WJIMChatAudioBoardView.h */,
+				0DD5F86E1E52FB9D00D606F6 /* WJIMChatAudioBoardView.m */,
+				0DD5F8701E52FC3900D606F6 /* WJIMChatFaceBoardView.h */,
+				0DD5F8711E52FC3900D606F6 /* WJIMChatFaceBoardView.m */,
+				0DD5F8731E52FC6300D606F6 /* WJIMChatMoreBoardView.h */,
+				0DD5F8741E52FC6300D606F6 /* WJIMChatMoreBoardView.m */,
+				0DD5F8861E5303D600D606F6 /* WJIMChatMoreBoardViewCell.h */,
+				0DD5F8871E5303D600D606F6 /* WJIMChatMoreBoardViewCell.m */,
+			);
+			path = ChatKeyBoard;
+			sourceTree = "<group>";
+		};
 		0DECE31F1E49CB550078CB20 /* ChatCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -807,23 +903,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD5F8621E52D74F00D606F6 /* news_ic_Expression@3x.png in Resources */,
 				0DD5F8191E52A3E300D606F6 /* Face_Expression.bundle in Resources */,
 				0D6E80781E5196D2000908DA /* =====png-02240.gif in Resources */,
 				0DA9CB981E4B1FFB00CD8FD0 /* 148654703233540.amr in Resources */,
+				0DD5F87B1E53034300D606F6 /* news_ic_Photo@3x.png in Resources */,
+				0DD5F8651E52D76A00D606F6 /* news_ic_keyboard@2x.png in Resources */,
 				0D6CFAC21E20957100B3259A /* LaunchScreen.storyboard in Resources */,
+				0DD5F87A1E53034300D606F6 /* news_ic_Photo@2x.png in Resources */,
+				0DD5F85E1E52D74500D606F6 /* news_ic_more@3x.png in Resources */,
 				0DA9CB671E4AC96A00CD8FD0 /* face.plist in Resources */,
 				0D6E80761E51940D000908DA /* =====png-02450.gif in Resources */,
+				0DD5F8661E52D76A00D606F6 /* news_ic_keyboard@3x.png in Resources */,
+				0DD5F8851E53038500D606F6 /* news_ic_video@3x.png in Resources */,
+				0DD5F87D1E53034300D606F6 /* news_ic_Photograph@3x.png in Resources */,
+				0DD5F85A1E52D73B00D606F6 /* news_ic_Voice@3x.png in Resources */,
 				0DA9CB941E4B0D8200CD8FD0 /* shipin.mp4 in Resources */,
+				0DD5F8841E53038500D606F6 /* news_ic_video@2x.png in Resources */,
+				0DD5F8611E52D74F00D606F6 /* news_ic_Expression@2x.png in Resources */,
 				0DECE3151E49AE4C0078CB20 /* EaseUIResource.bundle in Resources */,
 				0DD5F8171E52A3E300D606F6 /* expression_custom.plist in Resources */,
 				0D6CFABF1E20957100B3259A /* Assets.xcassets in Resources */,
 				0DD5F8181E52A3E300D606F6 /* expressionImage_custom.plist in Resources */,
 				0D6CFABD1E20957100B3259A /* Main.storyboard in Resources */,
+				0DD5F8811E53034900D606F6 /* news_ic_red@3x.png in Resources */,
 				0D6E80721E518E93000908DA /* gitTest.gif in Resources */,
+				0DD5F85D1E52D74500D606F6 /* news_ic_more@2x.png in Resources */,
 				0DD5F81A1E52A3E300D606F6 /* MLEmoji_Expression.bundle in Resources */,
 				0DD5F81B1E52A3E300D606F6 /* MLEmoji_Expression.plist in Resources */,
 				0DD5F81C1E52A3E300D606F6 /* MLEmoji_ExpressionImage.plist in Resources */,
+				0DD5F87C1E53034300D606F6 /* news_ic_Photograph@2x.png in Resources */,
+				0DD5F8591E52D73B00D606F6 /* news_ic_Voice@2x.png in Resources */,
 				0D6E80741E51932F000908DA /* =====png-02300.gif in Resources */,
+				0DD5F8801E53034900D606F6 /* news_ic_red@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -897,6 +1009,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD5F8211E52A3E300D606F6 /* UIAlertController+Blocks.m in Sources */,
+				0DD5F86C1E52DB7200D606F6 /* WJIMChatKeyBoard.m in Sources */,
 				0D99F1D91E4C46AD00C86D82 /* WJHuanXinChatPhotosBrowserController.m in Sources */,
 				0DD5F84E1E52AC9900D606F6 /* EaseEmotionEscape.m in Sources */,
 				0DA9CB831E4AF50900CD8FD0 /* WJIMChatCellUtil.m in Sources */,
@@ -906,6 +1019,7 @@
 				0DD5F82B1E52A4BE00D606F6 /* LoginController.m in Sources */,
 				0D6E806A1E514843000908DA /* WJIMConversationCell.m in Sources */,
 				0DD5F81F1E52A3E300D606F6 /* NSDate+Category.m in Sources */,
+				0DD5F8881E5303D600D606F6 /* WJIMChatMoreBoardViewCell.m in Sources */,
 				0D6E808F1E51A727000908DA /* WJIMChatStore.m in Sources */,
 				0DD5F80B1E52A3E300D606F6 /* EMCDDeviceManager+Media.m in Sources */,
 				0D6CFABA1E20957100B3259A /* ViewController.m in Sources */,
@@ -915,17 +1029,20 @@
 				0D6E808E1E51A727000908DA /* WJIMChatStore+send.m in Sources */,
 				0DECE3251E49CB8C0078CB20 /* WJIMChatBaseCell.m in Sources */,
 				0DD5F8391E52AC5F00D606F6 /* AppDelegate+WJIM.m in Sources */,
+				0DD5F8691E52DB0C00D606F6 /* WJKeyBoardManager.m in Sources */,
 				0D3417771E48593100CC7EA4 /* MainController.m in Sources */,
 				0DA9CB511E4AC66F00CD8FD0 /* WJIMChatBorderManager.m in Sources */,
 				0DA9CB891E4AFD0900CD8FD0 /* WJIMChatVideoMsgCell.m in Sources */,
 				0D6E806B1E514843000908DA /* WJIMConversationModel.m in Sources */,
 				0DD5F80A1E52A3E300D606F6 /* EMAudioRecorderUtil.m in Sources */,
 				0DA9CB6D1E4AF45C00CD8FD0 /* WJIMChatTimeCell.m in Sources */,
+				0DD5F8721E52FC3900D606F6 /* WJIMChatFaceBoardView.m in Sources */,
 				0DA9CB8F1E4AFD5700CD8FD0 /* WJIMChatLocationMsgCell.m in Sources */,
 				0D6E808C1E51A727000908DA /* WJIMChatController.m in Sources */,
 				0D6CFAB71E20957100B3259A /* AppDelegate.m in Sources */,
 				0DD5F83A1E52AC5F00D606F6 /* WJIMMainManager+Group.m in Sources */,
 				0DD5F84C1E52AC9800D606F6 /* EaseEmoji.m in Sources */,
+				0DD5F8751E52FC6300D606F6 /* WJIMChatMoreBoardView.m in Sources */,
 				0DD5F80E1E52A3E300D606F6 /* EMCDDeviceManager+Remind.m in Sources */,
 				0DD5F81E1E52A3E300D606F6 /* TTTAttributedLabel.m in Sources */,
 				0DD5F83D1E52AC5F00D606F6 /* WJIMMainManager.m in Sources */,
@@ -935,10 +1052,12 @@
 				0D34177D1E4859A000CC7EA4 /* FriendListController.m in Sources */,
 				0DA9CB8C1E4AFD3000CD8FD0 /* WJIMChatAudioMsgCell.m in Sources */,
 				0DD5F81D1E52A3E300D606F6 /* MLEmojiLabel.m in Sources */,
+				0DD5F8561E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.m in Sources */,
 				0D6E80691E514843000908DA /* ConversationController.m in Sources */,
 				0DA9CB6A1E4ACBF700CD8FD0 /* WJIMChatTextMsgCell.m in Sources */,
 				0DD5F84B1E52AC9800D606F6 /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				0DECE3221E49CB5E0078CB20 /* UIView+IM.m in Sources */,
+				0DD5F8531E52B0B400D606F6 /* WJIMChatKeyBoardTool.m in Sources */,
 				0D6E806C1E514843000908DA /* WJIMConversationStore.m in Sources */,
 				0DD5F8161E52A3E300D606F6 /* HexColors.m in Sources */,
 				0DD5F83C1E52AC5F00D606F6 /* WJIMMainManager+Send.m in Sources */,
@@ -953,6 +1072,7 @@
 				0DD5F8281E52A3E300D606F6 /* WYArrowImageTool.m in Sources */,
 				0DD5F83B1E52AC5F00D606F6 /* WJIMMainManager+Login.m in Sources */,
 				0DD5F80C1E52A3E300D606F6 /* EMCDDeviceManager+Microphone.m in Sources */,
+				0DD5F86F1E52FB9D00D606F6 /* WJIMChatAudioBoardView.m in Sources */,
 				0DD5F80F1E52A3E300D606F6 /* EMCDDeviceManagerBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1114,7 +1234,7 @@
 					"$(PROJECT_DIR)/IMTestDemo/Third/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/IMTestDemo/Third/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.moyou.moyouApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moyou.youxingAPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1137,7 +1257,7 @@
 					"$(PROJECT_DIR)/IMTestDemo/Third/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/IMTestDemo/Third/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.moyou.moyouApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moyou.youxingAPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

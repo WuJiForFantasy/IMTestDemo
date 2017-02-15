@@ -7,12 +7,14 @@
 //
 
 #import "LoginController.h"
+#import "WJIMChatKeyBoardToolBar.h"
+#import "WJIMChatKeyBoard.h"
 
 @interface LoginController ()
 
 @property (nonatomic,strong) UITextField *textFeild;    //输入框
 @property (nonatomic,strong) UIButton *button;          //按钮
-
+@property (nonatomic,strong) WJIMChatKeyBoard *tool;
 @end
 
 @implementation LoginController
@@ -23,6 +25,12 @@
     [self.view addSubview:self.textFeild];
     [self.view addSubview:self.button];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.tool = [[WJIMChatKeyBoard alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 40, CGRectGetWidth(self.view.bounds), 200)];
+//    self.tool.toolBarTopY = 100;
+    [self.view addSubview:self.tool];
+    
 }
 
 #pragma mark - 事件监听
@@ -52,6 +60,11 @@
 ////        UIApplication *application = [UIApplication sharedApplication];
 ////        [application setApplicationIconBadgeNumber:count];
 //    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [self.view endEditing:YES];
+    [self.tool resetKeyBoard];
 }
 
 #pragma mark - 懒加载
