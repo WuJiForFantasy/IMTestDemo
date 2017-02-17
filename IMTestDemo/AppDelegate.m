@@ -89,7 +89,7 @@
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
 {
-
+    
     //    NSDictionary *userInfo = notification.request.content.userInfo;
     //    [self easemobApplication:[UIApplication sharedApplication] didReceiveRemoteNotification:userInfo];
 

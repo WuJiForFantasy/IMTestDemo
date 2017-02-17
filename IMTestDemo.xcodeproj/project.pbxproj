@@ -114,13 +114,19 @@
 		0DD5F84D1E52AC9900D606F6 /* EaseEmojiEmoticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8461E52AC9800D606F6 /* EaseEmojiEmoticons.m */; };
 		0DD5F84E1E52AC9900D606F6 /* EaseEmotionEscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8481E52AC9800D606F6 /* EaseEmotionEscape.m */; };
 		0DD5F84F1E52AC9900D606F6 /* EaseEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F84A1E52AC9800D606F6 /* EaseEmotionManager.m */; };
-		0DD5F8531E52B0B400D606F6 /* WJIMChatKeyBoardTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8521E52B0B400D606F6 /* WJIMChatKeyBoardTool.m */; };
 		0DD5F8561E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8551E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.m */; };
 		0DD5F8691E52DB0C00D606F6 /* WJKeyBoardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F8681E52DB0C00D606F6 /* WJKeyBoardManager.m */; };
 		0DD5F86C1E52DB7200D606F6 /* WJIMChatKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5F86B1E52DB7200D606F6 /* WJIMChatKeyBoard.m */; };
 		0DECE3151E49AE4C0078CB20 /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DECE3141E49AE4C0078CB20 /* EaseUIResource.bundle */; };
 		0DECE3221E49CB5E0078CB20 /* UIView+IM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE3211E49CB5E0078CB20 /* UIView+IM.m */; };
 		0DECE3251E49CB8C0078CB20 /* WJIMChatBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECE3241E49CB8C0078CB20 /* WJIMChatBaseCell.m */; };
+		0DEFFB991E5553CD007FF111 /* WJIMChatTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEFFB981E5553CD007FF111 /* WJIMChatTextParser.m */; };
+		0DEFFB9F1E5556B1007FF111 /* WBStatusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEFFB9E1E5556B1007FF111 /* WBStatusHelper.m */; };
+		0DEFFBAB1E5559C9007FF111 /* WBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEFFBAA1E5559C9007FF111 /* WBModel.m */; };
+		0DEFFBAD1E55764E007FF111 /* EmoticonWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DEFFBAC1E55764E007FF111 /* EmoticonWeibo.bundle */; };
+		0DEFFBB01E558126007FF111 /* WBEmoticonInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEFFBAF1E558126007FF111 /* WBEmoticonInputView.m */; };
+		0DEFFBBA1E55875B007FF111 /* ResourceWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DEFFBB91E55875B007FF111 /* ResourceWeibo.bundle */; };
+		0DEFFBBC1E558A4E007FF111 /* EmoticonIMChat.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DEFFBBB1E558A4E007FF111 /* EmoticonIMChat.bundle */; };
 		2E29457B336A3BD875F1F28B /* libPods-IMTestDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4FD1032C30F6AA965922AD /* libPods-IMTestDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -336,8 +342,6 @@
 		0DD5F8481E52AC9800D606F6 /* EaseEmotionEscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseEmotionEscape.m; sourceTree = "<group>"; };
 		0DD5F8491E52AC9800D606F6 /* EaseEmotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseEmotionManager.h; sourceTree = "<group>"; };
 		0DD5F84A1E52AC9800D606F6 /* EaseEmotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseEmotionManager.m; sourceTree = "<group>"; };
-		0DD5F8511E52B0B400D606F6 /* WJIMChatKeyBoardTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatKeyBoardTool.h; sourceTree = "<group>"; };
-		0DD5F8521E52B0B400D606F6 /* WJIMChatKeyBoardTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatKeyBoardTool.m; sourceTree = "<group>"; };
 		0DD5F8541E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatKeyBoardToolBar.h; sourceTree = "<group>"; };
 		0DD5F8551E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatKeyBoardToolBar.m; sourceTree = "<group>"; };
 		0DD5F8671E52DB0C00D606F6 /* WJKeyBoardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJKeyBoardManager.h; sourceTree = "<group>"; };
@@ -351,6 +355,17 @@
 		0DECE3211E49CB5E0078CB20 /* UIView+IM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IM.m"; sourceTree = "<group>"; };
 		0DECE3231E49CB8C0078CB20 /* WJIMChatBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatBaseCell.h; sourceTree = "<group>"; };
 		0DECE3241E49CB8C0078CB20 /* WJIMChatBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatBaseCell.m; sourceTree = "<group>"; };
+		0DEFFB971E5553CD007FF111 /* WJIMChatTextParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJIMChatTextParser.h; sourceTree = "<group>"; };
+		0DEFFB981E5553CD007FF111 /* WJIMChatTextParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJIMChatTextParser.m; sourceTree = "<group>"; };
+		0DEFFB9D1E5556B1007FF111 /* WBStatusHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBStatusHelper.h; sourceTree = "<group>"; };
+		0DEFFB9E1E5556B1007FF111 /* WBStatusHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBStatusHelper.m; sourceTree = "<group>"; };
+		0DEFFBA91E5559C9007FF111 /* WBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBModel.h; sourceTree = "<group>"; };
+		0DEFFBAA1E5559C9007FF111 /* WBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBModel.m; sourceTree = "<group>"; };
+		0DEFFBAC1E55764E007FF111 /* EmoticonWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EmoticonWeibo.bundle; sourceTree = "<group>"; };
+		0DEFFBAE1E558126007FF111 /* WBEmoticonInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBEmoticonInputView.h; sourceTree = "<group>"; };
+		0DEFFBAF1E558126007FF111 /* WBEmoticonInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBEmoticonInputView.m; sourceTree = "<group>"; };
+		0DEFFBB91E55875B007FF111 /* ResourceWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ResourceWeibo.bundle; sourceTree = "<group>"; };
+		0DEFFBBB1E558A4E007FF111 /* EmoticonIMChat.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EmoticonIMChat.bundle; sourceTree = "<group>"; };
 		6D71C37133BAC3CD793D7820 /* Pods-IMTestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMTestDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMTestDemo/Pods-IMTestDemo.release.xcconfig"; sourceTree = "<group>"; };
 		6F4FD1032C30F6AA965922AD /* libPods-IMTestDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IMTestDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B281946A7B861C055FF2083 /* Pods-IMTestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMTestDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMTestDemo/Pods-IMTestDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -438,6 +453,9 @@
 		0D6CFAB11E20957100B3259A /* IMTestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0DEFFBBB1E558A4E007FF111 /* EmoticonIMChat.bundle */,
+				0DEFFBB91E55875B007FF111 /* ResourceWeibo.bundle */,
+				0DEFFBAC1E55764E007FF111 /* EmoticonWeibo.bundle */,
 				0DD5F8671E52DB0C00D606F6 /* WJKeyBoardManager.h */,
 				0DD5F8681E52DB0C00D606F6 /* WJKeyBoardManager.m */,
 				0DD5F7BD1E52A3E200D606F6 /* Third */,
@@ -838,12 +856,18 @@
 				0DA5F0231E5433C900D374CE /* WJIMChatAudioBoardView */,
 				0DA5F0281E5433C900D374CE /* WJIMChatFaceBoardView */,
 				0DA5F02B1E5433C900D374CE /* WJIMChatMoreBoardView */,
-				0DD5F8511E52B0B400D606F6 /* WJIMChatKeyBoardTool.h */,
-				0DD5F8521E52B0B400D606F6 /* WJIMChatKeyBoardTool.m */,
 				0DD5F8541E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.h */,
 				0DD5F8551E52B0DE00D606F6 /* WJIMChatKeyBoardToolBar.m */,
+				0DEFFB971E5553CD007FF111 /* WJIMChatTextParser.h */,
+				0DEFFB981E5553CD007FF111 /* WJIMChatTextParser.m */,
+				0DEFFB9D1E5556B1007FF111 /* WBStatusHelper.h */,
+				0DEFFB9E1E5556B1007FF111 /* WBStatusHelper.m */,
 				0DD5F86A1E52DB7200D606F6 /* WJIMChatKeyBoard.h */,
 				0DD5F86B1E52DB7200D606F6 /* WJIMChatKeyBoard.m */,
+				0DEFFBAE1E558126007FF111 /* WBEmoticonInputView.h */,
+				0DEFFBAF1E558126007FF111 /* WBEmoticonInputView.m */,
+				0DEFFBA91E5559C9007FF111 /* WBModel.h */,
+				0DEFFBAA1E5559C9007FF111 /* WBModel.m */,
 			);
 			path = ChatKeyBoard;
 			sourceTree = "<group>";
@@ -1006,6 +1030,7 @@
 				0DA5F0511E54341100D374CE /* news_ic_red@3x.png in Resources */,
 				0DA9CB981E4B1FFB00CD8FD0 /* 148654703233540.amr in Resources */,
 				0DA5F0491E54341100D374CE /* news_ic_keyboard@3x.png in Resources */,
+				0DEFFBAD1E55764E007FF111 /* EmoticonWeibo.bundle in Resources */,
 				0D6CFAC21E20957100B3259A /* LaunchScreen.storyboard in Resources */,
 				0DA9CB671E4AC96A00CD8FD0 /* face.plist in Resources */,
 				0D6E80761E51940D000908DA /* =====png-02450.gif in Resources */,
@@ -1020,12 +1045,14 @@
 				0D6CFABF1E20957100B3259A /* Assets.xcassets in Resources */,
 				0DA5F04F1E54341100D374CE /* news_ic_Photograph@3x.png in Resources */,
 				0DA5F04A1E54341100D374CE /* news_ic_more@2x.png in Resources */,
+				0DEFFBBC1E558A4E007FF111 /* EmoticonIMChat.bundle in Resources */,
 				0DA5F0501E54341100D374CE /* news_ic_red@2x.png in Resources */,
 				0DD5F8181E52A3E300D606F6 /* expressionImage_custom.plist in Resources */,
 				0D6CFABD1E20957100B3259A /* Main.storyboard in Resources */,
 				0D6E80721E518E93000908DA /* gitTest.gif in Resources */,
 				0DD5F81A1E52A3E300D606F6 /* MLEmoji_Expression.bundle in Resources */,
 				0DA5F0551E54341100D374CE /* news_ic_Voice@3x.png in Resources */,
+				0DEFFBBA1E55875B007FF111 /* ResourceWeibo.bundle in Resources */,
 				0DA5F0471E54341100D374CE /* news_ic_Expression@3x.png in Resources */,
 				0DA5F0481E54341100D374CE /* news_ic_keyboard@2x.png in Resources */,
 				0DD5F81B1E52A3E300D606F6 /* MLEmoji_Expression.plist in Resources */,
@@ -1107,6 +1134,7 @@
 			files = (
 				0DD5F8211E52A3E300D606F6 /* UIAlertController+Blocks.m in Sources */,
 				0DD5F86C1E52DB7200D606F6 /* WJIMChatKeyBoard.m in Sources */,
+				0DEFFBB01E558126007FF111 /* WBEmoticonInputView.m in Sources */,
 				0D99F1D91E4C46AD00C86D82 /* WJHuanXinChatPhotosBrowserController.m in Sources */,
 				0DD5F84E1E52AC9900D606F6 /* EaseEmotionEscape.m in Sources */,
 				0DA9CB831E4AF50900CD8FD0 /* WJIMChatCellUtil.m in Sources */,
@@ -1132,10 +1160,12 @@
 				0D3417771E48593100CC7EA4 /* MainController.m in Sources */,
 				0DA5F0321E5433C900D374CE /* WJIMChatFaceBoardView.m in Sources */,
 				0DA9CB511E4AC66F00CD8FD0 /* WJIMChatBorderManager.m in Sources */,
+				0DEFFBAB1E5559C9007FF111 /* WBModel.m in Sources */,
 				0DA9CB891E4AFD0900CD8FD0 /* WJIMChatVideoMsgCell.m in Sources */,
 				0D6E806B1E514843000908DA /* WJIMConversationModel.m in Sources */,
 				0DD5F80A1E52A3E300D606F6 /* EMAudioRecorderUtil.m in Sources */,
 				0DA9CB6D1E4AF45C00CD8FD0 /* WJIMChatTimeCell.m in Sources */,
+				0DEFFB9F1E5556B1007FF111 /* WBStatusHelper.m in Sources */,
 				0DA9CB8F1E4AFD5700CD8FD0 /* WJIMChatLocationMsgCell.m in Sources */,
 				0D6E808C1E51A727000908DA /* WJIMChatController.m in Sources */,
 				0D6CFAB71E20957100B3259A /* AppDelegate.m in Sources */,
@@ -1159,10 +1189,10 @@
 				0DA9CB6A1E4ACBF700CD8FD0 /* WJIMChatTextMsgCell.m in Sources */,
 				0DD5F84B1E52AC9800D606F6 /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				0DECE3221E49CB5E0078CB20 /* UIView+IM.m in Sources */,
-				0DD5F8531E52B0B400D606F6 /* WJIMChatKeyBoardTool.m in Sources */,
 				0D6E806C1E514843000908DA /* WJIMConversationStore.m in Sources */,
 				0DD5F8161E52A3E300D606F6 /* HexColors.m in Sources */,
 				0DD5F83C1E52AC5F00D606F6 /* WJIMMainManager+Send.m in Sources */,
+				0DEFFB991E5553CD007FF111 /* WJIMChatTextParser.m in Sources */,
 				0D6CFAB41E20957100B3259A /* main.m in Sources */,
 				0DD5F84F1E52AC9900D606F6 /* EaseEmotionManager.m in Sources */,
 				0DD5F8201E52A3E300D606F6 /* NSDateFormatter+Category.m in Sources */,

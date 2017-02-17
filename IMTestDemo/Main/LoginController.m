@@ -64,7 +64,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self.view endEditing:YES];
-    [self.tool resetKeyBoard];
+//    [self.tool resetKeyBoard];
 }
 
 #pragma mark - 懒加载

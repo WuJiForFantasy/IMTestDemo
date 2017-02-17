@@ -41,7 +41,7 @@
     if (!image) {
         image = message.image;
         if (!image) {
-            [self.picImage yy_setImageWithURL:[NSURL URLWithString:message.fileURLPath] placeholder:[UIImage imageNamed:message.failImageName]];
+            [self.picImage setImageWithURL:[NSURL URLWithString:message.fileURLPath] placeholder:[UIImage imageNamed:message.failImageName]];
         } else {
             self.picImage.image = image;
         }

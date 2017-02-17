@@ -3,33 +3,24 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - SVProgressHUD (2.1.2)
-  - YYCache (1.0.4)
-  - YYImage (1.0.4):
-    - YYImage/Core (= 1.0.4)
-  - YYImage/Core (1.0.4)
-  - YYText (1.0.7)
-  - YYWebImage (1.0.5):
-    - YYCache
-    - YYImage
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - HyphenateLite_CN
   - MJExtension
   - MJRefresh
   - SVProgressHUD
-  - YYText
-  - YYWebImage
+  - YYKit
 
 SPEC CHECKSUMS:
   HyphenateLite_CN: b1b023ca05b254f495924711158b3112abf37c04
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
-  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
-  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
-  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
-  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 2f9ea7151d152c6377ca8fccd737d785970b41a0
+PODFILE CHECKSUM: 68bf096e272317d39bcb6ffd655adc61fbb52ed3
 
 COCOAPODS: 1.1.1

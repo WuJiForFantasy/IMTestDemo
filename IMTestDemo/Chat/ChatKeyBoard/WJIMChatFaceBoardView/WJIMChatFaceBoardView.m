@@ -10,12 +10,15 @@
 #import "UIView+IM.h"
 #import "WJCollectionViewHorizontalLayout.h"
 #import "WJIMChatFaceBoardViewBottomCell.h"
+#import "WBEmoticonInputView.h"
 
 @interface WJIMChatFaceBoardView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic,strong) UICollectionView *toolView;//工具管理视图
 @property (nonatomic,strong) UIButton *sendButton;  //发送按钮
 @property (nonatomic,strong) UIView *lineView;      //线条
+//@property (nonatomic,strong) WBEmoticonInputView *faceView;
+//@property
 @end
 
 //UICollectionViewFlowLayout
@@ -27,6 +30,8 @@
     if (self) {
         
         self.backgroundColor = [UIColor whiteColor];
+       
+//        [self addSubview:self.faceView];
         [self addSubview:self.toolView];
         [self addSubview:self.sendButton];
         [self addSubview:self.lineView];
@@ -70,7 +75,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return self.faceSources.count;
+    return 3;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -84,10 +89,24 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    [_scrollView setContentOffset:CGPointMake(indexPath.row*self.frame.size.width, 0) animated:YES];
+//    [_scrollView setContentOffset:CGPointMake(indexPath.row*self.frame.size.width, 0) animated:YES];
 //    [collectionView cellForItemAtIndexPath:indexPath].backgroundColor = [UIColor redColor];
 //    [collectionView reloadData];
 }
+//
+//#pragma mark - <WBStatusComposeEmoticonViewDelegate>
+//
+//- (void)emoticonInputDidTapText:(NSString *)text {
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(emoticonInputDidTapText:)]) {
+//        [self.delegate emoticonInputDidTapText:text];
+//    }
+//}
+//
+//- (void)emoticonInputDidTapBackspace {
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(emoticonInputDidTapBackspace)]) {
+//        [self.delegate emoticonInputDidTapBackspace];
+//    }
+//}
 
 #pragma mark - 懒加载
 
@@ -126,5 +145,13 @@
     }
     return _lineView;
 }
+
+//- (WBEmoticonInputView *)faceView {
+//    if (!_faceView) {
+//        _faceView = [WBEmoticonInputView sharedView];
+//        _faceView.delegate = self;
+//    }
+//    return _faceView;
+//}
 
 @end

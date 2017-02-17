@@ -61,7 +61,7 @@
     
     if (self.chatType != EMChatTypeChat) {
         self.nickNameLabel.text = message.nickname;
-        [self.avatarView yy_setImageWithURL:[NSURL URLWithString:message.avatarURLPath] placeholder:nil];
+        [self.avatarView setImageWithURL:[NSURL URLWithString:message.avatarURLPath] placeholder:nil];
     }
   
     //显示基础逻辑控件的逻辑
@@ -312,7 +312,7 @@
 - (UIButton *)readView {
     if (!_readView) {
         _readView = [[UIButton alloc]init];
-        [_readView setBackgroundImage:[UIImage yy_imageWithColor:[UIColor colorWithHexString:@"93d050"]] forState:UIControlStateNormal];
+        [_readView setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"93d050"]] forState:UIControlStateNormal];
         [_readView setTitle:@"已读" forState:UIControlStateNormal];
         _readView.titleLabel.font = [UIFont systemFontOfSize:7];
         _readView.layer.cornerRadius = 3;

@@ -21,6 +21,7 @@
 /**完成后回调*/
 @property (nonatomic,copy) void (^didFinishBlock) (NSString *str,NSAttributedString *attStr);
 @property (nonatomic,weak) id <WJIMChatKeyBoardToolBarDelegate> delegate;
+@property (nonatomic,strong) YYTextView *textView;      //文本输入
 
 - (void)resetSelected;  //重置选中状态
 
@@ -33,6 +34,6 @@
 
 //0:音频，1:键盘，2:更多
 - (void)toolBarSelectedAtIndex:(NSInteger)index selected:(BOOL)selected textView:(YYTextView *)textView;
-
+- (void)toolBarDeleteFrom:(YYTextView *)textView;
 @end
 

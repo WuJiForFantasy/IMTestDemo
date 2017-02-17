@@ -7,7 +7,7 @@
 //
 
 #import "WJIMChatKeyBoardToolBar.h"
-#import "YYText.h"
+#import "WJIMChatTextParser.h"
 #import "WJKeyBoardManager.h"
 
 @interface WJIMChatKeyBoardToolBar () <YYTextViewDelegate>
@@ -15,7 +15,7 @@
 @property (nonatomic,strong) UIButton *audioButton;     //音频按钮
 @property (nonatomic,strong) UIButton *faceButton;      //表情按钮
 @property (nonatomic,strong) UIButton *moreButton;      //更多按钮
-@property (nonatomic,strong) YYTextView *textView;      //文本输入
+
 @property (nonatomic,strong) UIView *topLineView;       //顶部线条
 @property (nonatomic,strong) UIView *bottomLineView;    //底部线条
 
@@ -32,6 +32,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        self.autoresizesSubviews = NO;
         self.toolBarTopY = frame.origin.y;
         self.toolBarHeight = frame.size.height;
         self.backgroundColor = [UIColor whiteColor];
@@ -82,7 +83,7 @@
             }else {
                 self.frame = CGRectMake(0, self.toolBarTopY , width, self.toolBarHeight);
             }
-            
+            self.bottomLineView.frame = CGRectMake(0, self.textView.bottom + 4, width, 1);
         }else {
             
             self.textView.frame = CGRectMake(self.contentInset.left, self.contentInset.top,contentWidth+1,self.textView.textLayout.textBoundingRect.size.height + self.contentInset.top + self.contentInset.bottom+1);
@@ -95,7 +96,7 @@
             }else {
                 self.frame = CGRectMake(0, self.toolBarTopY - contentHeight + self.toolBarHeight - ( self.contentInset.top + self.contentInset.bottom), width, self.textView.textLayout.textBoundingRect.size.height + 2 * (self.contentInset.top + self.contentInset.bottom));
             }
-            
+            self.bottomLineView.frame = CGRectMake(0, self.textView.bottom + 3, width, 1);
         }
     }];
     
@@ -103,7 +104,7 @@
     self.faceButton.frame = CGRectMake(width - 80, 0, 40, 40);
     self.moreButton.frame = CGRectMake(width - 40, 0, 40, 40);
     self.topLineView.frame = CGRectMake(0, 0, width, 1);
-    self.bottomLineView.frame = CGRectMake(0, 39, width, 1);
+    
 }
 
 #pragma mark - 事件监听
@@ -158,6 +159,11 @@
 
 -(BOOL)textView:(YYTextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(toolBarDeleteFrom:)]) {
+        [self.delegate toolBarDeleteFrom:self.textView];
+    }
+    
     //如果为回车则将键盘收起
     if ([text isEqualToString:@"\n"]) {
         
@@ -213,10 +219,12 @@
         _textView.placeholderText = @"说点什么吧...";
         _textView.font = [UIFont systemFontOfSize:15];
         _textView.placeholderFont = [UIFont systemFontOfSize:15];
-        _textView.textContainerInset = UIEdgeInsetsMake(10, 10, 0, 10);
+//        _textView.textContainerInset = UIEdgeInsetsMake(10, 10, 0, 10);
         _textView.returnKeyType = UIReturnKeyDone;
         _textView.layer.cornerRadius = 20;
         _textView.layer.masksToBounds = YES;
+        //解析器
+        _textView.textParser = [WJIMChatTextParser new];
     }
     return _textView;
 }

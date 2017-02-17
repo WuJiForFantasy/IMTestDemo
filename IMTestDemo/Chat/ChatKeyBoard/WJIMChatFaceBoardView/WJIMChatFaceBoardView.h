@@ -9,8 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "FacePanel.h"
 
+//@protocol WJIMChatFaceBoardViewDelegate;
+
+
 @interface WJIMChatFaceBoardView : FacePanel
 
-- (void)changeFaceSubjectIndex:(NSInteger)subjectIndex;
+//@property (nonatomic,assign)id<WJIMChatFaceBoardViewDelegate>delegate;
 
 @end
+
+//@protocol WJIMChatFaceBoardViewDelegate <NSObject>
+//
+//- (void)emoticonInputDidTapText:(NSString *)text;
+//
+//- (void)emoticonInputDidTapBackspace;
+//
+//@end
